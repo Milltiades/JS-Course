@@ -50,9 +50,24 @@
 // console.log(message2.trimLeft());
 // console.log(message2.trimRight());
 
-const message = "This is my\n first message";
+// const message = "This is my\n first message";
 // console.log(message);
 // console.log(message.split(" "));
 
 // String object
-const another = new String("hi");
+// const another = new String("hi");
+//
+
+const myVariable = "Mathematics";
+
+// console.log(myVariable.length);
+// console.log("Every good boy does fine".length);
+// console.log(myVariable.charAt(6)); //მეექვსე ციფრი სტრინგში
+// console.log(myVariable.indexOf("ati"));
+// console.log(myVariable.lastIndexOf("ath"));
+// console.log(myVariable.slice(5)); //იწყება 5 ინდექსით და გამოაქვს ბოლომდე
+// console.log(myVariable.slice(5, 8)); //იწყება 5 ინდექსით და 8-მდე
+// console.log(myVariable.slice(5, 6)); //არაფერს არ გამოიტანს თუ ნაკლებია ან იგივე
+// console.log(myVariable.split("a"));
+const num = myVariable.split("");
+console.log(num);

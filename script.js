@@ -116,11 +116,71 @@
 
 // console.log(varVariable);
 
-const constVar = { name: "Bob", age: 21 };
-let letVar = 2;
+// const constVar = { name: "Bob", age: 21 };
+// let letVar = 2;
 
-constVar.name = "sally";
-constVar.name = "sally 2";
-constVar.age = 2;
+// constVar.name = "sally";
+// constVar.name = "sally 2";
+// constVar.age = 2;
 
-console.log(constVar);
+// console.log(constVar);
+
+// var, let, and const
+
+//both var and let are re-assignable
+
+// const x = 1;
+// x = 2;
+
+// console.log(x);
+
+// global scope
+// var x = 1;
+// let y = 2;
+// const z = 3;
+
+// local scope
+
+// local scope
+// function myFunc() {
+//   const z = 5;
+//   console.log(y);
+//   // local scope
+//   {
+//     const y = 4;
+//     console.log(y);
+//   }
+// }
+
+// myFunc();
+
+//global scope
+var x = 1; // function scope
+let y = 2; // block scope
+const z = 3;
+
+console.log(`global: ${x}`);
+console.log(`global: ${y}`);
+console.log(`global: ${z}`);
+
+function myFunc() {
+  var x = 10;
+  const z = 5;
+  {
+    var x = 11; // function scoped
+    const z = 6; // block scoped
+    console.log(`block: ${x}`);
+    console.log(`block: ${y}`);
+    console.log(`block: ${z}`);
+  }
+  console.log(`function: ${x}`);
+  console.log(`function: ${y}`);
+  console.log(`function: ${z}`);
+}
+
+myFunc();
+
+// Global = Not in a function or block. Not desirable.
+// Local = in a function or block. Nor global.
+// var instantiates function() scoped variables.
+// let and const instantiate {block} scoped variables.

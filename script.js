@@ -86,10 +86,41 @@
 // var => function-scoped
 // ES6 (ES2015): let, const => block-scoped
 
-var color = "red"; // var is attached to window object
-let age = 30;
+// var color = "red"; // var is attached to window object
+// let age = 30;
 
 // this function is attached to window object
-function saiHi() {
-  console.log("hi");
-}
+// function saiHi() {
+//   console.log("hi");
+// }
+
+// if (true) {
+//   var varVariable = "this is true - var"; // function scoped
+// }
+
+// var varVariable = "this is false"; // var can be re-declared
+// console.log(varVariable);
+
+// let letVariable = "true"; // let can not be re-declared
+// let letVariable = "false";
+
+// console.log(letVariable);
+
+// if (true) {
+//   let letVariable = "this is true - let"; // block scoped
+//   const constVariable = "this is true - const"; // block scoped
+//   console.log(letVariable);
+//   console.log(constVariable);
+// }
+// console.log(letVariable);
+
+// console.log(varVariable);
+
+const constVar = { name: "Bob", age: 21 };
+let letVar = 2;
+
+constVar.name = "sally";
+constVar.name = "sally 2";
+constVar.age = 2;
+
+console.log(constVar);

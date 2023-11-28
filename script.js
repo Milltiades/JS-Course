@@ -18,16 +18,41 @@
 // let num = 1e5;
 // console.log("num: ", typeof num);
 
-const PI = 3.141596254;
+// const PI = 3.141596254;
 
-let num = PI.toFixed(3); // დაამრგვალო სიზუსტით
+// let num = PI.toFixed(3); // დაამრგვალო სიზუსტით
 // num = PI.toPrecision(5); // ზუსტად გამოაჩინო
 
-let mill = 1000000;
+// let mill = 1000000;
 // num = mill.toExponential(); // შეკვეცილათ აჩვენო
 
-let num2 = PI.toPrecision(3);
-console.log(num2);
-let lightSpeed = 186000;
+// let num2 = PI.toPrecision(3);
+// console.log(num2);
+// let lightSpeed = 186000;
 
-console.log(lightSpeed.toExponential());
+// console.log(lightSpeed.toExponential());
+
+// String primitive
+// const message = "This is my first message";
+// const message2 = " This is my first message ";
+// console.log(message.includes("my"));
+// console.log(message.includes("not"));
+// console.log(message.startsWith("This"));
+// console.log(message.startsWith("this"));
+// console.log(message.endsWith("message"));
+// console.log(message.endsWith("e"));
+// console.log(message.indexOf("message"));
+// console.log(message.replace("first", "second"));
+// console.log(message);
+// console.log(message.toUpperCase());
+// console.log(message.toLowerCase());
+// console.log(message2.trim());
+// console.log(message2.trimLeft());
+// console.log(message2.trimRight());
+
+const message = "This is my\n first message";
+// console.log(message);
+// console.log(message.split(" "));
+
+// String object
+const another = new String("hi");

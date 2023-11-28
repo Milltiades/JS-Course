@@ -58,7 +58,7 @@
 // const another = new String("hi");
 //
 
-const myVariable = "Mathematics";
+// const myVariable = "Mathematics";
 
 // console.log(myVariable.length);
 // console.log("Every good boy does fine".length);
@@ -69,5 +69,27 @@ const myVariable = "Mathematics";
 // console.log(myVariable.slice(5, 8)); //იწყება 5 ინდექსით და 8-მდე
 // console.log(myVariable.slice(5, 6)); //არაფერს არ გამოიტანს თუ ნაკლებია ან იგივე
 // console.log(myVariable.split("a"));
-const num = myVariable.split("");
-console.log(num);
+// const num = myVariable.split("");
+// console.log(num);
+
+// function start() {
+//   for (var i = 0; i < 5; i++) {
+//     if (true) {
+//       let color = "red";
+//     }
+//   }
+
+//   console.log(color);
+// }
+// start();
+
+// var => function-scoped
+// ES6 (ES2015): let, const => block-scoped
+
+var color = "red"; // var is attached to window object
+let age = 30;
+
+// this function is attached to window object
+function saiHi() {
+  console.log("hi");
+}

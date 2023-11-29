@@ -219,11 +219,27 @@
 // start();
 // stop();
 
-console.log(`sumFunc(1, 2 => ${sumFunc(1, 2)}`);
-console.log(`sumConst(3, 4 => ${sumConst(3, 4)}`);
+// console.log(`sumFunc(1, 2 => ${sumFunc(1, 2)}`);
+// console.log(`sumConst(3, 4 => ${sumConst(3, 4)}`);
 
-function sumFunc(a, b) {
-  return a + b;
-}
+// function sumFunc(a, b) {
+//   return a + b;
+// }
 
-var sumConst = (a, b) => a + b;
+// var sumConst = (a, b) => a + b;
+
+// getName();
+// console.log(x);
+// console.log(getName);
+
+getName();
+console.log(x);
+console.log(getName);
+
+var x = 7;
+
+var getName2 = function () {};
+
+var getName = () => {
+  console.log("Namaste Javascript");
+};

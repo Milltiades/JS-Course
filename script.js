@@ -190,17 +190,31 @@
 
 // console.log(exportedVar);
 
-function test() {
-  const b = 2;
+// function test() {
+//   const b = 2;
 
-  if (true) {
-    const c = 3;
-    console.log(b, c);
-  }
-  // console.log(c);
-}
+//   if (true) {
+//     const c = 3;
+//     console.log(b, c);
+//   }
+//   // console.log(c);
+// }
 
-test();
+// test();
 
 // var variables ar function scoped
 // let, and const are block scoped
+
+const color = "red";
+
+function start() {
+  const message = "hi";
+  const color = "blue";
+  console.log(color);
+}
+function stop() {
+  const message = "bye";
+  // console.log(message);
+}
+start();
+stop();

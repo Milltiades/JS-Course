@@ -185,12 +185,7 @@
 // var instantiates function() scoped variables.
 // let and const instantiate {block} scoped variables.
 
-const a = 1;
+// console.log(globalVar);
+import { exportedVar } from "./moduleScript.js";
 
-function test() {
-  const b = 2;
-  console.log("Here", a, b);
-}
-
-test();
-console.log(a, b);
+console.log(exportedVar);

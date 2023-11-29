@@ -155,32 +155,42 @@
 // myFunc();
 
 //global scope
-var x = 1; // function scope
-let y = 2; // block scope
-const z = 3;
+// var x = 1; // function scope
+// let y = 2; // block scope
+// const z = 3;
 
-console.log(`global: ${x}`);
-console.log(`global: ${y}`);
-console.log(`global: ${z}`);
+// console.log(`global: ${x}`);
+// console.log(`global: ${y}`);
+// console.log(`global: ${z}`);
 
-function myFunc() {
-  var x = 10;
-  const z = 5;
-  {
-    var x = 11; // function scoped
-    const z = 6; // block scoped
-    console.log(`block: ${x}`);
-    console.log(`block: ${y}`);
-    console.log(`block: ${z}`);
-  }
-  console.log(`function: ${x}`);
-  console.log(`function: ${y}`);
-  console.log(`function: ${z}`);
-}
+// function myFunc() {
+//   var x = 10;
+//   const z = 5;
+//   {
+//     var x = 11; // function scoped
+//     const z = 6; // block scoped
+//     console.log(`block: ${x}`);
+//     console.log(`block: ${y}`);
+//     console.log(`block: ${z}`);
+//   }
+//   console.log(`function: ${x}`);
+//   console.log(`function: ${y}`);
+//   console.log(`function: ${z}`);
+// }
 
-myFunc();
+// myFunc();
 
 // Global = Not in a function or block. Not desirable.
 // Local = in a function or block. Nor global.
 // var instantiates function() scoped variables.
 // let and const instantiate {block} scoped variables.
+
+const a = 1;
+
+function test() {
+  const b = 2;
+  console.log("Here", a, b);
+}
+
+test();
+console.log(a, b);

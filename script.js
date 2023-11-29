@@ -155,32 +155,75 @@
 // myFunc();
 
 //global scope
-var x = 1; // function scope
-let y = 2; // block scope
-const z = 3;
+// var x = 1; // function scope
+// let y = 2; // block scope
+// const z = 3;
 
-console.log(`global: ${x}`);
-console.log(`global: ${y}`);
-console.log(`global: ${z}`);
+// console.log(`global: ${x}`);
+// console.log(`global: ${y}`);
+// console.log(`global: ${z}`);
 
-function myFunc() {
-  var x = 10;
-  const z = 5;
-  {
-    var x = 11; // function scoped
-    const z = 6; // block scoped
-    console.log(`block: ${x}`);
-    console.log(`block: ${y}`);
-    console.log(`block: ${z}`);
-  }
-  console.log(`function: ${x}`);
-  console.log(`function: ${y}`);
-  console.log(`function: ${z}`);
-}
+// function myFunc() {
+//   var x = 10;
+//   const z = 5;
+//   {
+//     var x = 11; // function scoped
+//     const z = 6; // block scoped
+//     console.log(`block: ${x}`);
+//     console.log(`block: ${y}`);
+//     console.log(`block: ${z}`);
+//   }
+//   console.log(`function: ${x}`);
+//   console.log(`function: ${y}`);
+//   console.log(`function: ${z}`);
+// }
 
-myFunc();
+// myFunc();
 
 // Global = Not in a function or block. Not desirable.
 // Local = in a function or block. Nor global.
 // var instantiates function() scoped variables.
 // let and const instantiate {block} scoped variables.
+
+// console.log(globalVar);
+// import { exportedVar } from "./moduleScript.js";
+
+// console.log(exportedVar);
+
+// function test() {
+//   const b = 2;
+
+//   if (true) {
+//     const c = 3;
+//     console.log(b, c);
+//   }
+//   // console.log(c);
+// }
+
+// test();
+
+// var variables ar function scoped
+// let, and const are block scoped
+
+// const color = "red";
+
+// function start() {
+//   const message = "hi";
+//   const color = "blue";
+//   console.log(color);
+// }
+// function stop() {
+//   const message = "bye";
+//   // console.log(message);
+// }
+// start();
+// stop();
+
+console.log(`sumFunc(1, 2 => ${sumFunc(1, 2)}`);
+console.log(`sumConst(3, 4 => ${sumConst(3, 4)}`);
+
+function sumFunc(a, b) {
+  return a + b;
+}
+
+var sumConst = (a, b) => a + b;

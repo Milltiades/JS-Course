@@ -1,3 +1,3 @@
-const moduleVar = "Module";
+// const moduleVar = "Module";
 
-export const exportedVar = "Exported";
+// export const exportedVar = "Exported";

@@ -186,6 +186,21 @@
 // let and const instantiate {block} scoped variables.
 
 // console.log(globalVar);
-import { exportedVar } from "./moduleScript.js";
+// import { exportedVar } from "./moduleScript.js";
 
-console.log(exportedVar);
+// console.log(exportedVar);
+
+function test() {
+  const b = 2;
+
+  if (true) {
+    const c = 3;
+    console.log(b, c);
+  }
+  // console.log(c);
+}
+
+test();
+
+// var variables ar function scoped
+// let, and const are block scoped

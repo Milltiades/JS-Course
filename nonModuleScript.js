@@ -1,1 +1,1 @@
-const globalVar = "Global";
+// const globalVar = "Global";

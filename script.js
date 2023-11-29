@@ -205,16 +205,25 @@
 // var variables ar function scoped
 // let, and const are block scoped
 
-const color = "red";
+// const color = "red";
 
-function start() {
-  const message = "hi";
-  const color = "blue";
-  console.log(color);
+// function start() {
+//   const message = "hi";
+//   const color = "blue";
+//   console.log(color);
+// }
+// function stop() {
+//   const message = "bye";
+//   // console.log(message);
+// }
+// start();
+// stop();
+
+console.log(`sumFunc(1, 2 => ${sumFunc(1, 2)}`);
+console.log(`sumConst(3, 4 => ${sumConst(3, 4)}`);
+
+function sumFunc(a, b) {
+  return a + b;
 }
-function stop() {
-  const message = "bye";
-  // console.log(message);
-}
-start();
-stop();
+
+var sumConst = (a, b) => a + b;

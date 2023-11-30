@@ -219,11 +219,174 @@
 // start();
 // stop();
 
-console.log(`sumFunc(1, 2 => ${sumFunc(1, 2)}`);
-console.log(`sumConst(3, 4 => ${sumConst(3, 4)}`);
+// console.log(`sumFunc(1, 2 => ${sumFunc(1, 2)}`);
+// console.log(`sumConst(3, 4 => ${sumConst(3, 4)}`);
 
-function sumFunc(a, b) {
-  return a + b;
+// function sumFunc(a, b) {
+//   return a + b;
+// }
+
+// var sumConst = (a, b) => a + b;
+
+// getName();
+// console.log(x);
+// console.log(getName);
+
+// var x = 7;
+
+// function getName() {
+//   console.log("Namaste Javascript");
+// }
+
+// getName();
+// console.log(x);
+// console.log(getName);
+
+// function outer(a, b) {
+//   let state = "rabbit";
+//   function inner() {
+//     return `Hello ${state}`;
+//   }
+//   return inner;
+// }
+
+// function alertFun(message) {
+//   return () => {
+//     alert(`${message}`);
+//   };
+// }
+
+// const alertMom = alertFun("hi mom");
+
+// outer();
+
+// for (var i = 0; i < 100; i++) {
+//   const log = () => {
+//     console.log(i);
+//   };
+//   setTimeout(log, 100);
+// }
+
+// let myName = "Kyle";
+
+// function printName() {
+//   console.log(myName);
+// }
+
+// myName = "Giga";
+
+// printName();
+
+// myName = "lasha";
+
+// printName();
+
+// function outerFunction(url) {
+//   fetch(url).then(() => {
+//     console.log(url);
+//   });
+//   // const outer2 = "Hi";
+//   // return function innerFunction(innerVariable) {
+//   //   console.log("Outer Variable: " + outerVariable);
+//   //   console.log("Inner Variable: " + innerVariable);
+//   //   console.log(outer2);
+//   // };
+// }
+
+// const newFunction = outerFunction("outside");
+// newFunction("inner");
+
+// const arr = ["badger", "beaver", "baboon"];
+
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+// for (const e of arr) {
+//   console.log(e);
+// }
+
+// arr[Symbol.iterator] = function () {
+//   let i = 0;
+//   let arr = this;
+//   return {
+//     next: function () {
+//       if (i >= arr.length) {
+//         return { done: true };
+//       } else {
+//         const value = arr[i] + "🐒";
+//         i++;
+//         return { value, done: false };
+//       }
+//     },
+//   };
+// };
+
+// for (const e of arr) {
+//   console.log(e);
+// }
+
+// arr.forEach(console.log);
+
+// const mil = 1000000;
+// const arr = Array(mil);
+
+// console.time("⏲");
+
+// for (let i = 0; i < mil; i++) {}
+// for (const v of arr) {}
+// arr.forEach((v) => null);
+// arr
+//   .map((v) => v)
+//   .map((v) => v)
+//   .forEach((v) => v);
+// console.timeEnd("⏲");
+
+// const equine = { horse: "🐴", zebra: "🦓", unicorn: "🦄" };
+
+// for (const key in equine) {
+//   console.log(equine[key]);
+// }
+
+// for (const v of Object.values(equine)) {
+//   console.log(v);
+// }
+
+// const equine = new Map(
+//   Object.entries({ horse: "🐴", zebra: "🦓", unicorn: "🦄" })
+// );
+
+// for (const v of equine.values()) {
+//   console.log(v);
+// }
+
+const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "🍿"];
+
+// const feces = faces.filter((v) => v === "🍿");
+// const cleaned = feces.map((v) => "🧭");
+
+// console.log(cleaned);
+
+// const isCar = faces.some((v) => v === "🚗");
+// console.log(isCar);
+// const isEmoji = faces.every((v) => v > "s");
+// console.log(isEmoji);
+
+// const pooCount = faces.reduce((acc, cur) => {
+//   return acc + (cur === "🤠" ? 1 : 0);
+// }, 0);
+// console.log(pooCount);
+
+// const sorted = faces.sort((a, b) => a < b);
+// console.log(sorted);
+
+// sorted.splice(6);
+// console.log(sorted);
+
+// for (initialExpression; condition; incrementExpression){
+//   statement
+// }
+
+for (let i = 5; i >= 5; i--) {
+  if (i % 2 !== 0) console.log(i);
 }
-
-var sumConst = (a, b) => a + b;

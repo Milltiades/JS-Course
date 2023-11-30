@@ -377,8 +377,16 @@ const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "
 // }, 0);
 // console.log(pooCount);
 
-const sorted = faces.sort((a, b) => a < b);
-console.log(sorted);
+// const sorted = faces.sort((a, b) => a < b);
+// console.log(sorted);
 
-sorted.splice(6);
-console.log(sorted);
+// sorted.splice(6);
+// console.log(sorted);
+
+// for (initialExpression; condition; incrementExpression){
+//   statement
+// }
+
+for (let i = 5; i >= 5; i--) {
+  if (i % 2 !== 0) console.log(i);
+}

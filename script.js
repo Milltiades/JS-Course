@@ -232,14 +232,66 @@
 // console.log(x);
 // console.log(getName);
 
-getName();
-console.log(x);
-console.log(getName);
+// var x = 7;
 
-var x = 7;
+// function getName() {
+//   console.log("Namaste Javascript");
+// }
 
-var getName2 = function () {};
+// getName();
+// console.log(x);
+// console.log(getName);
 
-var getName = () => {
-  console.log("Namaste Javascript");
-};
+// function outer(a, b) {
+//   let state = "rabbit";
+//   function inner() {
+//     return `Hello ${state}`;
+//   }
+//   return inner;
+// }
+
+// function alertFun(message) {
+//   return () => {
+//     alert(`${message}`);
+//   };
+// }
+
+// const alertMom = alertFun("hi mom");
+
+// outer();
+
+// for (var i = 0; i < 100; i++) {
+//   const log = () => {
+//     console.log(i);
+//   };
+//   setTimeout(log, 100);
+// }
+
+// let myName = "Kyle";
+
+// function printName() {
+//   console.log(myName);
+// }
+
+// myName = "Giga";
+
+// printName();
+
+// myName = "lasha";
+
+// printName();
+
+function outerFunction(url) {
+  fetch(url).then(() => {
+    console.log(url);
+  });
+  // const outer2 = "Hi";
+  // return function innerFunction(innerVariable) {
+  //   console.log("Outer Variable: " + outerVariable);
+  //   console.log("Inner Variable: " + innerVariable);
+  //   console.log(outer2);
+  // };
+}
+
+const newFunction = outerFunction("outside");
+newFunction("inner");

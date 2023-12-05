@@ -387,6 +387,101 @@ const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "
 //   statement
 // }
 
-for (let i = 5; i >= 5; i--) {
-  if (i % 2 !== 0) console.log(i);
-}
+// Javascript Number Methods
+
+//toString() returns a string, with a number rounded and written using exponential notation.
+// let x = 123;
+// console.log(x);
+// console.log(x.toString());
+//returns 123
+
+//toFixed() returns a string, with the number written with a specified number of decimals:
+// let y = 9.565;
+// let t = 9.5455;
+// console.log(y);
+// console.log(y.toFixed(2)); //returns 9.56
+// console.log(y.toFixed(1)); //returns 9.6
+// console.log("test:", t.toFixed(2)); //returns 9.55
+// console.log(y.toFixed(0)); //returns 10
+
+//toPrecision() returns a string, with a number written with a specified length:
+
+// let z = 2.565;
+// console.log(z);
+// console.log(z.toPrecision(1)); //returns 3
+
+//toExponential() returns a string, with a number rounded and written using exponential notation.
+
+// let b = 70000000;
+// console.log(b);
+// console.log(b.toExponential()); //returns 7e+7
+
+//valueOf() returns a number as a number.
+// let r = 123;
+// console.log(r);
+// console.log(r.valueOf());
+
+// In JavaScript, a number can be a primitive value (typeof = number) or an object (typeof = object).
+
+// The valueOf() method is used internally in JavaScript to convert Number objects to primitive values.
+
+// There is no reason to use it in your code.
+
+// All JavaScript data types have a valueOf() and a toString() method.
+
+// Number() 	Returns a number converted from its argument.
+// parseFloat() 	Parses its argument and returns a floating point number
+// parseInt() 	Parses its argument and returns a whole number
+
+// console.log(Number(true)); //output 1
+// console.log(Number(false)); //output  0
+// console.log(Number("10")); //output 10
+// console.log(Number("  10")); //output 10
+// console.log(Number("10  ")); //output 10
+// console.log(Number(" 10  ")); //output 10
+// console.log(Number("10.33")); //output 10.33
+// console.log(Number("10,33")); //output NaN
+// console.log(Number("10 33")); //output NaN
+// console.log(Number("John")); //output NaN
+
+// console.log(new Date("2023-04-16")); //output Date Sun Apr 16 2023 04:00:00 GMT+0400 (Georgia Standard Time)
+
+// let x = new Date("2023-01-02");
+// console.log(Number(x)); // Output will be the number of milliseconds since the Unix Epoch for "2023-01-02 :   1672617600000"
+
+//parseInt() parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:
+
+// console.log(parseInt("-10")); //output -10
+// console.log(parseInt(" -10")); //output -10
+// console.log(parseInt(" -10 ")); //output -10
+// console.log(parseInt("-10.33")); //output -10
+// console.log(parseInt("10 33")); //output 10
+// console.log(parseInt("10 years")); //output 10
+// console.log(parseInt("years 10")); //output NaN
+
+//parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:
+
+// console.log(parseFloat("-10")); //output -10
+// console.log(parseFloat(" -10")); //output -10
+// console.log(parseFloat(" -10 ")); //output -10
+// console.log(parseFloat("-10.33")); //output -10
+// console.log(parseFloat("10 33")); //output 10
+// console.log(parseFloat("10 years")); //output 10
+// console.log(parseFloat("years 10")); //output NaN
+
+// console.log(Number.isInteger(3)); //output  true
+// console.log(Number.isInteger(3.3)); //output  false
+
+// console.log(Number.isSafeInteger(10)); //output  true
+// console.log(Number.isSafeInteger(3032343434412222030)); //output  false
+
+// Safe integers are all integers from -(253 - 1) to +(253 - 1).
+// This is safe: 9007199254740991. This is not safe: 9007199254740992.
+
+// The Number methods Number.parseInt() and Number.parseFloat()
+
+// are the same as the
+
+// Global methods parseInt() and parseFloat().
+
+// The purpose is modularization of globals (to make it easier to use the same JavaScript code outside the browser).

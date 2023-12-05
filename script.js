@@ -485,3 +485,75 @@ const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "
 // Global methods parseInt() and parseFloat().
 
 // The purpose is modularization of globals (to make it easier to use the same JavaScript code outside the browser).
+
+// String
+
+// Strings can be created as primitives, from string literals, or as objects, using the String() constructor:
+
+// "cat".charAt(1);
+
+// console.log("cat".charAt(1));
+// console.log("cat"[1]);
+
+const a = "a";
+const b = "b";
+
+if (a < b) {
+  console.log(`${a} is less then ${b}`);
+} else if (a > b) {
+  console.log(`${a} is greater than ${b}`);
+} else {
+  console.log(`${a} and ${b} are equal.`);
+}
+
+function areEqualCaseInsensitive(str1, str2) {
+  return str1.toUpperCase() === str2.toUpperCase();
+}
+
+const areEqualInUpperCase = (str1, str2) =>
+  str1.toUpperCase() === str2.toUpperCase();
+const areEqualInLowerCase = (str1, str2) =>
+  str1.toLowerCase() === str2.toLowerCase();
+
+areEqualInUpperCase("ß", "ss");
+areEqualInLowerCase("ı", "I");
+
+const areEqual = (str1, str2, locale = "en-US") =>
+  str1.localeCompare(str2, locale, { sensitivity: "accent" }) === 0;
+
+areEqual("ß", "ss", "de"); // false
+areEqual("ı", "I", "tr"); // true
+
+const strPrim = "foo"; // A literal is a string primitive
+const strPrim2 = String(1); // Coerced into the string primitive "1"
+const strPrim3 = String(true); // Coerced into the string primitive "true"
+const strObj = new String(strPrim); // String with new returns a string wrapper object.
+
+console.log(typeof strPrim); // "string"
+console.log(typeof strPrim2); // "string"
+console.log(typeof strPrim3); // "string"
+console.log(typeof strObj); // "object"
+
+const s1 = "2 + 2"; // creates a string primitive
+const s2 = new String("2 + 2"); // creates a String object
+console.log(eval(s1)); // returns the number 4
+console.log(eval(s2)); // returns the string "2 + 2"
+
+// For these reasons, the code may break when it encounters String objects when it expects a primitive string instead, although generally, authors need not worry about the distinction.
+
+// A String object can always be converted to its primitive counterpart with the valueOf() method.
+console.log(eval(s2.valueOf())); // returns the number 4
+
+console.log(String.fromCharCode(72, 101, 108, 108, 111)); // Output: "Hello"
+
+console.log(String.fromCodePoint(72, 101, 108, 108, 111)); // Output: "Hello"
+
+const path = String.raw`C:\Users\nodejs`;
+console.log(path); // Output: "C:\Users\nodejs"
+
+let text = "Hello, my email is user@example.com";
+let emailPattern = /\S+@\S+\.\S+/;
+let result = text.match(emailPattern);
+
+console.log(result);
+// Output: ["user@example.com"]

@@ -495,65 +495,96 @@ const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "
 // console.log("cat".charAt(1));
 // console.log("cat"[1]);
 
-const a = "a";
-const b = "b";
+// const a = "a";
+// const b = "b";
 
-if (a < b) {
-  console.log(`${a} is less then ${b}`);
-} else if (a > b) {
-  console.log(`${a} is greater than ${b}`);
-} else {
-  console.log(`${a} and ${b} are equal.`);
-}
+// if (a < b) {
+//   console.log(`${a} is less then ${b}`);
+// } else if (a > b) {
+//   console.log(`${a} is greater than ${b}`);
+// } else {
+//   console.log(`${a} and ${b} are equal.`);
+// }
 
-function areEqualCaseInsensitive(str1, str2) {
-  return str1.toUpperCase() === str2.toUpperCase();
-}
+// function areEqualCaseInsensitive(str1, str2) {
+//   return str1.toUpperCase() === str2.toUpperCase();
+// }
 
-const areEqualInUpperCase = (str1, str2) =>
-  str1.toUpperCase() === str2.toUpperCase();
-const areEqualInLowerCase = (str1, str2) =>
-  str1.toLowerCase() === str2.toLowerCase();
+// const areEqualInUpperCase = (str1, str2) =>
+//   str1.toUpperCase() === str2.toUpperCase();
+// const areEqualInLowerCase = (str1, str2) =>
+//   str1.toLowerCase() === str2.toLowerCase();
 
-areEqualInUpperCase("ß", "ss");
-areEqualInLowerCase("ı", "I");
+// areEqualInUpperCase("ß", "ss");
+// areEqualInLowerCase("ı", "I");
 
-const areEqual = (str1, str2, locale = "en-US") =>
-  str1.localeCompare(str2, locale, { sensitivity: "accent" }) === 0;
+// const areEqual = (str1, str2, locale = "en-US") =>
+//   str1.localeCompare(str2, locale, { sensitivity: "accent" }) === 0;
 
-areEqual("ß", "ss", "de"); // false
-areEqual("ı", "I", "tr"); // true
+// areEqual("ß", "ss", "de"); // false
+// areEqual("ı", "I", "tr"); // true
 
-const strPrim = "foo"; // A literal is a string primitive
-const strPrim2 = String(1); // Coerced into the string primitive "1"
-const strPrim3 = String(true); // Coerced into the string primitive "true"
-const strObj = new String(strPrim); // String with new returns a string wrapper object.
+// const strPrim = "foo"; // A literal is a string primitive
+// const strPrim2 = String(1); // Coerced into the string primitive "1"
+// const strPrim3 = String(true); // Coerced into the string primitive "true"
+// const strObj = new String(strPrim); // String with new returns a string wrapper object.
 
-console.log(typeof strPrim); // "string"
-console.log(typeof strPrim2); // "string"
-console.log(typeof strPrim3); // "string"
-console.log(typeof strObj); // "object"
+// console.log(typeof strPrim); // "string"
+// console.log(typeof strPrim2); // "string"
+// console.log(typeof strPrim3); // "string"
+// console.log(typeof strObj); // "object"
 
-const s1 = "2 + 2"; // creates a string primitive
-const s2 = new String("2 + 2"); // creates a String object
-console.log(eval(s1)); // returns the number 4
-console.log(eval(s2)); // returns the string "2 + 2"
+// const s1 = "2 + 2"; // creates a string primitive
+// const s2 = new String("2 + 2"); // creates a String object
+// console.log(eval(s1)); // returns the number 4
+// console.log(eval(s2)); // returns the string "2 + 2"
 
-// For these reasons, the code may break when it encounters String objects when it expects a primitive string instead, although generally, authors need not worry about the distinction.
+// // For these reasons, the code may break when it encounters String objects when it expects a primitive string instead, although generally, authors need not worry about the distinction.
 
-// A String object can always be converted to its primitive counterpart with the valueOf() method.
-console.log(eval(s2.valueOf())); // returns the number 4
+// // A String object can always be converted to its primitive counterpart with the valueOf() method.
+// console.log(eval(s2.valueOf())); // returns the number 4
 
-console.log(String.fromCharCode(72, 101, 108, 108, 111)); // Output: "Hello"
+// console.log(String.fromCharCode(72, 101, 108, 108, 111)); // Output: "Hello"
 
-console.log(String.fromCodePoint(72, 101, 108, 108, 111)); // Output: "Hello"
+// console.log(String.fromCodePoint(72, 101, 108, 108, 111)); // Output: "Hello"
 
-const path = String.raw`C:\Users\nodejs`;
-console.log(path); // Output: "C:\Users\nodejs"
+// const path = String.raw`C:\Users\nodejs`;
+// console.log(path); // Output: "C:\Users\nodejs"
 
-let text = "Hello, my email is user@example.com";
-let emailPattern = /\S+@\S+\.\S+/;
-let result = text.match(emailPattern);
+// let text = "Hello, my email is user@example.com";
+// let emailPattern = /\S+@\S+\.\S+/;
+// let result = text.match(emailPattern);
 
-console.log(result);
-// Output: ["user@example.com"]
+// console.log(result);
+// // Output: ["user@example.com"]
+
+let str = "Hello";
+let str2 = "World";
+let str3 = "Hello World";
+let str4 = " Hello ";
+let str5 = "Apple,Orange,Banana";
+let num = "3";
+console.log(str.charAt(1)); //  e
+console.log(str.charCodeAt(2)); //  108
+console.log(str.concat(" ", str2)); // Hello World
+console.log(str.indexOf("H")); // 0
+console.log(str.indexOf("l")); // 2
+console.log(str.lastIndexOf("l")); // 3
+console.log(str.slice(1, 3)); // el
+console.log(str3.substring(0, 5)); // Hello
+console.log(str3.substr(6, 5)); // World
+console.log(str3.toLowerCase()); // hello world
+console.log(str3.toUpperCase()); // HELLO WORLD
+console.log(str4.trim()); // Hello
+console.log(str3.replace("World", "Universe")); // Hello Universe
+console.log(str5.split(",")); // [ "Apple", "Orange", "Banana" ]
+console.log(str5.length); // 19
+console.log(str5.startsWith("Hello")); // false
+console.log(str3.startsWith("Hello")); // true
+console.log(str3.endsWith("World")); // true
+console.log(str3.includes("e")); //true
+console.log(str3.includes("z")); //false
+console.log(str3.includes("world")); //false
+console.log(str3.includes("World")); //true
+console.log(str.repeat(3)); //HelloHelloHello
+console.log(num.padStart(3, "0")); // 003

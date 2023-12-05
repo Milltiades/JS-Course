@@ -558,33 +558,145 @@ const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "
 // console.log(result);
 // // Output: ["user@example.com"]
 
-let str = "Hello";
-let str2 = "World";
-let str3 = "Hello World";
-let str4 = " Hello ";
-let str5 = "Apple,Orange,Banana";
-let num = "3";
-console.log(str.charAt(1)); //  e
-console.log(str.charCodeAt(2)); //  108
-console.log(str.concat(" ", str2)); // Hello World
-console.log(str.indexOf("H")); // 0
-console.log(str.indexOf("l")); // 2
-console.log(str.lastIndexOf("l")); // 3
-console.log(str.slice(1, 3)); // el
-console.log(str3.substring(0, 5)); // Hello
-console.log(str3.substr(6, 5)); // World
-console.log(str3.toLowerCase()); // hello world
-console.log(str3.toUpperCase()); // HELLO WORLD
-console.log(str4.trim()); // Hello
-console.log(str3.replace("World", "Universe")); // Hello Universe
-console.log(str5.split(",")); // [ "Apple", "Orange", "Banana" ]
-console.log(str5.length); // 19
-console.log(str5.startsWith("Hello")); // false
-console.log(str3.startsWith("Hello")); // true
-console.log(str3.endsWith("World")); // true
-console.log(str3.includes("e")); //true
-console.log(str3.includes("z")); //false
-console.log(str3.includes("world")); //false
-console.log(str3.includes("World")); //true
-console.log(str.repeat(3)); //HelloHelloHello
-console.log(num.padStart(3, "0")); // 003
+// let str = "Hello";
+// let str2 = "World";
+// let str3 = "Hello World";
+// let str4 = " Hello ";
+// let str5 = "Apple,Orange,Banana";
+// let num = "3";
+// console.log(str.charAt(1)); //  e
+// console.log(str.charCodeAt(2)); //  108
+// console.log(str.concat(" ", str2)); // Hello World
+// console.log(str.indexOf("H")); // 0
+// console.log(str.indexOf("l")); // 2
+// console.log(str.lastIndexOf("l")); // 3
+// console.log(str.slice(1, 3)); // el
+// console.log(str3.substring(0, 5)); // Hello
+// console.log(str3.substr(6, 5)); // World
+// console.log(str3.toLowerCase()); // hello world
+// console.log(str3.toUpperCase()); // HELLO WORLD
+// console.log(str4.trim()); // Hello
+// console.log(str3.replace("World", "Universe")); // Hello Universe
+// console.log(str5.split(",")); // [ "Apple", "Orange", "Banana" ]
+// console.log(str5.length); // 19
+// console.log(str5.startsWith("Hello")); // false
+// console.log(str3.startsWith("Hello")); // true
+// console.log(str3.endsWith("World")); // true
+// console.log(str3.includes("e")); //true
+// console.log(str3.includes("z")); //false
+// console.log(str3.includes("world")); //false
+// console.log(str3.includes("World")); //true
+// console.log(str.repeat(3)); //HelloHelloHello
+// console.log(num.padStart(3, "0")); // 003
+
+// var greeter = "hey hi"; //global scope
+// var greeter = "say Hello instead"; //global scope
+
+// function myFunction() {
+//   var hello = "hello"; // function scope
+// }
+
+// console.log(greeter); // hey hi
+// console.log(greeter); // say Hello instead
+// console.log(hello); // error: ReferenceError : hello is not defined
+
+// var greater;
+// console.log(greeter);
+// var greeter = "hey hi"; //undefined
+
+// var greeter = "hey hi";
+
+// if (true) {
+//   var greeter = "say Hello instead";
+// }
+
+// console.log(greeter); // say Hello instead
+
+// let greeter = "hey hi";
+
+// if (true) {
+//   let greeter = "say Hello instead";
+// }
+
+// console.log(greeter); // hey hi
+
+// let greeter = "hey hi";
+
+// if (true) {
+//   let greeter = "say Hello instead";
+//   console.log(greeter); // say Hello instead
+// }
+
+// console.log(greeter); // hey hi
+
+// let greeter = "hey hi";
+
+// if (true) {
+//   let hello = "say Hello instead";
+//   console.log(hello); // say Hello instead
+// }
+
+// console.log(hello); // ReferenceError: hello is not defined
+
+// let greeter = "hey hi";
+// greeter = "say Hello instead";
+// console.log(greeter);
+
+// console.log(greeter);
+// let greeter = "hey hi"; // Uncaught ReferenceError: can't access lexical declaration 'greeter' before initialization
+
+// console.log(greeter);
+
+// const greeter = "hey hi"; //Uncaught ReferenceError: can't access lexical declaration 'greeter' before initialization
+
+// const greeter = {
+//   message: "say hi",
+//   times: 4,
+// };
+// greeter.message = "say Hello instead";
+// console.log(greeter); //Object { message: "say Hello instead", times: 4 }
+
+// Scope of var
+
+// Scope essentially means where these variables are available for use. var declarations are globally scoped or function/locally scoped.
+
+// var tester = "hi";
+// function foo() {
+//   var hello = "hello";
+// }
+// console.log(hello);
+
+// var greeter = "hey hi";
+// var times = 4;
+
+// if (times > 3) {
+//   var greeter = "say Hello instead";
+// }
+
+// console.log(greeter); // "say Hello instead"
+
+// let greeter = "hey hi";
+// let times = 4;
+
+// if (times > 3) {
+//   let greeter = "say Hello instead";
+// }
+
+// console.log(greeter); // Uncaught SyntaxError: redeclaration of var greeter
+// let greeting = "say Hi";
+//     if (true) {
+//         let greeting = "say Hello instead";
+//         console.log(greeting); // "say Hello instead"
+//     }
+//     console.log(greeting); // "say Hi"
+
+// console.log(name);
+
+// let name = "giga"; //Uncaught ReferenceError: can't access lexical declaration 'name' before initialization
+
+// console.log(surname);
+
+// var surname = "kakulia";  // undefined
+
+// const greeting = "say Hi";
+// greeting = "say Hello instead"; // error: Assignment to constant variable.

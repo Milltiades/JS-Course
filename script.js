@@ -700,3 +700,190 @@ const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "
 
 // const greeting = "say Hi";
 // greeting = "say Hello instead"; // error: Assignment to constant variable.
+
+// Javascript Scope
+
+// JavaScript has 3 types of scope:
+
+//     Block scope
+//     Function scope
+//     Global scope
+
+//block scope
+
+// {
+//   let x = 2;
+// }
+// // x can NOT be used here
+// console.log(x); // Uncaught ReferenceError: x is not defined
+
+// {
+//   var x = 2;
+// }
+// // x CAN be used here
+// console.log(x); // 2
+
+//local scope
+//Variables declared within a JavaScript function, become LOCAL to the function.
+
+// code here can NOT use carName
+
+// function myFunction() {
+//   let carName = "Volvo";
+//   // code here CAN use carName
+// }
+
+// code here can NOT use carName
+
+// Local variables have Function Scope:
+
+// They can only be accessed from within the function.
+
+// Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.
+
+// Local variables are created when a function starts, and deleted when the function is completed.
+
+// JavaScript has function scope: Each function creates a new scope.
+
+// Variables defined inside a function are not accessible (visible) from outside the function.
+
+// Variables declared with var, let and const are quite similar when declared inside a function.
+
+// function myFunction() {
+//   var carName = "Volvo"; // Function Scope
+// }
+// function myFunction() {
+//   let carName = "Volvo"; // Function Scope
+// }
+// function myFunction() {
+//   const carName = "Volvo"; // Function Scope
+// }
+
+//A variable declared outside a function, becomes GLOBAL.
+
+// let carName = "Volvo";
+// // code here can use carName
+
+// function myFunction() {
+//   // code here can also use carName
+//   console.log(carName);
+// }
+
+// myFunction();
+
+// A global variable has Global Scope:
+
+// All scripts and functions on a web page can access it.
+
+// Global Scope
+
+// Variables declared Globally (outside any function) have Global Scope.
+
+// Global variables can be accessed from anywhere in a JavaScript program.
+
+// Variables declared with var, let and const are quite similar when declared outside a block.
+
+// They all have Global Scope:
+// var x = 2; // Global scope
+// let x = 2; // Global scope
+// const x = 2; // Global scope
+
+// console.log(x);
+
+// In JavaScript, objects and functions are also variables.
+
+// Scope determines the accessibility of variables, objects, and functions from different parts of the code.
+
+// myFunction();
+
+// // code here can use carName
+
+// function myFunction() {
+//   carName = "Volvo";
+// }
+
+// Global Variables in HTML
+
+// With JavaScript, the global scope is the JavaScript environment.
+
+// In HTML, the global scope is the window object.
+
+// Global variables defined with the var keyword belong to the window object:
+// Global variables defined with the let keyword do not belong to the window object:
+
+// Do NOT create global variables unless you intend to.
+
+// Your global variables (or functions) can overwrite window variables (or functions).
+// Any function, including the window object, can overwrite your global variables and functions.
+
+// The Lifetime of JavaScript Variables
+
+// The lifetime of a JavaScript variable starts when it is declared.
+
+// Function (local) variables are deleted when the function is completed.
+
+// In a web browser, global variables are deleted when you close the browser window (or tab).
+
+// Hoisting
+// x = 5;
+// console.log(x);
+
+// Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
+
+// carName = "volvo";
+// let carName; // ReferenceError
+
+// carName = "volvo";
+// const carName;  // Using a const variable before it is declared, is a syntax error, so the code will simply not run.
+// carName = "volvo";
+// var carName;
+// console.log(carName);
+// var x = 5;
+// var y = 7;
+// console.log(x + y);
+// var x = 5;
+// console.log(x + y);
+// var y = 7;  //5 + undefinded
+
+// Because of hoisting, y has been declared before it is used, but because initializations are not hoisted, the value of y is undefined.
+
+// Declare Your Variables At the Top !
+
+// Hoisting is (to many developers) an unknown or overlooked behavior of JavaScript.
+
+// If a developer doesn't understand hoisting, programs may contain bugs (errors).
+
+// To avoid bugs, always declare all variables at the beginning of every scope.
+
+// Since this is how JavaScript interprets the code, it is always a good rule.
+
+// JavaScript in strict mode does not allow variables to be used if they are not declared.
+// Study "use strict" in the next chapter.
+
+// console.log(x);
+
+// let x = 2; //ReferenceError
+
+// console.log(x);
+
+// const x = 2; //ReferenceError
+
+// console.log(x);
+
+// var x = 2; //undefined
+
+// getName();
+// console.log(x);
+
+// var x = 7;
+// function getName() {
+//   console.log("Namaste Javascript");
+// }
+
+var x = 7;
+function getName() {
+  console.log("namaste");
+}
+getName();
+console.log(x);
+console.log(getName);

@@ -558,33 +558,544 @@ const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "
 // console.log(result);
 // // Output: ["user@example.com"]
 
-let str = "Hello";
-let str2 = "World";
-let str3 = "Hello World";
-let str4 = " Hello ";
-let str5 = "Apple,Orange,Banana";
-let num = "3";
-console.log(str.charAt(1)); //  e
-console.log(str.charCodeAt(2)); //  108
-console.log(str.concat(" ", str2)); // Hello World
-console.log(str.indexOf("H")); // 0
-console.log(str.indexOf("l")); // 2
-console.log(str.lastIndexOf("l")); // 3
-console.log(str.slice(1, 3)); // el
-console.log(str3.substring(0, 5)); // Hello
-console.log(str3.substr(6, 5)); // World
-console.log(str3.toLowerCase()); // hello world
-console.log(str3.toUpperCase()); // HELLO WORLD
-console.log(str4.trim()); // Hello
-console.log(str3.replace("World", "Universe")); // Hello Universe
-console.log(str5.split(",")); // [ "Apple", "Orange", "Banana" ]
-console.log(str5.length); // 19
-console.log(str5.startsWith("Hello")); // false
-console.log(str3.startsWith("Hello")); // true
-console.log(str3.endsWith("World")); // true
-console.log(str3.includes("e")); //true
-console.log(str3.includes("z")); //false
-console.log(str3.includes("world")); //false
-console.log(str3.includes("World")); //true
-console.log(str.repeat(3)); //HelloHelloHello
-console.log(num.padStart(3, "0")); // 003
+// let str = "Hello";
+// let str2 = "World";
+// let str3 = "Hello World";
+// let str4 = " Hello ";
+// let str5 = "Apple,Orange,Banana";
+// let num = "3";
+// console.log(str.charAt(1)); //  e
+// console.log(str.charCodeAt(2)); //  108
+// console.log(str.concat(" ", str2)); // Hello World
+// console.log(str.indexOf("H")); // 0
+// console.log(str.indexOf("l")); // 2
+// console.log(str.lastIndexOf("l")); // 3
+// console.log(str.slice(1, 3)); // el
+// console.log(str3.substring(0, 5)); // Hello
+// console.log(str3.substr(6, 5)); // World
+// console.log(str3.toLowerCase()); // hello world
+// console.log(str3.toUpperCase()); // HELLO WORLD
+// console.log(str4.trim()); // Hello
+// console.log(str3.replace("World", "Universe")); // Hello Universe
+// console.log(str5.split(",")); // [ "Apple", "Orange", "Banana" ]
+// console.log(str5.length); // 19
+// console.log(str5.startsWith("Hello")); // false
+// console.log(str3.startsWith("Hello")); // true
+// console.log(str3.endsWith("World")); // true
+// console.log(str3.includes("e")); //true
+// console.log(str3.includes("z")); //false
+// console.log(str3.includes("world")); //false
+// console.log(str3.includes("World")); //true
+// console.log(str.repeat(3)); //HelloHelloHello
+// console.log(num.padStart(3, "0")); // 003
+
+// var greeter = "hey hi"; //global scope
+// var greeter = "say Hello instead"; //global scope
+
+// function myFunction() {
+//   var hello = "hello"; // function scope
+// }
+
+// console.log(greeter); // hey hi
+// console.log(greeter); // say Hello instead
+// console.log(hello); // error: ReferenceError : hello is not defined
+
+// var greater;
+// console.log(greeter);
+// var greeter = "hey hi"; //undefined
+
+// var greeter = "hey hi";
+
+// if (true) {
+//   var greeter = "say Hello instead";
+// }
+
+// console.log(greeter); // say Hello instead
+
+// let greeter = "hey hi";
+
+// if (true) {
+//   let greeter = "say Hello instead";
+// }
+
+// console.log(greeter); // hey hi
+
+// let greeter = "hey hi";
+
+// if (true) {
+//   let greeter = "say Hello instead";
+//   console.log(greeter); // say Hello instead
+// }
+
+// console.log(greeter); // hey hi
+
+// let greeter = "hey hi";
+
+// if (true) {
+//   let hello = "say Hello instead";
+//   console.log(hello); // say Hello instead
+// }
+
+// console.log(hello); // ReferenceError: hello is not defined
+
+// let greeter = "hey hi";
+// greeter = "say Hello instead";
+// console.log(greeter);
+
+// console.log(greeter);
+// let greeter = "hey hi"; // Uncaught ReferenceError: can't access lexical declaration 'greeter' before initialization
+
+// console.log(greeter);
+
+// const greeter = "hey hi"; //Uncaught ReferenceError: can't access lexical declaration 'greeter' before initialization
+
+// const greeter = {
+//   message: "say hi",
+//   times: 4,
+// };
+// greeter.message = "say Hello instead";
+// console.log(greeter); //Object { message: "say Hello instead", times: 4 }
+
+// Scope of var
+
+// Scope essentially means where these variables are available for use. var declarations are globally scoped or function/locally scoped.
+
+// var tester = "hi";
+// function foo() {
+//   var hello = "hello";
+// }
+// console.log(hello);
+
+// var greeter = "hey hi";
+// var times = 4;
+
+// if (times > 3) {
+//   var greeter = "say Hello instead";
+// }
+
+// console.log(greeter); // "say Hello instead"
+
+// let greeter = "hey hi";
+// let times = 4;
+
+// if (times > 3) {
+//   let greeter = "say Hello instead";
+// }
+
+// console.log(greeter); // Uncaught SyntaxError: redeclaration of var greeter
+// let greeting = "say Hi";
+//     if (true) {
+//         let greeting = "say Hello instead";
+//         console.log(greeting); // "say Hello instead"
+//     }
+//     console.log(greeting); // "say Hi"
+
+// console.log(name);
+
+// let name = "giga"; //Uncaught ReferenceError: can't access lexical declaration 'name' before initialization
+
+// console.log(surname);
+
+// var surname = "kakulia";  // undefined
+
+// const greeting = "say Hi";
+// greeting = "say Hello instead"; // error: Assignment to constant variable.
+
+// Javascript Scope
+
+// JavaScript has 3 types of scope:
+
+//     Block scope
+//     Function scope
+//     Global scope
+
+//block scope
+
+// {
+//   let x = 2;
+// }
+// // x can NOT be used here
+// console.log(x); // Uncaught ReferenceError: x is not defined
+
+// {
+//   var x = 2;
+// }
+// // x CAN be used here
+// console.log(x); // 2
+
+//local scope
+//Variables declared within a JavaScript function, become LOCAL to the function.
+
+// code here can NOT use carName
+
+// function myFunction() {
+//   let carName = "Volvo";
+//   // code here CAN use carName
+// }
+
+// code here can NOT use carName
+
+// Local variables have Function Scope:
+
+// They can only be accessed from within the function.
+
+// Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.
+
+// Local variables are created when a function starts, and deleted when the function is completed.
+
+// JavaScript has function scope: Each function creates a new scope.
+
+// Variables defined inside a function are not accessible (visible) from outside the function.
+
+// Variables declared with var, let and const are quite similar when declared inside a function.
+
+// function myFunction() {
+//   var carName = "Volvo"; // Function Scope
+// }
+// function myFunction() {
+//   let carName = "Volvo"; // Function Scope
+// }
+// function myFunction() {
+//   const carName = "Volvo"; // Function Scope
+// }
+
+//A variable declared outside a function, becomes GLOBAL.
+
+// let carName = "Volvo";
+// // code here can use carName
+
+// function myFunction() {
+//   // code here can also use carName
+//   console.log(carName);
+// }
+
+// myFunction();
+
+// A global variable has Global Scope:
+
+// All scripts and functions on a web page can access it.
+
+// Global Scope
+
+// Variables declared Globally (outside any function) have Global Scope.
+
+// Global variables can be accessed from anywhere in a JavaScript program.
+
+// Variables declared with var, let and const are quite similar when declared outside a block.
+
+// They all have Global Scope:
+// var x = 2; // Global scope
+// let x = 2; // Global scope
+// const x = 2; // Global scope
+
+// console.log(x);
+
+// In JavaScript, objects and functions are also variables.
+
+// Scope determines the accessibility of variables, objects, and functions from different parts of the code.
+
+// myFunction();
+
+// // code here can use carName
+
+// function myFunction() {
+//   carName = "Volvo";
+// }
+
+// Global Variables in HTML
+
+// With JavaScript, the global scope is the JavaScript environment.
+
+// In HTML, the global scope is the window object.
+
+// Global variables defined with the var keyword belong to the window object:
+// Global variables defined with the let keyword do not belong to the window object:
+
+// Do NOT create global variables unless you intend to.
+
+// Your global variables (or functions) can overwrite window variables (or functions).
+// Any function, including the window object, can overwrite your global variables and functions.
+
+// The Lifetime of JavaScript Variables
+
+// The lifetime of a JavaScript variable starts when it is declared.
+
+// Function (local) variables are deleted when the function is completed.
+
+// In a web browser, global variables are deleted when you close the browser window (or tab).
+
+// Hoisting
+// x = 5;
+// console.log(x);
+
+// Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
+
+// carName = "volvo";
+// let carName; // ReferenceError
+
+// carName = "volvo";
+// const carName;  // Using a const variable before it is declared, is a syntax error, so the code will simply not run.
+// carName = "volvo";
+// var carName;
+// console.log(carName);
+// var x = 5;
+// var y = 7;
+// console.log(x + y);
+// var x = 5;
+// console.log(x + y);
+// var y = 7;  //5 + undefinded
+
+// Because of hoisting, y has been declared before it is used, but because initializations are not hoisted, the value of y is undefined.
+
+// Declare Your Variables At the Top !
+
+// Hoisting is (to many developers) an unknown or overlooked behavior of JavaScript.
+
+// If a developer doesn't understand hoisting, programs may contain bugs (errors).
+
+// To avoid bugs, always declare all variables at the beginning of every scope.
+
+// Since this is how JavaScript interprets the code, it is always a good rule.
+
+// JavaScript in strict mode does not allow variables to be used if they are not declared.
+// Study "use strict" in the next chapter.
+
+// console.log(x);
+
+// let x = 2; //ReferenceError
+
+// console.log(x);
+
+// const x = 2; //ReferenceError
+
+// console.log(x);
+
+// var x = 2; //undefined
+
+// getName();
+// console.log(x);
+
+// var x = 7;
+// function getName() {
+//   console.log("Namaste Javascript");
+// }
+
+// var x = 7;
+// function getName() {
+//   console.log("namaste");
+// }
+// getName();
+// console.log(x);
+// console.log(getName);
+
+// function init() {
+//   var name = "Mozilla";
+//   function displayName() {
+//     console.log(name);
+//   }
+//   displayName();
+// }
+// init();
+
+// function varTest() {
+//   var x = 1;
+//   {
+//     var x = 2;
+//     console.log(x);
+//   }
+//   console.log(x);
+// }
+
+// varTest();
+
+// function letTest() {
+//   let x = 1;
+//   {
+//     let x = 2; // different variable
+//     console.log(x); // 2
+//   }
+//   console.log(x); // 1
+// }
+
+// letTest();
+
+// var x = "global";
+// let y = "global";
+// console.log(this.x);
+// console.log(this.y);
+
+// function test() {
+//   var foo = 33;
+//   if (foo) {
+//     let foo = foo + 55; // ReferenceError
+//   }
+// }
+// test();
+
+// function go(n) {
+//     // n here is defined!
+//     console.log(n); // { a: [1, 2, 3] }
+
+//     for (let n of n.a) {
+//       //          ^ ReferenceError
+//       console.log(n);
+//     }
+//   }
+
+//   go({ a: [1, 2, 3] });
+
+// var a = 1;
+// var b = 2;
+// {
+//   var a = 11;
+//   let b = 22;
+//   console.log(a); // 11
+//   console.log(b); // 22
+// }
+
+// console.log(a); // 11
+// console.log(b); // 2
+
+// const result = /(a+)(b+)(c+)/.exec("aaabcc");
+// let [, a, b, c] = result;
+// console.log(a, b, c);
+
+// if (Math.random() > 0.5) {
+//   const x = 1;
+// } else {
+//   const x = 2;
+// }
+// console.log(x); // ReferenceError: x is not defined
+
+// function makeFunc() {
+//   const name = "Mozilla";
+//   function displayName() {
+//     console.log(name);
+//   }
+//   return displayName;
+// }
+
+// const myFunc = makeFunc();
+// myFunc();
+
+// function makeAdder(x) {
+//   return function (y) {
+//     return x + y;
+//   };
+// }
+
+// const add5 = makeAdder(5);
+// const add10 = makeAdder(10);
+
+// console.log(add5(2)); // 7
+// console.log(add10(10)); // 12
+
+// function something(x) {
+//   return function foo(y) {
+//     return x + y;
+//   };
+// }
+
+// const add4 = something(4);
+// const add5 = something(5);
+
+// console.log(add4(4));
+// console.log(add5(5));
+
+// function outerFunction(x) {
+//   return function innerFunction(y) {
+//     return x * y;
+//   };
+// }
+// const variableX = outerFunction(10);
+// const variableY = outerFunction(20);
+
+// console.log(variableX(30));
+// console.log(variableY(30));
+
+// const counter = (function () {
+//   let privateCounter = 0;
+//   function changeBy(val) {
+//     privateCounter += val;
+//   }
+//   return {
+//     increment() {
+//       changeBy(1);
+//     },
+//     decrement() {
+//       changeBy(-1);
+//     },
+//     value() {
+//       return privateCounter;
+//     },
+//   };
+// })();
+
+// console.log(counter.value()); //0
+
+// counter.increment();
+// counter.increment();
+// counter.increment();
+// console.log(counter.value()); //3
+// counter.decrement();
+// console.log(counter.value()); //2
+// counter.decrement();
+// console.log(counter.value()); //1
+
+// const makeCounter = function () {
+//   let privateCounter = 0;
+//   function changeBy(val) {
+//     privateCounter += val;
+//   }
+//   return {
+//     increment() {
+//       changeBy(1);
+//     },
+//     decrement() {
+//       changeBy(-1);
+//     },
+//     value() {
+//       return privateCounter;
+//     },
+//   };
+// };
+
+// const counter1 = makeCounter();
+// const counter2 = makeCounter();
+
+// console.log(counter1.value()); // 0
+
+// counter1.increment();
+// counter1.increment();
+// console.log(counter1.value()); // 2
+
+// counter1.decrement();
+// console.log(counter1.value()); // 1
+// console.log(counter2.value()); // 0
+
+const mainFoo = function () {
+  let initialValue = 1;
+  function changeBy(value) {
+    initialValue *= value;
+  }
+  return {
+    multipleBy2() {
+      changeBy(2);
+    },
+    // divideBy3() {
+    //     changeBy(0.3)
+    // },
+    changedValue() {
+      return initialValue;
+    },
+  };
+};
+
+const foo = mainFoo();
+
+console.log(foo.changedValue());
+foo.multipleBy2();
+foo.multipleBy2();
+foo.multipleBy2();
+
+console.log(foo.changedValue());

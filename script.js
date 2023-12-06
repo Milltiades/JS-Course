@@ -880,10 +880,222 @@ const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "
 //   console.log("Namaste Javascript");
 // }
 
-var x = 7;
-function getName() {
-  console.log("namaste");
-}
-getName();
-console.log(x);
-console.log(getName);
+// var x = 7;
+// function getName() {
+//   console.log("namaste");
+// }
+// getName();
+// console.log(x);
+// console.log(getName);
+
+// function init() {
+//   var name = "Mozilla";
+//   function displayName() {
+//     console.log(name);
+//   }
+//   displayName();
+// }
+// init();
+
+// function varTest() {
+//   var x = 1;
+//   {
+//     var x = 2;
+//     console.log(x);
+//   }
+//   console.log(x);
+// }
+
+// varTest();
+
+// function letTest() {
+//   let x = 1;
+//   {
+//     let x = 2; // different variable
+//     console.log(x); // 2
+//   }
+//   console.log(x); // 1
+// }
+
+// letTest();
+
+// var x = "global";
+// let y = "global";
+// console.log(this.x);
+// console.log(this.y);
+
+// function test() {
+//   var foo = 33;
+//   if (foo) {
+//     let foo = foo + 55; // ReferenceError
+//   }
+// }
+// test();
+
+// function go(n) {
+//     // n here is defined!
+//     console.log(n); // { a: [1, 2, 3] }
+
+//     for (let n of n.a) {
+//       //          ^ ReferenceError
+//       console.log(n);
+//     }
+//   }
+
+//   go({ a: [1, 2, 3] });
+
+// var a = 1;
+// var b = 2;
+// {
+//   var a = 11;
+//   let b = 22;
+//   console.log(a); // 11
+//   console.log(b); // 22
+// }
+
+// console.log(a); // 11
+// console.log(b); // 2
+
+// const result = /(a+)(b+)(c+)/.exec("aaabcc");
+// let [, a, b, c] = result;
+// console.log(a, b, c);
+
+// if (Math.random() > 0.5) {
+//   const x = 1;
+// } else {
+//   const x = 2;
+// }
+// console.log(x); // ReferenceError: x is not defined
+
+// function makeFunc() {
+//   const name = "Mozilla";
+//   function displayName() {
+//     console.log(name);
+//   }
+//   return displayName;
+// }
+
+// const myFunc = makeFunc();
+// myFunc();
+
+// function makeAdder(x) {
+//   return function (y) {
+//     return x + y;
+//   };
+// }
+
+// const add5 = makeAdder(5);
+// const add10 = makeAdder(10);
+
+// console.log(add5(2)); // 7
+// console.log(add10(10)); // 12
+
+// function something(x) {
+//   return function foo(y) {
+//     return x + y;
+//   };
+// }
+
+// const add4 = something(4);
+// const add5 = something(5);
+
+// console.log(add4(4));
+// console.log(add5(5));
+
+// function outerFunction(x) {
+//   return function innerFunction(y) {
+//     return x * y;
+//   };
+// }
+// const variableX = outerFunction(10);
+// const variableY = outerFunction(20);
+
+// console.log(variableX(30));
+// console.log(variableY(30));
+
+// const counter = (function () {
+//   let privateCounter = 0;
+//   function changeBy(val) {
+//     privateCounter += val;
+//   }
+//   return {
+//     increment() {
+//       changeBy(1);
+//     },
+//     decrement() {
+//       changeBy(-1);
+//     },
+//     value() {
+//       return privateCounter;
+//     },
+//   };
+// })();
+
+// console.log(counter.value()); //0
+
+// counter.increment();
+// counter.increment();
+// counter.increment();
+// console.log(counter.value()); //3
+// counter.decrement();
+// console.log(counter.value()); //2
+// counter.decrement();
+// console.log(counter.value()); //1
+
+// const makeCounter = function () {
+//   let privateCounter = 0;
+//   function changeBy(val) {
+//     privateCounter += val;
+//   }
+//   return {
+//     increment() {
+//       changeBy(1);
+//     },
+//     decrement() {
+//       changeBy(-1);
+//     },
+//     value() {
+//       return privateCounter;
+//     },
+//   };
+// };
+
+// const counter1 = makeCounter();
+// const counter2 = makeCounter();
+
+// console.log(counter1.value()); // 0
+
+// counter1.increment();
+// counter1.increment();
+// console.log(counter1.value()); // 2
+
+// counter1.decrement();
+// console.log(counter1.value()); // 1
+// console.log(counter2.value()); // 0
+
+const mainFoo = function () {
+  let initialValue = 1;
+  function changeBy(value) {
+    initialValue *= value;
+  }
+  return {
+    multipleBy2() {
+      changeBy(2);
+    },
+    // divideBy3() {
+    //     changeBy(0.3)
+    // },
+    changedValue() {
+      return initialValue;
+    },
+  };
+};
+
+const foo = mainFoo();
+
+console.log(foo.changedValue());
+foo.multipleBy2();
+foo.multipleBy2();
+foo.multipleBy2();
+
+console.log(foo.changedValue());

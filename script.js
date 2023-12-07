@@ -1073,29 +1073,211 @@ const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "
 // console.log(counter1.value()); // 1
 // console.log(counter2.value()); // 0
 
-const mainFoo = function () {
-  let initialValue = 1;
-  function changeBy(value) {
-    initialValue *= value;
-  }
-  return {
-    multipleBy2() {
-      changeBy(2);
-    },
-    // divideBy3() {
-    //     changeBy(0.3)
-    // },
-    changedValue() {
-      return initialValue;
-    },
-  };
-};
+// const mainFoo = function () {
+//   let initialValue = 1;
+//   function changeBy(value) {
+//     initialValue *= value;
+//   }
+//   return {
+//     multipleBy2() {
+//       changeBy(2);
+//     },
+//     // divideBy3() {
+//     //     changeBy(0.3)
+//     // },
+//     changedValue() {
+//       return initialValue;
+//     },
+//   };
+// };
 
-const foo = mainFoo();
+// const foo = mainFoo();
 
-console.log(foo.changedValue());
-foo.multipleBy2();
-foo.multipleBy2();
-foo.multipleBy2();
+// console.log(foo.changedValue());
+// foo.multipleBy2();
+// foo.multipleBy2();
+// foo.multipleBy2();
 
-console.log(foo.changedValue());
+// console.log(foo.changedValue());
+
+//Every closure has three scopes:
+
+// Local scope (Own scope)
+// Enclosing scope (can be block, function, or module scope)
+// Global scope
+
+// global scope
+// const e = 10;
+// function sum(a) {
+//   return function (b) {
+//     return function (c) {
+//       // outer functions scope
+//       return function (d) {
+//         // local scope
+//         return a + b + c + d + e;
+//       };
+//     };
+//   };
+// }
+
+// console.log(sum(1)(2)(3)(4));
+
+// const a = "red";
+
+// function colorFun(b) {
+//   return function (c) {
+//     return function (d) {
+//       return function (e) {
+//         return b + c + d + e + a;
+//       };
+//     };
+//   };
+// }
+
+// console.log(colorFun("my")(" favorite")(" color")(" is "));
+
+//global scope
+// const e = 10;
+// function sum(a) {
+//   return function sum2(b) {
+//     return function sum3(c) {
+//       //outer function
+//       return function sum4(d) {
+//         //local scope
+//         return a + b + c + d + e;
+//       };
+//     };
+//   };
+// }
+// const sum2 = sum(1);
+// const sum3 = sum2(2);
+// const sum4 = sum3(3);
+// const result = sum4(4);
+
+// console.log(result);
+
+// console.log(sum(1)(2)(3)(4));
+
+// In the example above, there's a series of nested functions, all of which have access to the outer functions' scope. In this context, we can say that closures have access to all outer function scopes.
+
+// function outer() {
+//   let getY;
+//   {
+//     const y = 6;
+//     getY = () => y;
+//   }
+//   console.log(typeof y);
+//   console.log(getY());
+// }
+// outer();
+
+// const counter = function () {
+//   let initialNum = 0;
+//   function changedBy(value) {
+//     initialNum += value;
+//   }
+//   return {
+//     increment() {
+//       changedBy(1);
+//     },
+//     decrement() {
+//       changedBy(-1);
+//     },
+//     value() {
+//       return initialNum;
+//     },
+//   };
+// };
+// const counterFunction = counter();
+// counterFunction.increment();
+// counterFunction.increment();
+// console.log(counterFunction.value());
+
+// const e = 10;
+// function sum(a) {
+//   return function (b) {
+//     return function (c) {
+//       // outer functions scope
+//       return function (d) {
+//         // local scope
+//         return a + b + c + d + e;
+//       };
+//     };
+//   };
+// }
+
+// console.log(sum(1)(2)(3)(4));
+
+// global scope
+// const e = 10;
+// function sum(a) {
+//   return function sum2(b) {
+//     return function sum3(c) {
+//       // outer functions scope
+//       return function sum4(d) {
+//         // local scope
+//         return a + b + c + d + e;
+//       };
+//     };
+//   };
+// }
+
+// const sum2 = sum(1);
+// const sum3 = sum2(2);
+// const sum4 = sum3(3);
+// const result = sum4(4);
+// console.log(result); // 20
+
+// myModule.js
+// let x = 5;
+// export const getX = () => x;
+// export const setX = (val) => {
+//   x = val;
+// };
+
+///
+
+// foo();
+// function foo() {
+//   console.log("hi");
+// }
+
+// foo1();
+
+// const foo1 = () => {
+//   console.log("ho again!");
+// };
+
+// foo2();
+
+// var foo2 = () => {
+//   console.log("hi again bro!");
+// };
+
+// let b = 3; // heap memory
+// function impureFun(a) {
+//   return a + b;
+// }
+
+// function outer() {
+//   let state = "rabbit";
+//   function inner() {
+//     return `Hello ${state}`;
+//   }
+//   return inner;
+// }
+
+// for (var i = 0; i < 3; i++) {
+//   const log = () => {
+//     console.log(i); // 3 3 3
+//   };
+
+//   setTimeout(log, 100);
+// }
+// for (let i = 0; i < 3; i++) {
+//   const log = () => {
+//     console.log(i); // 1 2 3
+//   };
+
+//   setTimeout(log, 100);
+// }

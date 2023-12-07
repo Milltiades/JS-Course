@@ -1073,29 +1073,89 @@ const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "
 // console.log(counter1.value()); // 1
 // console.log(counter2.value()); // 0
 
-const mainFoo = function () {
-  let initialValue = 1;
-  function changeBy(value) {
-    initialValue *= value;
-  }
-  return {
-    multipleBy2() {
-      changeBy(2);
-    },
-    // divideBy3() {
-    //     changeBy(0.3)
-    // },
-    changedValue() {
-      return initialValue;
-    },
+// const mainFoo = function () {
+//   let initialValue = 1;
+//   function changeBy(value) {
+//     initialValue *= value;
+//   }
+//   return {
+//     multipleBy2() {
+//       changeBy(2);
+//     },
+//     // divideBy3() {
+//     //     changeBy(0.3)
+//     // },
+//     changedValue() {
+//       return initialValue;
+//     },
+//   };
+// };
+
+// const foo = mainFoo();
+
+// console.log(foo.changedValue());
+// foo.multipleBy2();
+// foo.multipleBy2();
+// foo.multipleBy2();
+
+// console.log(foo.changedValue());
+
+//Every closure has three scopes:
+
+// Local scope (Own scope)
+// Enclosing scope (can be block, function, or module scope)
+// Global scope
+
+// global scope
+// const e = 10;
+// function sum(a) {
+//   return function (b) {
+//     return function (c) {
+//       // outer functions scope
+//       return function (d) {
+//         // local scope
+//         return a + b + c + d + e;
+//       };
+//     };
+//   };
+// }
+
+// console.log(sum(1)(2)(3)(4));
+
+// const a = "red";
+
+// function colorFun(b) {
+//   return function (c) {
+//     return function (d) {
+//       return function (e) {
+//         return b + c + d + e + a;
+//       };
+//     };
+//   };
+// }
+
+// console.log(colorFun("my")(" favorite")(" color")(" is "));
+
+//global scope
+const e = 10;
+function sum(a) {
+  return function sum2(b) {
+    return function sum3(c) {
+      //outer function
+      return function sum4(d) {
+        //local scope
+        return a + b + c + d + e;
+      };
+    };
   };
-};
+}
+const sum2 = sum(1);
+const sum3 = sum2(2);
+const sum4 = sum3(3);
+const result = sum4(4);
 
-const foo = mainFoo();
+console.log(result);
 
-console.log(foo.changedValue());
-foo.multipleBy2();
-foo.multipleBy2();
-foo.multipleBy2();
+console.log(sum(1)(2)(3)(4));
 
-console.log(foo.changedValue());
+// In the example above, there's a series of nested functions, all of which have access to the outer functions' scope. In this context, we can say that closures have access to all outer function scopes.

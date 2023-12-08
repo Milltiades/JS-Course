@@ -360,7 +360,7 @@
 //   console.log(v);
 // }
 
-const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "🍿"];
+// const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "🍿"];
 
 // const feces = faces.filter((v) => v === "🍿");
 // const cleaned = feces.map((v) => "🧭");
@@ -1281,3 +1281,319 @@ const faces = ["😇", "😍", "😢", "🤠", "🍿", "🚗", "😢", "🤠", "
 
 //   setTimeout(log, 100);
 // }
+
+// let myName = "Kyle";
+
+// function printName() {
+//   console.log(myName);
+// }
+// myName = "Joey";
+
+// printName();
+
+// myName = "Kate";
+
+// printName();
+
+// function outerFunction(outerVariable) {
+//   const outer2 = "Hi";
+//   return function innerFunction(innerVariable) {
+//     console.log("Outer Variable: " + outerVariable);
+//     console.log("Inner Variable: " + innerVariable);
+//     console.log(outer2);
+//   };
+// }
+
+// const newFunction = outerFunction("outside");
+// newFunction("inner");
+
+// // outerFunction("outside")("inside");
+
+// let num = Math.random() * Math.random() * Math.random();
+
+// if (num < 0.5) {
+//   var x = 1;
+// } else {
+//   var x = 2;
+// }
+
+// console.log(x, num);
+
+// Loops
+
+// for (let i = 1; i <= 5; i++) {
+//   if (i % 2 !== 0) console.log(i);
+// } // 1 3 5
+
+// for (let i = 5; i >= 1; i--) {
+//   if (i % 2 !== 0) console.log(i);
+// } // 5 3 1
+
+// for (initialization; condition; finalExpression) {
+//   // code
+// }
+
+// for (let i = 1; i < 10; i += 2) {
+//   if (i === 7) {
+//     break;
+//   }
+//   console.log("Total elephants: " + i);
+// }
+
+// Output:
+// Total elephants: 1
+// Total elephants: 3
+// Total elephants: 5
+
+// const arr = [1, 2, 3];
+
+// for (let i = 0; i <= arr.length; i++) {
+//   console.log(arr[i], i);
+// }
+
+// Output:
+// 1
+// 2
+// 3
+// undefined
+
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i], i);
+// }
+
+// Output:
+// 1
+// 2
+// 3
+
+// for (let i = 0; i <= arr.length - 1; i++) {
+//   console.log(arr[i], i);
+// }
+
+// Output:
+// 1
+// 2
+// 3
+
+// const capitals = {
+//   a: "Athens",
+//   b: "Belgrade",
+//   c: "Cairo",
+// };
+
+// for (let key in capitals) {
+//   console.log(key + ": " + capitals[key]);
+// }
+
+// Output:
+// a: Athens
+// b: Belgrade
+// c: Cairo
+
+// const names = {
+//   1: "giga",
+//   2: "lasha",
+//   3: "dato",
+// };
+
+// for (let key in names) {
+//   console.log(key + ": " + names[key]);
+// }
+
+// const array = [1, 2, 3];
+
+// for (const i in array) {
+//   console.log(i);
+// }
+
+// 0
+// 1
+// 2
+
+// const array1 = [1, 2, 3];
+
+// Array.prototype.someMethod = true;
+
+// for (const i in array1) {
+//   console.log(i);
+// }
+
+// 0
+// 1
+// 2
+// someMethod
+
+// Also, since the for...in is meant for objects, it's much slower with arrays than other loops.
+
+// In short, just remember to only use for...in loops to iterate over objects, not arrays.
+
+//for...of loop
+
+// for (variable of object) {
+//   // code
+// }
+
+// const arr = ["Fred", "Tom", "Bob"];
+
+// for (let i of arr) {
+//   console.log(i);
+// }
+
+// Output:
+// Fred
+// Tom
+// Bob
+
+// const m = new Map();
+// m.set(1, "black");
+// m.set(2, "red");
+
+// for (let n of m) {
+//   console.log(n);
+// }
+
+// Output:
+// [1, black]
+// [2, red]
+
+// const s = new Set();
+// s.add(1);
+// s.add("red");
+
+// for (let n of s) {
+//   console.log(n);
+// }
+
+// Output:
+// 1
+// red
+
+// let i = 1;
+
+// while (i < 10) {
+//   console.log(i);
+//   i++;
+// }
+
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9
+
+// let i = 1;
+
+// do {
+//   console.log(i);
+//   i++;
+// } while (i < 10);
+
+// Output:
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9
+
+// const myArray = [];
+// let i = 10;
+
+// do {
+//   myArray.push(i);
+//   i++;
+// } while (i < 10);
+
+// console.log(myArray);
+
+// Output:
+// [10]
+
+// const arr = ["badger", "beaver", "baboon"];
+
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+// for (const e of arr) {
+//   console.log(e);
+// }
+
+// arr.forEach((v) => console.log(v));
+
+// arr.map((v) => console.log(v));
+
+// const mil = 1000000;
+// const arr = Array(mil);
+
+// console.time("⏲");
+
+// for (let i = 0; i < 1000000; i++) {}
+// for (const v of arr) {}
+// arr
+//   .map((v) => v)
+//   .map((v) => v)
+//   .forEach((v) => null);
+// console.timeEnd("⏲");
+
+// const equine = { horse: "🐴", zebra: "🦓", unicorn: "🦄" };
+
+// for (const key in equine) {
+//   console.log(equine[key]);
+// }
+
+// for (const v of Object.values(equine)) {
+//   console.log(v);
+// }
+
+// const equine = new Map(
+//   Object.entries({ horse: "🐴", zebra: "🦓", unicorn: "🦄" })
+// );
+
+// for (const v of equine.values()) {
+//   console.log(v);
+// }
+const faces = [
+  "😇",
+  "😍",
+  "😢",
+  "🤠",
+  "🍿",
+  "🚗",
+  "😢",
+  "🤠",
+  "🍿",
+  "😇",
+  "😍",
+  "😢",
+];
+
+// const feces = faces.filter((v) => v === "🚗");
+// const cleaned = feces.map((v) => "🦓");
+
+// console.log(cleaned);
+
+// const isCar = faces.some((v) => v === "🚗");
+// console.log(isCar); //true
+
+// const isEmoji = faces.every((v) => v > "🤠");
+// console.log(isEmoji); //false
+
+// const pooCOunt = faces.reduce((acc, cur) => {
+//   return acc + (cur === "🚗" ? 1 : 0);
+// }, 0);
+// console.log(pooCOunt);
+
+const sorted = faces.sort((a, b) => a < b);
+console.log(sorted);
+
+sorted.splice(2);
+console.log(sorted);

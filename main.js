@@ -73,25 +73,51 @@
 // console.log(newArray);
 // console.log(newArray1);
 
-const equipShelfA = ["baseball", "football", "volleyball"];
-const equipShelfB = ["basketball", "golf balls", "tennis balls"];
+// const equipShelfA = ["baseball", "football", "volleyball"];
+// const equipShelfB = ["basketball", "golf balls", "tennis balls"];
 
-const clothesShelfA = ["tank tops", "t-shirts", "jerseys"];
-const clothesShelfB = ["sweat tops", "sweat pants", "hoodies"];
+// const clothesShelfA = ["tank tops", "t-shirts", "jerseys"];
+// const clothesShelfB = ["sweat tops", "sweat pants", "hoodies"];
 
-console.log(equipShelfA[1]);
+// console.log(equipShelfA[1]);
 
-console.log(clothesShelfB[0]);
+// console.log(clothesShelfB[0]);
 
-const equipDept = [equipShelfA, equipShelfB];
-const clothesDept = [clothesShelfA, clothesShelfB];
+// const equipDept = [equipShelfA, equipShelfB];
+// const clothesDept = [clothesShelfA, clothesShelfB];
 
-console.log(equipDept[0][1]);
-console.log(clothesDept[1][0]);
+// console.log(equipDept[0][1]);
+// console.log(clothesDept[1][0]);
 
-const sportsStore = [equipDept, clothesDept];
+// const sportsStore = [equipDept, clothesDept];
 
-console.log(sportsStore);
-console.log(sportsStore[1][1][2]);
-console.log(sportsStore[0][0][1]);
-console.log(sportsStore[1][1][0]);
+// console.log(sportsStore);
+// console.log(sportsStore[1][1][2]);
+// console.log(sportsStore[0][0][1]);
+// console.log(sportsStore[1][1][0]);
+
+const people = ["Sally", "Kyle", "John"];
+
+// people.splice(0, 2, "New");
+const splicedPeople = people.toSpliced(0, 2, "New");
+
+console.log("Original", splicedPeople);
+// console.log("Original", people);
+
+// const sortedPeople = [...people].sort();
+// or
+// const sortedPeople = people.toSorted();
+// const reversedPeople = people.toReversed();
+
+// console.log("Sorted", sortedPeople);
+// console.log("Reversed", reversedPeople);
+
+// const peopleCopy = [...people];
+// peopleCopy[2] = "New";
+
+// console.log("Original", people);
+// console.log("Copy", peopleCopy);
+
+// const newPeople = people.with(2, "New");
+// console.log("Orignal", people);
+// console.log("New", newPeople);

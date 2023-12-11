@@ -1592,8 +1592,135 @@ const faces = [
 // }, 0);
 // console.log(pooCOunt);
 
-const sorted = faces.sort((a, b) => a < b);
-console.log(sorted);
+// const sorted = faces.sort((a, b) => a < b);
+// console.log(sorted);
 
-sorted.splice(2);
-console.log(sorted);
+// sorted.splice(2);
+// console.log(sorted);
+
+// var x = 10;
+// function foo(a) {
+//   var b = 20;
+//   function bar(c) {
+//     var d = 30;
+//     return boop(10 + 5 + 20 + 15 + 30);
+//   }
+//   function boop(e) {
+//     return e * -1;
+//   }
+//   return bar;
+// }
+// var moar = foo(5);
+// moar(15);
+
+// console.log(moar(15));
+
+// var x = 10;
+// function foo() {
+//   var y = 20;
+//   function bar() {
+//     var z = 15;
+//     return x + y + z;
+//   }
+//   return bar;
+// }
+
+// var x = 10;
+// function foo() {
+//   var y = x + 5;
+//   return y;
+// }
+// function bar() {
+//   var x = 2;
+//   return foo();
+// }
+// function main() {
+//   foo();
+//   bar();
+//   return 0;
+// }
+
+// var myVar = 100;
+
+// function foo() {
+//   console.log(myVar);
+// }
+
+// foo();
+
+// (function () {
+//   var myVar = 50;
+//   foo();
+// })();
+
+// (function (arg) {
+//   var myVar = 1500;
+//   arg();
+// })(foo);
+
+// var x = 10;
+// function foo() {
+//   var y = 20;
+//   function bar() {
+//     var z = 15;
+//     return x + y + z;
+//   }
+//   return bar;
+// }
+// var test = foo();
+// test();
+
+// var result = [];
+// for (var i = 0; i < 5; i++) {
+//   result[i] = (function inner(x) {
+//     return function () {
+//       console.log(x);
+//     };
+//   })(i);
+// }
+
+// result[1]();
+
+// function makeCounter() {
+//   let initalValue = 0;
+//   function changedBy(value) {
+//     initalValue += value;
+//   }
+
+//   return {
+//     increase() {
+//       changedBy(1);
+//     },
+//     decrease() {
+//       changedBy(-1);
+//     },
+//     result() {
+//       return initalValue;
+//     },
+//   };
+// }
+
+// const counterFunction = makeCounter();
+// counterFunction.increase();
+// counterFunction.increase();
+// counterFunction.increase();
+// counterFunction.increase();
+// console.log(counterFunction.result());
+
+// function secretPass() {
+//   var password = "qwerty";
+//   return {
+//     guessPass(guess) {
+//       if (guess === password) {
+//         return console.log(true);
+//       } else {
+//         return console.log(false);
+//       }
+//     },
+//   };
+// }
+// var passwordGame = secretPass();
+// passwordGame.guessPass("qwerty");
+// for (let i = 0; i < name.length; i++){
+//   console.log(name)
+// }

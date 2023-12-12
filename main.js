@@ -246,12 +246,141 @@
 // console.log(food);
 
 //slice
-const food = ["🍎", "🥕", "🍐", "🍌", "🍅", "🍇", "🥔", "🥑"];
+// const food = ["🍎", "🥕", "🍐", "🍌", "🍅", "🍇", "🥔", "🥑"];
 
-const foodSlice = food.slice(2, 4);
-const foodSlice2 = food.slice(2);
-const foodSlice3 = food.slice();
-console.log(food);
-console.log(foodSlice); //['🍐', '🍌']
-console.log(foodSlice2); //['🍐', '🍌', '🍅', '🍇', '🥔', '🥑']
-console.log(foodSlice3); //['🍎', '🥕', '🍐', '🍌', '🍅', '🍇', '🥔', '🥑']
+// const foodSlice = food.slice(2, 4);
+// const foodSlice2 = food.slice(2);
+// const foodSlice3 = food.slice();
+// console.log(food);
+// console.log(foodSlice); //['🍐', '🍌']
+// console.log(foodSlice2); //['🍐', '🍌', '🍅', '🍇', '🥔', '🥑']
+// console.log(foodSlice3); //['🍎', '🥕', '🍐', '🍌', '🍅', '🍇', '🥔', '🥑']
+
+//splice
+// const months = ["Jan", "February", "March", "April"];
+
+// months.splice(0, 1); //remove 1 element from 0
+// months.splice(1, 1, "June"); //['Jan', 'June', 'March', 'April']
+// months.splice(0, 1, "December", "January"); //['December', 'January', 'February', 'March', 'April']
+// console.log(months); //['February', 'March', 'April']
+
+//sort
+// const months = ["Jan", "February", "March", "April"];
+// const numbers = [1, 5, 80, 9, 6];
+// months.sort();
+// // numbers.sort(); //[1, 5, 6, 80, 9]
+// numbers.sort((a, b) => {
+//   return a - b;
+// }); //[1, 5, 6, 9, 80]
+
+// numbers.sort((a, b) => {
+//   return b - a;
+// }); //[80, 9, 6, 5, 1]
+// console.log(months);
+// console.log(numbers);
+
+//reverse
+// const numbers = [1, 2, 3, 4, 5];
+// numbers.reverse();
+// console.log(numbers); //[5, 4, 3, 2, 1]
+
+//from()
+
+// const str = "1234";
+// const numbers = Array.from(str);
+// console.log(numbers); // ['1', '2', '3', '4']
+
+// const str1 = "1234";
+// const numbers1 = Array.from(str1, (element) => Number(element));
+// console.log(numbers1); //[1, 2, 3, 4]
+
+//isArray
+
+// const food = ["🍌", "🍅", "🥔", "🥑"];
+// console.log(Array.isArray(food)); //true
+// const obj = { foo: 123 };
+// console.log(Array.isArray(obj)); //false
+
+//valueOF
+
+// const food = ["🍌", "🍅", "🥔", "🥑"];
+// const foodCopy = food.valueOf();
+// console.log(foodCopy); //['🍌', '🍅', '🥔', '🥑']
+
+//entries
+
+// const food = ["🍌", "🍅", "🥔", "🥑"];
+// const foodEntries = food.entries();
+// for (let element of foodEntries) {
+//   console.log(element);
+// }
+// // [0, "🍌"];
+// // [1, "🍅"];
+// // [2, "🥔"];
+// // [3, '🥑']
+// [...foodEntries];
+
+//keys
+// const food = ["🍌", "🍅", "🥔", "🥑"];
+// const foodKeys = food.keys();
+// for (let key of foodKeys) {
+//   console.log(key);
+// }
+// 0
+// 1
+// 2
+// 3
+
+//values
+// const food = ["🍌", "🍅", "🥔", "🥑"];
+// const foodValues = food.values();
+// for (let value of foodValues) {
+//   console.log(value);
+// }
+// // 🍌
+// // 🍅
+// // 🥔
+// // 🥑
+
+//reduce
+// const numbers = [1, 2, 3, 4];
+// function reducer(previousValue, currentValue) {
+//   return previousValue + currentValue;
+// }
+// const sum = numbers.reduce(reducer, 0);
+// console.log(sum); //10
+
+//reduceRight
+// const numbers = [1, 2, 3, 4];
+// function reducer(previousValue, currentValue) {
+//   return previousValue + currentValue;
+// }
+// const sum = numbers.reduceRight(reducer, 0);
+// console.log(sum); //10
+
+//flat
+// const numbers = [1, 2, 3, [4, [5, [6]]]];
+// console.log(numbers); //[1, 2, 3, Array(2)]
+// console.log(numbers.flat()); //[1, 2, 3, 4, Array(2)]
+// console.log(numbers.flat(2)); // [1, 2, 3, 4, 5, Array(1)]
+// console.log(numbers.flat(3)); // [1, 2, 3, 4, 5, 6]
+// console.log(numbers.flat(4)); //[1, 2, 3, 4, 5, 6]
+
+//flatMap
+// const food = [
+//   ["🍌", "🍅"],
+//   ["🥔", "🥑"],
+// ];
+// const result = food
+//   .map((array) => {
+//     return [array[0] + array[1]];
+//   })
+//   .flat();
+// console.log(result); // ['🍌🍅', '🥔🥑']
+
+// // or
+
+// const result1 = food.flatMap((array) => {
+//   return [array[0] + array[1]];
+// });
+// console.log(result1); // ['🍌🍅', '🥔🥑']

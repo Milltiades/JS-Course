@@ -159,19 +159,83 @@
 // }
 
 // Creates a new object, myobj, with two properties, a and b.
-const myobj = new Object();
-myobj.a = 5;
-myobj.b = 12;
+// const myobj = new Object();
+// myobj.a = 5;
+// myobj.b = 12;
 
 // Removes the a property, leaving myobj with only the b property.
-delete myobj.a;
-console.log("a" in myobj); // false
+// delete myobj.a;
+// console.log("a" in myobj); // false
 
-const myCars = new Object();
+// const myCars = new Object();
 
-myCars["1"] = "mercedes";
-myCars["2"] = "volkswagen";
+// myCars["1"] = "mercedes";
+// myCars["2"] = "volkswagen";
 
-console.log(myCars);
-delete myCars["1"];
-console.log(myCars);
+// console.log(myCars);
+// delete myCars["1"];
+// console.log(myCars);
+
+// const Manager = {
+//   name: "Karina",
+//   age: 27,
+//   job: "Spftware Engineer",
+// };
+
+// const Intern = {
+//   name: "Tyrone",
+//   age: 21,
+//   job: "Software Engineer Intern",
+// };
+
+// function sayHi() {
+//   console.log(`Hello, my name is ${this.name}`);
+// }
+// Manager.sayHi = sayHi;
+// Intern.sayHi = sayHi;
+
+// Manager.sayHi();
+// Intern.sayHi();
+
+// const obj1 = {
+//   item: "box",
+//   material: "wood",
+//   weight: "20 T",
+// };
+
+// const obj2 = {
+//   item: "box",
+//   material: "iron",
+//   weight: "55 T",
+// };
+
+// function whatIs() {
+//   console.log(
+//     `It is ${this.item} made with ${this.material} and weights: ${this.weight}`
+//   );
+// }
+
+// obj1.whatIs = whatIs;
+// obj2.whatIs = whatIs;
+// obj1.whatIs();
+// obj2.whatIs();
+
+const computer1 = {
+  cpu: "i-5",
+  ram: 16,
+  gpu: "rtx 3060",
+};
+const computer2 = {
+  cpu: "i-7",
+  ram: 32,
+  gpu: "rtx 3080",
+};
+
+function chooseComputer() {
+  console.log(`This is best choice :${this.cpu} with ${this.gpu}`);
+}
+computer1.chooseComputer = chooseComputer;
+computer2.chooseComputer = chooseComputer;
+
+computer1.chooseComputer();
+computer2.chooseComputer();

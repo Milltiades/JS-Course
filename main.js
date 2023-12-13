@@ -384,3 +384,28 @@
 //   return [array[0] + array[1]];
 // });
 // console.log(result1); // ['🍌🍅', '🥔🥑']
+
+//Copy an Array
+// const fruits = ["Strawberry", "Mango"];
+
+// // Create a copy using spread syntax.
+// const fruitsCopy = [...fruits];
+// // ["Strawberry", "Mango"]
+
+// // Create a copy using the from() method.
+// const fruitsCopy2 = Array.from(fruits);
+// // ["Strawberry", "Mango"]
+
+// // Create a copy using the slice() method.
+// const fruitsCopy3 = fruits.slice();
+// // ["Strawberry", "Mango"]
+// const fruits = ["Strawberry", "Mango"];
+// const fruitsAlias = fruits;
+// // 'fruits' and 'fruitsAlias' are the same object, strictly equivalent.
+// fruits === fruitsAlias; // true
+// // Any changes to the 'fruits' array change 'fruitsAlias' too.
+// fruits.unshift("Apple", "Banana");
+// console.log(fruits);
+// // ['Apple', 'Banana', 'Strawberry', 'Mango']
+// console.log(fruitsAlias);
+// // ['Apple', 'Banana', 'Strawberry', 'Mango']

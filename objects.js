@@ -40,4 +40,7 @@ function Academy(founder, field, openingYear) {
 const gedit = new Academy("Gedeon", "IT", 2024);
 const myCar = new Car("Mercedes-Benz", "C class", 2011, gedit);
 
+// console.log(myCar);
+myCar.color = "Gray";
+myCar.owner.isSchool = "yes";
 console.log(myCar);

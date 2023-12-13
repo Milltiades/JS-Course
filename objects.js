@@ -138,22 +138,40 @@
 //   }
 //   console.log(result);
 // }
-function showProps(obj, objName) {
-  let result = "";
-  Object.keys(obj).forEach((i) => {
-    result += `${objName}.${i} = ${obj[i]}\n`;
-  });
-  console.log(result);
-}
+// function showProps(obj, objName) {
+//   let result = "";
+//   Object.keys(obj).forEach((i) => {
+//     result += `${objName}.${i} = ${obj[i]}\n`;
+//   });
+//   console.log(result);
+// }
 
-function listAllProperties(myObj) {
-  let objectToInspect = myObj;
-  let result = [];
+// function listAllProperties(myObj) {
+//   let objectToInspect = myObj;
+//   let result = [];
 
-  while (objectToInspect !== null) {
-    result = result.concat(Object.getOwnPropertyNames(objectToInspect));
-    objectToInspect = Object.getPrototypeOf(objectToInspect);
-  }
+//   while (objectToInspect !== null) {
+//     result = result.concat(Object.getOwnPropertyNames(objectToInspect));
+//     objectToInspect = Object.getPrototypeOf(objectToInspect);
+//   }
 
-  return result;
-}
+//   return result;
+// }
+
+// Creates a new object, myobj, with two properties, a and b.
+const myobj = new Object();
+myobj.a = 5;
+myobj.b = 12;
+
+// Removes the a property, leaving myobj with only the b property.
+delete myobj.a;
+console.log("a" in myobj); // false
+
+const myCars = new Object();
+
+myCars["1"] = "mercedes";
+myCars["2"] = "volkswagen";
+
+console.log(myCars);
+delete myCars["1"];
+console.log(myCars);

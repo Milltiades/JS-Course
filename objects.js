@@ -355,7 +355,106 @@
 // console.log(obj1 == obj2); //false
 // console.log(obj1 === obj2); //false
 
-const obj1 = { a: 5 };
-const obj2 = obj1;
-console.log(obj1 == obj2); //true
-console.log(obj1 === obj2); //true
+// const obj1 = { a: 5 };
+// const obj2 = obj1;
+// console.log(obj1 == obj2); //true
+// console.log(obj1 === obj2); //true
+
+// const myObj = { name: "dave" };
+// console.log(myObj.name); //dave
+// const anotherObj = {
+//   alive: true,
+//   answer: 42,
+//   hobbies: ["eat", "sleep", "code"],
+//   beverage: {
+//     morning: "coffee",
+//     afternoon: "iced tea",
+//   },
+//   action: function () {
+//     return "Hello World";
+//   },
+//   secondAction: function () {
+//     return `This for ${this.beverage.morning}`;
+//   },
+// };
+// console.log(anotherObj.alive); //true
+// console.log(anotherObj.hobbies[1]); //sleep
+// console.log(anotherObj["beverage"].morning); //coffee
+// console.log(anotherObj["beverage"]["afternoon"]); //iced tea
+// console.log(anotherObj.action()); //hello world
+// console.log(anotherObj.secondAction()); //This for coffee
+
+const vehicle = {
+  wheels: 4,
+  engine: function () {
+    return "Vrrooom!";
+  },
+};
+
+const truck = Object.create(vehicle);
+truck.doors = 2;
+// console.log(truck);
+// console.log(truck.wheels); //inheritance
+// console.log(truck.engine());
+
+// const car = Object.create(vehicle);
+// car.doors = 4;
+// car.engine = function () {
+//   return "Whoooooash!";
+// };
+
+// console.log(car.engine());
+// console.log(car.wheels);
+
+// const tesla = Object.create(car);
+// console.log(tesla.engine());
+// console.log(tesla.wheels);
+// console.log(tesla.doors);
+// tesla.engine = function () {
+//   return "Shhhhhh";
+// };
+// console.log(tesla.engine());
+
+// const band = {
+//   vocals: "Robert Plant",
+//   guitar: "Jimmy Page",
+//   bass: "John Paul jones",
+//   drums: "John Bonham",
+// };
+
+//destructuring objects
+
+// const { guitar, bass, drums } = band;
+// console.log(drums); //John Bonham
+// console.log(bass); //John Paul jones
+// console.log(guitar); //Jimmy Page
+
+// function sings({ vocals }) {
+//   return `${vocals} sings!`;
+// }
+// console.log(sings(band));
+// const { guitar: myVariable, bass: myBass } = band;
+
+// console.log(myVariable); // Jimmy Page
+// console.log(myBass); // Jimmy Page
+
+// delete band.drums; //delete drums
+// console.log(band.hasOwnProperty("drums")); //false
+// console.log(Object.keys(band));
+// console.log(Object.values(band));
+
+// for (let job in band) {
+//   console.log(`On ${job}, it's ${band[job]}!`);
+// }
+
+// const cars = {
+//   model1: "opel",
+//   model2: "mercedes",
+//   model3: "gaz",
+//   model4: "volkswagen",
+// };
+
+// function chooseOne({ model1, model2 }) {
+//   return `${model2} is better then ${model1}`;
+// }
+// console.log(chooseOne(cars));

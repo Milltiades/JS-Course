@@ -220,22 +220,115 @@
 // obj1.whatIs();
 // obj2.whatIs();
 
-const computer1 = {
-  cpu: "i-5",
-  ram: 16,
-  gpu: "rtx 3060",
-};
-const computer2 = {
-  cpu: "i-7",
-  ram: 32,
-  gpu: "rtx 3080",
-};
+// const computer1 = {
+//   cpu: "i-5",
+//   ram: 16,
+//   gpu: "rtx 3060",
+// };
+// const computer2 = {
+//   cpu: "i-7",
+//   ram: 32,
+//   gpu: "rtx 3080",
+// };
 
-function chooseComputer() {
-  console.log(`This is best choice :${this.cpu} with ${this.gpu}`);
-}
-computer1.chooseComputer = chooseComputer;
-computer2.chooseComputer = chooseComputer;
+// function chooseComputer() {
+//   console.log(`This is best choice :${this.cpu} with ${this.gpu}`);
+// }
+// computer1.chooseComputer = chooseComputer;
+// computer2.chooseComputer = chooseComputer;
 
-computer1.chooseComputer();
-computer2.chooseComputer();
+// computer1.chooseComputer();
+// computer2.chooseComputer();
+
+// const obj = {
+//   a: 10,
+//   d: 30,
+//   get b() {
+//     return this.a * 2;
+//   },
+//   set c(x) {
+//     this.d = x / 2;
+//   },
+// };
+
+// console.log(obj.b);
+// obj.c = 1000;
+// console.log(obj.d);
+
+// const obj = {
+//   name: "giga",
+//   surname: "",
+//   get myName() {
+//     return this.name;
+//   },
+//   set setSurname(addSurname) {
+//     this.surname = addSurname;
+//   },
+//   human: function () {
+//     console.log(`My name is ${this.name} and my surname is ${this.surname}`);
+//   },
+// };
+// console.log(obj);
+// console.log(obj.name);
+// console.log(obj.surname);
+// obj.surname = "kakulia";
+// console.log(obj.surname);
+// console.log(obj.human());
+
+// const myObj = { a: 0 };
+
+// Object.defineProperties(myObj, {
+//   b: {
+//     get() {
+//       return this.a + 1;
+//     },
+//   },
+//   c: {
+//     set(x) {
+//       this.a = x / 2;
+//     },
+//   },
+// });
+
+// myObj.c = 10;
+// console.log(myObj.b);
+
+// const obj = { a: 10 };
+
+// Object.defineProperties(obj, {
+//   b: {
+//     get() {
+//       return this.a + 5;
+//     },
+//   },
+//   c: {
+//     set(x) {
+//       this.a = x * x;
+//     },
+//   },
+// });
+
+// console.log(obj.b);
+// obj.c = 2;
+// console.log(obj.b);
+
+// const testObj = { items: 10 };
+
+// Object.defineProperties(testObj, {
+//   a: {
+//     get() {
+//       return this.items - 3;
+//     },
+//   },
+//   b: {
+//     set(num) {
+//       this.items = num;
+//     },
+//   },
+// });
+
+// console.log(testObj.items);
+// console.log(testObj.a);
+// testObj.b = 5;
+// console.log(testObj.items);
+// console.log(testObj.a);

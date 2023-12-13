@@ -85,3 +85,46 @@
 // w204.type = "Coupe";
 // w204.engine = 1.8;
 // w204.displayProperties();
+
+// const myCar = {
+//   make: "Ford",
+//   model: "Mustang",
+//   year: 1969,
+// };
+
+// console.log(myCar.make); // Dot notation
+// console.log(myCar["model"]); // Bracket notation
+
+// myCar["year"] = 2017;
+// console.log(myCar);
+
+// const myObj = {};
+// const str = "myString";
+// const rand = Math.random();
+// const anotherObj = {};
+
+// myObj.type = "Dot syntax for a key named type";
+// myObj["date created"] = "this key has a space";
+// myObj[str] = "This key is in variable str";
+// myObj[rand] = "A random number is the key here";
+// myObj[anotherObj] = "this key is object anotherObj";
+// myObj[""] = "tHIS KEY IS AN EMPTY STRING";
+// myObj["giga"] = "it is my name giga";
+// // console.log(myObj);
+
+// console.log(myObj.giga);
+// console.log(myObj["myString"]);
+// console.log(myObj.myString);
+// console.log(myObj["giga"]);
+const myCar = {};
+
+let propertyName = "make";
+myCar[propertyName] = "Ford";
+
+// access different properties by changing the contents of the variable
+propertyName = "model";
+myCar[propertyName] = "Mustang";
+
+console.log(myCar); // { make: 'Ford', model: 'Mustang' }
+
+console.log(myCar.nonexistentProperty); //undefined

@@ -332,3 +332,30 @@
 // testObj.b = 5;
 // console.log(testObj.items);
 // console.log(testObj.a);
+
+// Two variables, two distinct objects with the same properties
+// const fruit = { name: "apple" };
+// const fruitBear = { name: "apple" };
+
+// fruit == fruitBear; // return false
+// fruit === fruitBear; // return false
+
+// const fruit = { name: "apple" };
+// const fruitBear = fruit;
+
+// fruit == fruitBear; // true
+// fruit === fruitBear; // true
+
+// fruit.name = "grape";
+// console.log(fruitBear); //name: grape
+
+// const obj1 = { a: 5 };
+// const obj2 = { a: 5 };
+
+// console.log(obj1 == obj2); //false
+// console.log(obj1 === obj2); //false
+
+const obj1 = { a: 5 };
+const obj2 = obj1;
+console.log(obj1 == obj2); //true
+console.log(obj1 === obj2); //true

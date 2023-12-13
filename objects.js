@@ -116,15 +116,44 @@
 // console.log(myObj["myString"]);
 // console.log(myObj.myString);
 // console.log(myObj["giga"]);
-const myCar = {};
+// const myCar = {};
 
-let propertyName = "make";
-myCar[propertyName] = "Ford";
+// let propertyName = "make";
+// myCar[propertyName] = "Ford";
 
-// access different properties by changing the contents of the variable
-propertyName = "model";
-myCar[propertyName] = "Mustang";
+// // access different properties by changing the contents of the variable
+// propertyName = "model";
+// myCar[propertyName] = "Mustang";
 
-console.log(myCar); // { make: 'Ford', model: 'Mustang' }
+// console.log(myCar); // { make: 'Ford', model: 'Mustang' }
 
-console.log(myCar.nonexistentProperty); //undefined
+// console.log(myCar.nonexistentProperty); //undefined
+
+// function showProps(obj, objName) {
+//   let result = "";
+//   for (const i in obj) {
+//     if (Object.hasOwn(obj, i)) {
+//       result += `${objName}.${i} = ${obj[i]}\n`;
+//     }
+//   }
+//   console.log(result);
+// }
+function showProps(obj, objName) {
+  let result = "";
+  Object.keys(obj).forEach((i) => {
+    result += `${objName}.${i} = ${obj[i]}\n`;
+  });
+  console.log(result);
+}
+
+function listAllProperties(myObj) {
+  let objectToInspect = myObj;
+  let result = [];
+
+  while (objectToInspect !== null) {
+    result = result.concat(Object.getOwnPropertyNames(objectToInspect));
+    objectToInspect = Object.getPrototypeOf(objectToInspect);
+  }
+
+  return result;
+}

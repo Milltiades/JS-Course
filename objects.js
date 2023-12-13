@@ -458,3 +458,89 @@ truck.doors = 2;
 //   return `${model2} is better then ${model1}`;
 // }
 // console.log(chooseOne(cars));
+
+// const obj = {
+//   spider: "spider",
+//   legs: 0,
+//   legs: 10,
+//   legs: 23,
+// };
+
+// console.log(obj.legs);
+
+// const spider = "spider";
+// const random = () => Math.random().toString(35).slice(-5);
+
+// const obj = {
+//   spider,
+//   [random()]: true,
+// };
+
+// console.log(obj);
+
+// function Zombie(name) {
+//   this.name = name;
+//   this.reanimated = Date.now();
+
+//   this.eatBrain = function () {
+//     return `${this.name} is hungry for brain`;
+//   };
+// }
+// const obj = new Zombie("Jeff");
+
+// console.log(obj.eatBrain()); //Jeff is hungry for brain
+
+// console.log("hello world");
+
+// function createCircle(radius) {
+//   return {
+//     radius,
+//     draw: function () {
+//       console.log("draw");
+//     },
+//   };
+// }
+// const circle = createCircle(1);
+
+// //Constructor function
+// function Circle(radius) {
+//   this.radius = radius;
+//   this.draw = function () {
+//     console.log("draw");
+//   };
+// }
+
+// const another = new Circle(1);
+// console.log(another);
+
+// let x = {};
+
+// let x = new Object();
+
+// new String(); // '', "", ``
+// new Boolean(); // true, false
+// new Number(); // 1, 2, 3, ...
+
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log("draw");
+  };
+}
+
+Circle.call({}, 1);
+Circle.apply({}, [1, 2, 3]);
+
+const another = new Circle(1);
+
+// const Circle1 = new Function(
+//   "radius",
+//   `
+//   this.radius = radius;
+//   this.draw = function () {
+//     console.log("draw");
+//   };
+// `
+// );
+
+// const circle = new Circle1(1);

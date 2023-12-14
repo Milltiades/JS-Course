@@ -521,17 +521,17 @@ truck.doors = 2;
 // new Boolean(); // true, false
 // new Number(); // 1, 2, 3, ...
 
-function Circle(radius) {
-  this.radius = radius;
-  this.draw = function () {
-    console.log("draw");
-  };
-}
+// function Circle(radius) {
+//   this.radius = radius;
+//   this.draw = function () {
+//     console.log("draw");
+//   };
+// }
 
-Circle.call({}, 1);
-Circle.apply({}, [1, 2, 3]);
+// Circle.call({}, 1);
+// Circle.apply({}, [1, 2, 3]);
 
-const another = new Circle(1);
+// const another = new Circle(1);
 
 // const Circle1 = new Function(
 //   "radius",
@@ -544,3 +544,229 @@ const another = new Circle(1);
 // );
 
 // const circle = new Circle1(1);
+
+// let x = { value: 10 };
+// let y = x;
+
+// x.value = 20;
+
+// console.log(x); // 20
+// console.log(y); // 10
+
+// let obj = { value: 10 };
+
+// function increase(obj) {
+//   obj.value++;
+// }
+// increase(obj);
+// console.log(obj);
+
+// value types also called primitives and reference types
+// value types : {
+//   Number,
+//   String,
+//   Boolean,
+//   Symbol,
+//   undefined,
+//   null
+// }
+// reference types: {
+//   Object,
+//   Function,
+//   Array
+// }
+// Primitives are copied by their value
+// Objects are copied by their reference
+
+// function Circle(radius) {
+//   this.radius = radius;
+//   this.draw = function () {
+//     console.log("draw");
+//   };
+// }
+
+// const circle = new Circle(10);
+
+// // user.token = 'asdfafaf';
+// circle.location = { x: 1 };
+
+// const propertyName = "center-location";
+// circle["center-location"] = { y: 22 };
+// // const propertyName = "location";
+// // circle[propertyName] = { x: 15 };
+// // circle["location"] = { x: 1 };
+
+// delete circle.location; //delete location property
+
+// function Circle(radius) {
+//   this.radius = radius;
+//   this.draw = function () {
+//     console.log("draw");
+//   };
+// }
+
+// const circle = new Circle(10);
+
+// for (let key in circle) {
+//   if (typeof circle[key] !== "function") {
+//     console.log(key, circle[key]);
+//   }
+// }
+// // output only radius 10
+
+// const keys = Object.keys(circle);
+// console.log(keys); // ['radius', 'draw']
+
+// if ("radius" in circle) {
+//   console.log("Circle has a radius");
+// }
+
+// if ("draw" in circle) {
+//   console.log("Circle has a draw");
+// }
+
+// function Circle(radius) {
+//   this.radius = radius;
+
+//   let defaultLocation = {
+//     x: 0,
+//     y: 0,
+//   };
+
+//   let computeOptimumLocation = function (factor) {};
+//   this.draw = function () {
+//     computeOptimumLocation(0.1);
+//     // defaultLocation
+//     // this.radius
+
+//     console.log("draw");
+//   };
+// }
+// const circle = new Circle(10);
+// circle.draw();
+
+//abstraction means : hide the details and show the essentials
+
+// function Circle(radius) {
+//   this.radius = radius;
+
+//   let defaultLocation = { x: 0, y: 0 };
+//   this.getDefaultLocation = function () {
+//     return defaultLocation;
+//   };
+
+//   this.draw = function () {
+//     console.log("draw");
+//   };
+//   Object.defineProperty(this, "defaultLocation", {
+//     get: function () {
+//       return defaultLocation;
+//     },
+//     set: function (value) {
+//       if (!value.x || !value.y) {
+//         throw new Error("Invalid location.");
+//       }
+//       defaultLocation = value;
+//     },
+//   });
+// }
+
+// const circle = new Circle(10);
+// circle.defaultLocation = 1;
+// // circle.defaultLocation;
+// circle.draw();
+
+// function Stopwatch() {
+//   let startTime,
+//     endTime,
+//     running,
+//     duration = 0;
+//   this.start = function () {
+//     if (running) throw new Error("Stopwatch has already started.");
+
+//     running = true;
+//     startTime = new Date();
+//   };
+//   this.stop = function () {
+//     if (!running) throw new Error("Stopwatch is not started.");
+//     running = false;
+//     endTime = new Date();
+//     const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+//     duration += seconds;
+//   };
+//   this.reset = function () {
+//     startTime = null;
+//     endTime = null;
+//     running = false;
+//     duration = 0;
+//   };
+
+//   Object.defineProperty(this, "duration", {
+//     get: function () {
+//       return duration;
+//     },
+//   });
+// }
+// const sw = new Stopwatch();
+
+// function Stopwatch() {
+//   let startTime,
+//     endTime,
+//     running,
+//     duration = 0;
+//   this.start = function () {
+//     if (running) throw new Error("Stopwatch already started");
+//     running = true;
+//     startTime = new Date();
+//   };
+//   this.stop = function () {
+//     if (!running) throw new Error("Stopwatch is not started");
+//     running = false;
+//     endTime = new Date();
+//     const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+//     duration += seconds;
+//   };
+//   this.reset = function () {
+//     running = false;
+//     startTime = null;
+//     endTime = null;
+//     duration = 0;
+//   };
+//   Object.defineProperty(this, "duration", {
+//     get: function () {
+//       return duration;
+//     },
+//   });
+// }
+// const sw = new Stopwatch();
+
+function myStopwatch() {
+  let startTime,
+    endTime,
+    running,
+    duration = 0;
+  this.start = function () {
+    if (running) throw new Error("Stopwatch is already started");
+    running = true;
+    startTime = new Date();
+  };
+  this.stop = function () {
+    if (!running) throw new Error("Stopwatch is not started");
+    running = false;
+    endTime = new Date();
+    const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+    duration += seconds;
+  };
+  this.reset = function () {
+    startTime = null;
+    endTime = null;
+    running = false;
+    duration = 0;
+  };
+  Object.defineProperty(this, "duration", {
+    get: function () {
+      return duration;
+    },
+  });
+}
+const sw = new myStopwatch();

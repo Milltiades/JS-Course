@@ -740,33 +740,108 @@ truck.doors = 2;
 // }
 // const sw = new Stopwatch();
 
-function myStopwatch() {
-  let startTime,
-    endTime,
-    running,
-    duration = 0;
-  this.start = function () {
-    if (running) throw new Error("Stopwatch is already started");
-    running = true;
-    startTime = new Date();
-  };
-  this.stop = function () {
-    if (!running) throw new Error("Stopwatch is not started");
-    running = false;
-    endTime = new Date();
-    const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
-    duration += seconds;
-  };
-  this.reset = function () {
-    startTime = null;
-    endTime = null;
-    running = false;
-    duration = 0;
-  };
-  Object.defineProperty(this, "duration", {
-    get: function () {
-      return duration;
-    },
-  });
-}
-const sw = new myStopwatch();
+// function myStopwatch() {
+//   let startTime,
+//     endTime,
+//     running,
+//     duration = 0;
+//   this.start = function () {
+//     if (running) throw new Error("Stopwatch is already started");
+//     running = true;
+//     startTime = new Date();
+//   };
+//   this.stop = function () {
+//     if (!running) throw new Error("Stopwatch is not started");
+//     running = false;
+//     endTime = new Date();
+//     const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+//     duration += seconds;
+//   };
+//   this.reset = function () {
+//     startTime = null;
+//     endTime = null;
+//     running = false;
+//     duration = 0;
+//   };
+//   Object.defineProperty(this, "duration", {
+//     get: function () {
+//       return duration;
+//     },
+//   });
+// }
+// const sw = new myStopwatch();
+
+// Declaration
+// class Rectangle {
+//   constructor(height, width) {
+//     this.height = height;
+//     this.width = width;
+//   }
+// }
+
+// //Expression, the class is anonymous but assigned to a variable
+// const Rectangle = class {
+//   constructor(height, width) {
+//     this.height = height;
+//     this.width = width;
+//   }
+// };
+
+// //Expression, the class has its own name
+// const Rectangle = class Rectangle2 {
+//   constructor(height, width) {
+//     this.height = height;
+//     this.width = width;
+//   }
+// };
+
+// class Rectangle {
+//   constructor(height, width) {
+//     this.height = height;
+//     this.width = width;
+//   }
+// }
+
+// class Rectangle {
+//   constructor(height, width) {
+//     this.height = height;
+//     this.width = width;
+//   }
+//   // Getter
+//   get area() {
+//     return this.calcArea;
+//   }
+//   // Method
+//   calcArea() {
+//     return this.height * this.width;
+//   }
+//   *getSides() {
+//     yield this.height;
+//     yield this.width;
+//     yield this.height;
+//     yield this.width;
+//   }
+// }
+
+// const square = new Rectangle(10, 10);
+
+// console.log(square.area);
+// console.log([...square.getSides()]);
+
+// class Point {
+//   constructor(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
+
+//   static displayName = "Point";
+//   static distance(a, b) {
+//     const dx = a.x - b.x;
+//     const dy = a.y - b.y;
+
+//     return Math.hypot(dx, dy);
+//   }
+// }
+
+// const p1 = new Point(5, 5);
+// const p2 = new Point(10, 10);

@@ -1,28 +1,58 @@
-class Rectangle {
-  // Setup
-  constructor(_width, _height, _color) {
-    console.log("The Rectangle is being created!");
+// class Rectangle {
+//   // Setup
+//   constructor(_width, _height, _color) {
+//     console.log("The Rectangle is being created!");
 
+//     this.width = _width;
+//     this.height = _height;
+//     this.color = _color;
+//   }
+
+//   getArea() {
+//     return this.width * this.height;
+//   }
+//   printDescription() {
+//     console.log(
+//       `I am a rectangle of ${this.width} x ${this.height} and I am ${this.color}`
+//     );
+//   }
+// }
+
+// let myRectangle1 = new Rectangle(5, 3, "blue");
+// let myRectangle2 = new Rectangle(10, 5, "red");
+
+// console.log(myRectangle1.getArea()); // 15
+// console.log(myRectangle2.getArea()); // 50
+
+// console.log(myRectangle1.printDescription());
+// console.log(myRectangle2.printDescription());
+
+class Square {
+  constructor(_width) {
     this.width = _width;
-    this.height = _height;
-    this.color = _color;
+    this.height = _width;
+    this.numOfRequestsForArea = 0;
   }
 
-  getArea() {
+  get area() {
+    this.numOfRequestsForArea++;
     return this.width * this.height;
   }
-  printDescription() {
-    console.log(
-      `I am a rectangle of ${this.width} x ${this.height} and I am ${this.color}`
-    );
+
+  set area(area) {
+    this.width = Math.sqrt(area);
+    this.height = this.width;
   }
 }
 
-let myRectangle1 = new Rectangle(5, 3, "blue");
-let myRectangle2 = new Rectangle(10, 5, "red");
+let square1 = new Square(4);
 
-console.log(myRectangle1.getArea()); // 15
-console.log(myRectangle2.getArea()); // 50
+square1.area = 25;
+// console.log(square1.width);
+// console.log(square1.height);
+console.log(square1.area);
+console.log(square1.area);
+console.log(square1.area);
+console.log(square1.area);
 
-console.log(myRectangle1.printDescription());
-console.log(myRectangle2.printDescription());
+console.log(square1.numOfRequestsForArea);

@@ -57,24 +57,83 @@
 
 // console.log(square1.numOfRequestsForArea);
 
-class Square {
-  constructor(_width) {
-    this.width = _width;
-    this.height = _width;
-  }
+// class Square {
+//   constructor(_width) {
+//     this.width = _width;
+//     this.height = _width;
+//   }
 
-  static equals(a, b) {
-    return a.width * a.height === b.width * b.height;
-  }
-  static isValidDimensions(width, height) {
-    return width === height;
-  }
-}
+//   static equals(a, b) {
+//     return a.width * a.height === b.width * b.height;
+//   }
+//   static isValidDimensions(width, height) {
+//     return width === height;
+//   }
+// }
+// console.log(Square.isValidDimensions(4, 4)); //true
+// console.log(Square.isValidDimensions(4, 5)); //false
 
 // let square1 = new Square(9);
 // let square2 = new Square(9);
 
-console.log(Square.isValidDimensions(7, 6)); //false
-console.log(Square.isValidDimensions(6, 6)); //true
+// console.log(Square.isValidDimensions(7, 6)); //false
+// console.log(Square.isValidDimensions(6, 6)); //true
 
 // console.log(Square.equals(square1, square2)); //true
+
+// class Point {
+//   constructor(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
+//   static displayName = "Point";
+//   static distance(a, b) {
+//     const dx = a.x - b.x;
+//     const dy = a.y - b.y;
+
+//     return Math.hypot(dx, dy);
+//   }
+// }
+
+// const p1 = new Point(5, 5);
+// const p2 = new Point(10, 10);
+
+// class Point {
+//   constructor(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
+//   static displayName = "Point";
+//   static distance(a, b) {
+//     const dx = a.x - b.x;
+//     const dy = a.y - b.y;
+
+//     return Math.hypot(dx, dy);
+//   }
+// }
+
+// const p1 = new Point(4, 8);
+// const p2 = new Point(11, 6);
+
+// console.log(Point.displayName);
+// console.log(Point.distance(p1, p2));
+
+// class Point {
+//   constructor(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
+//   static displayName = "Point";
+//   static distance(a, b) {
+//     const dx = a.x - b.x;
+//     const dy = a.y - b.y;
+
+//     return Math.hypot(dx, dy);
+//   }
+// }
+
+// const p1 = new Point(34, 13);
+// const p2 = new Point(14, 17);
+
+// console.log(Point.displayName);
+// console.log(Point.distance(p1, p2));

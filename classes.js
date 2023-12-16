@@ -137,3 +137,123 @@
 
 // console.log(Point.displayName);
 // console.log(Point.distance(p1, p2));
+
+// class Person {
+//   constructor(_name, _age) {
+//     this.name = _name;
+//     this.age = _age;
+//   }
+//   describe() {
+//     console.log(`I am ${this.name} and I am ${this.age} years old`);
+//   }
+// }
+// class Programmer extends Person {
+//   constructor(_name, _age, _yearsOfExperience) {
+//     super(_name, _age);
+
+//     //Custom behaviour
+//     this.yearsOfExperience = _yearsOfExperience;
+//   }
+//   code() {
+//     console.log(`${this.name} is coding`);
+//   }
+// }
+
+// const programmers = [
+//   new Programmer("Dom", 56, 12),
+//   new Programmer("Jeff", 24, 4),
+// ];
+
+// function developSoftware(programmers) {
+//   for (let programmer of programmers) {
+//     programmer.code();
+//   }
+// }
+// developSoftware(programmers);
+
+// let person1 = new Person("Jeff", 45);
+// let programmer1 = new Programmer("Dom", 56, 12);
+
+// programmer1.code(); //Dom is coding
+// person1.code(); // TypeError person1.code is not a function
+
+// console.log(person1);
+// console.log(programmer1);
+
+// programmer1.describe();
+// person1.describe();
+
+// class Main {
+//   constructor(_name, _surname) {
+//     this.name = _name;
+//     this.surname = _surname;
+//   }
+//   declare() {
+//     console.log(`I am ${this.name} ${this.surname}`);
+//   }
+// }
+
+// class Programmer extends Main {
+//   constructor(_name, _surname, _age) {
+//     super(_name, _surname);
+//     this.age = _age;
+//   }
+//   declareWithAge() {
+//     console.log(`I am ${this.name} ${this.surname} ${this.age} years old!`);
+//   }
+// }
+
+// const Giga = new Programmer("Giga", "Kakulia", 27);
+// const Lasha = new Programmer("Lasha", "Kakulia", 26);
+// const Irakli = new Programmer("Irakli", "Khasaia", 27);
+// Giga.declare();
+// Giga.declareWithAge();
+// Lasha.declare();
+// Lasha.declareWithAge();
+// Irakli.declare();
+// Irakli.declareWithAge();
+
+class Cars {
+  constructor(_model, _age) {
+    this.model = _model;
+    this.age = _age;
+  }
+
+  chooseCar() {
+    console.log(`I take ${this.model} and its created in ${this.age}.`);
+  }
+}
+
+class NewCars extends Cars {
+  constructor(_name, _age, _color) {
+    super(_name, _age);
+    this.color = _color;
+  }
+
+  chooseNewCar() {
+    console.log(
+      `I take ${this.model} and its created in ${this.age}, also it is ${this.color}.`
+    );
+  }
+}
+
+// let mercedes = new NewCars("Mercedes", 2011, "Gray");
+// let volkswagen = new NewCars("Volkswagen", 2015, "Black");
+
+const takenCars = [
+  new NewCars("Mercedes", 2011, "Gray"),
+  new NewCars("Volkswagen", 2015, "Black"),
+];
+
+function getAllCars(takenCars) {
+  for (let cars of takenCars) {
+    cars.chooseNewCar();
+  }
+}
+getAllCars(takenCars);
+
+// mercedes.chooseCar();
+// volkswagen.chooseCar();
+
+// mercedes.chooseNewCar();
+// volkswagen.chooseNewCar();

@@ -329,5 +329,5 @@
 // giga.makeNoise();
 // lasha.makeNoise();
 
-const myList = document.getElementById("myList");
-const listBinding = new ListBinding(myList);
+// const myList = document.getElementById("myList");
+// const listBinding = new ListBinding(myList);

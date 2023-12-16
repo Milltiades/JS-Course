@@ -213,47 +213,121 @@
 // Irakli.declare();
 // Irakli.declareWithAge();
 
-class Cars {
-  constructor(_model, _age) {
-    this.model = _model;
-    this.age = _age;
-  }
+// class Cars {
+//   constructor(_model, _age) {
+//     this.model = _model;
+//     this.age = _age;
+//   }
 
-  chooseCar() {
-    console.log(`I take ${this.model} and its created in ${this.age}.`);
-  }
-}
+//   chooseCar() {
+//     console.log(`I take ${this.model} and its created in ${this.age}.`);
+//   }
+// }
 
-class NewCars extends Cars {
-  constructor(_name, _age, _color) {
-    super(_name, _age);
-    this.color = _color;
-  }
+// class NewCars extends Cars {
+//   constructor(_name, _age, _color) {
+//     super(_name, _age);
+//     this.color = _color;
+//   }
 
-  chooseNewCar() {
-    console.log(
-      `I take ${this.model} and its created in ${this.age}, also it is ${this.color}.`
-    );
-  }
-}
+//   chooseNewCar() {
+//     console.log(
+//       `I take ${this.model} and its created in ${this.age}, also it is ${this.color}.`
+//     );
+//   }
+// }
 
 // let mercedes = new NewCars("Mercedes", 2011, "Gray");
 // let volkswagen = new NewCars("Volkswagen", 2015, "Black");
 
-const takenCars = [
-  new NewCars("Mercedes", 2011, "Gray"),
-  new NewCars("Volkswagen", 2015, "Black"),
-];
+// const takenCars = [
+//   new NewCars("Mercedes", 2011, "Gray"),
+//   new NewCars("Volkswagen", 2015, "Black"),
+// ];
 
-function getAllCars(takenCars) {
-  for (let cars of takenCars) {
-    cars.chooseNewCar();
-  }
-}
-getAllCars(takenCars);
+// function getAllCars(takenCars) {
+//   for (let cars of takenCars) {
+//     cars.chooseNewCar();
+//   }
+// }
+// getAllCars(takenCars);
 
 // mercedes.chooseCar();
 // volkswagen.chooseCar();
 
 // mercedes.chooseNewCar();
 // volkswagen.chooseNewCar();
+
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   makeSound() {
+//     console.log("generic animal sound!");
+//   }
+// }
+
+// class Dog extends Animal {
+//   constructor(name) {
+//     super(name);
+//   }
+
+//   makeSound() {
+//     console.log("Woof! Woof!");
+//   }
+// }
+// const a1 = new Animal("Dom");
+// const a2 = new Dog("Jeff");
+// a1.makeSound();
+// a2.makeSound();
+
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   makeSound() {
+//     console.log("generic animal sound!");
+//   }
+// }
+
+// class Dog extends Animal {
+//   constructor(name) {
+//     super(name);
+//   }
+
+//   makeSound() {
+//     super.makeSound();
+//     console.log("Woof! Woof!");
+//   }
+// }
+// const a1 = new Animal("Dom");
+// const a2 = new Dog("Jeff");
+// a1.makeSound();
+// a2.makeSound();
+
+// class Human {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   makeNoise() {
+//     console.log(`${this.name} ღრიალებს!`);
+//   }
+// }
+
+// class newHuman extends Human {
+//   constructor(name) {
+//     super(name);
+//   }
+//   makeNoise() {
+//     super.makeNoise();
+//     console.log(`${this.name} უფრო ღრიალებს!`);
+//   }
+// }
+
+// let giga = new Human("გიგა");
+// let lasha = new newHuman("ლაშა");
+// giga.makeNoise();
+// lasha.makeNoise();
+
+// const myList = document.getElementById("myList");
+// const listBinding = new ListBinding(myList);

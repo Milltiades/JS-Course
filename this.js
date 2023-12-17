@@ -286,27 +286,144 @@
 // const me = new Person("Gedeon");
 // me.talk();
 
-function Person(name) {
-  this.name = name;
-  this.talk = function () {
-    console.log(`${this.name} is talking!`);
-  };
-  setTimeout(
-    function () {
-      console.log(`Listen to ${this.name}`);
-    }.bind(this),
-    100
-  );
-  setTimeout(() => {
-    console.log(`Listen to ${this.name}`);
-  }, 100);
-}
+// function Person(name) {
+//   this.name = name;
+//   this.talk = function () {
+//     console.log(`${this.name} is talking!`);
+//   };
+//   setTimeout(
+//     function () {
+//       console.log(`Listen to ${this.name}`);
+//     }.bind(this),
+//     100
+//   );
+//   setTimeout(() => {
+//     console.log(`Listen to ${this.name}`);
+//   }, 100);
+// }
 
-const me = new Person("Gedeon");
-me.talk();
+// const me = new Person("Gedeon");
+// me.talk();
 
 // 1.In this case, bind(this) is used to explicitly set the value of this inside the callback function to the current instance of the Person object. This is necessary because in JavaScript, the value of this inside a function depends on how the function is called. By using bind(this), you are ensuring that this inside the callback refers to the Person instance created by new Person("Gedeon").
 
 // 2.Arrow functions do not have their own this context; instead, they inherit the this value from the enclosing scope. In this case, the arrow function is part of the Person constructor, so it captures the this value from the surrounding context, which is the instance of the Person object. Therefore, there is no need for bind(this) when using an arrow function.
 
 // In summary, the use of bind(this) in the first setTimeout callback is necessary to explicitly set the value of this to the current instance, while the second setTimeout callback uses an arrow function, which automatically captures the correct this value from the surrounding context.
+
+// const show = () => this;
+
+// console.log("arrow function this", show());
+
+// const person = {
+//   name: "Pedro",
+//   surname: "Sanchez",
+//   sayName: () => this.name + " " + this.surname,
+// };
+
+// console.log(person.sayName());
+
+// function btnHandler() {
+//   if (this.textContent === "click me") {
+//     this.textContent = "clicked";
+//     this.style.background = "green";
+//   } else {
+//     this.textContent = "click me";
+//     this.style.background = "red";
+//   }
+// }
+
+// document.getElementById("testBtn").addEventListener("click", btnHandler);
+
+// const person1 = {
+//   name: "Pedro",
+//   surname: "Sanchez",
+//   sayName: function () {
+//     return this.name + " " + this.surname;
+//   },
+// };
+
+// const person2 = {
+//   name: "Jimena",
+//   surname: "Juarez",
+// };
+// const person3 = {
+//   name: "Gedeon",
+//   surname: "Kakulia",
+// };
+
+// console.log(person1.sayName.call(person3)); // Gedeon Kakulia
+// console.log(person1.sayName.apply(person3)); // Gedeon Kakulia
+// console.log(person1.sayName.bind(person3)()); // Gedeon Kakulia
+
+// const person1 = {
+//   name: "Pedro",
+//   surname: "Sanchez",
+//   sayName: function (city, country) {
+//     return this.name + " " + this.surname + ", " + city + ", " + country;
+//   },
+// };
+
+// const person2 = {
+//   name: "Jimena",
+//   surname: "Juarez",
+// };
+
+// console.log(person1.sayName.call(person2, "DF", "Mexico"));
+
+// const person1 = {
+//   name: "Pedro",
+//   surname: "Sanchez",
+//   sayName: function (city, country) {
+//     return this.name + " " + this.surname + ", " + city + ", " + country;
+//   },
+// };
+
+// const person2 = {
+//   name: "Jimena",
+//   surname: "Juarez",
+// };
+
+// console.log(person1.sayName.apply(person2, ["DF", "Mexico"]));
+
+// const person = {
+//   name: "Gedeon",
+//   surname: "Kakulia",
+//   sayName: function (city, country) {
+//     return this.name + " " + this.surname + ", " + city + ", " + country;
+//   },
+// };
+
+// const person1 = {
+//   name: "Davit",
+//   surname: "Kakhidze",
+// };
+
+// console.log(person.sayName.bind(person1, "batumi", "georgia")());
+
+// console.log(person.sayName.call(person1, "batumi", "georgia"));
+
+// console.log(person.sayName.apply(person1, ["batumi", "georgia"]));
+
+// How to Use the Bind Method
+
+// Same as call and apply , the bind method indicates the object to which the this keyword will refer when a given method executes.
+
+// But the difference with bind is that it will return a new function, without executing it. While with call and apply the function executed right away, using bind we must execute it separately.
+
+const person1 = {
+  name: "Pedro",
+  surname: "Sanchez",
+  sayName: function () {
+    return this.name + " " + this.surname;
+  },
+};
+
+const person2 = {
+  name: "Jimena",
+  surname: "Juarez",
+};
+
+const sayPerson2Name = person1.sayName.bind(person2);
+
+console.log(sayPerson2Name());

@@ -242,30 +242,71 @@
 // console.log(talk.call(me, "en")); // I am Giga
 // console.log(talk.call(me, "it")); // Io sono Giga
 
-function talk(lang, isPolite) {
-  if (isPolite) {
-    if (lang === "en") {
-      return `Hello, I am ${this.name}`;
-    } else if (lang === "it") {
-      return `Ciao bella, sono ${this.name}`;
-    }
-  }
+// function talk(lang, isPolite) {
+//   if (isPolite) {
+//     if (lang === "en") {
+//       return `Hello, I am ${this.name}`;
+//     } else if (lang === "it") {
+//       return `Ciao bella, sono ${this.name}`;
+//     }
+//   }
 
-  if (!isPolite) {
-    if (lang === "en") {
-      return `${this.name}, what you wnat?`;
-    } else if (lang === "it") {
-      return `Sono ${this.name}, ?`;
-    }
-  }
+//   if (!isPolite) {
+//     if (lang === "en") {
+//       return `${this.name}, what you wnat?`;
+//     } else if (lang === "it") {
+//       return `Sono ${this.name}, ?`;
+//     }
+//   }
+// }
+
+// const me = {
+//   name: "Giga",
+// };
+
+// console.log(talk.call(me, "en", false)); //Giga, what you wnat?
+// console.log(talk.call(me, "it", true)); //Ciao bella, sono Giga
+
+// console.log(talk.apply(me, ["en", true])); //Hello, I am Giga
+// console.log(talk.apply(me, ["it", false])); //Sono Giga, ?
+
+// function Person(n) {
+//   this.name = n;
+//   this.talk = function () {
+//     console.log(this);
+//   };
+//   setTimeout(
+//     function () {
+//       console.log(this);
+//     }.bind(this),
+//     100
+//   );
+// }
+
+// const me = new Person("Gedeon");
+// me.talk();
+
+function Person(name) {
+  this.name = name;
+  this.talk = function () {
+    console.log(`${this.name} is talking!`);
+  };
+  setTimeout(
+    function () {
+      console.log(`Listen to ${this.name}`);
+    }.bind(this),
+    100
+  );
+  setTimeout(() => {
+    console.log(`Listen to ${this.name}`);
+  }, 100);
 }
 
-const me = {
-  name: "Giga",
-};
+const me = new Person("Gedeon");
+me.talk();
 
-console.log(talk.call(me, "en", false)); //Giga, what you wnat?
-console.log(talk.call(me, "it", true)); //Ciao bella, sono Giga
+// 1.In this case, bind(this) is used to explicitly set the value of this inside the callback function to the current instance of the Person object. This is necessary because in JavaScript, the value of this inside a function depends on how the function is called. By using bind(this), you are ensuring that this inside the callback refers to the Person instance created by new Person("Gedeon").
 
-console.log(talk.apply(me, ["en", true])); //Hello, I am Giga
-console.log(talk.apply(me, ["it", false])); //Sono Giga, ?
+// 2.Arrow functions do not have their own this context; instead, they inherit the this value from the enclosing scope. In this case, the arrow function is part of the Person constructor, so it captures the this value from the surrounding context, which is the instance of the Person object. Therefore, there is no need for bind(this) when using an arrow function.
+
+// In summary, the use of bind(this) in the first setTimeout callback is necessary to explicitly set the value of this to the current instance, while the second setTimeout callback uses an arrow function, which automatically captures the correct this value from the surrounding context.

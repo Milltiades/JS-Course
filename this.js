@@ -208,11 +208,64 @@
 //   talk,
 // };
 
-function talk() {
-  return `I am ${this.name}`;
+// function talk() {
+//   return `I am ${this.name}`;
+// }
+// const me = {
+//   name: "Giga",
+// };
+// const meTalk = talk.bind(me);
+// console.log(meTalk());
+
+// function talk() {
+//   return `I am ${this.name}`;
+// }
+
+// const me = {
+//   name: "Gedeon",
+// };
+// console.log(talk.call(me)); //I am Gedeon
+
+// function talk(lang) {
+//   if (lang === "en") {
+//     return `I am ${this.name}`;
+//   } else if (lang === "it") {
+//     return `Io sono ${this.name}`;
+//   }
+// }
+
+// const me = {
+//   name: "Giga",
+// };
+
+// console.log(talk.call(me)); // undefined
+// console.log(talk.call(me, "en")); // I am Giga
+// console.log(talk.call(me, "it")); // Io sono Giga
+
+function talk(lang, isPolite) {
+  if (isPolite) {
+    if (lang === "en") {
+      return `Hello, I am ${this.name}`;
+    } else if (lang === "it") {
+      return `Ciao bella, sono ${this.name}`;
+    }
+  }
+
+  if (!isPolite) {
+    if (lang === "en") {
+      return `${this.name}, what you wnat?`;
+    } else if (lang === "it") {
+      return `Sono ${this.name}, ?`;
+    }
+  }
 }
+
 const me = {
   name: "Giga",
 };
-const meTalk = talk.bind(me);
-console.log(meTalk());
+
+console.log(talk.call(me, "en", false)); //Giga, what you wnat?
+console.log(talk.call(me, "it", true)); //Ciao bella, sono Giga
+
+console.log(talk.apply(me, ["en", true])); //Hello, I am Giga
+console.log(talk.apply(me, ["it", false])); //Sono Giga, ?

@@ -411,19 +411,19 @@
 
 // But the difference with bind is that it will return a new function, without executing it. While with call and apply the function executed right away, using bind we must execute it separately.
 
-const person1 = {
-  name: "Pedro",
-  surname: "Sanchez",
-  sayName: function () {
-    return this.name + " " + this.surname;
-  },
-};
+// const person1 = {
+//   name: "Pedro",
+//   surname: "Sanchez",
+//   sayName: function () {
+//     return this.name + " " + this.surname;
+//   },
+// };
 
-const person2 = {
-  name: "Jimena",
-  surname: "Juarez",
-};
+// const person2 = {
+//   name: "Jimena",
+//   surname: "Juarez",
+// };
 
-const sayPerson2Name = person1.sayName.bind(person2);
+// const sayPerson2Name = person1.sayName.bind(person2);
 
-console.log(sayPerson2Name());
+// console.log(sayPerson2Name());

@@ -168,19 +168,42 @@
 // console.log(factorial(1)); // 1
 // console.log(factorial(0)); // 1
 
-console.log(foo(5)); //25
+// console.log(foo(5)); //25
 
-function foo(n) {
-  return n * n;
-}
-function square(n) {
-  return n * n;
-}
+// function foo(n) {
+//   return n * n;
+// }
+// function square(n) {
+//   return n * n;
+// }
 
-console.log(square(5)); // 25
+// console.log(square(5)); // 25
 // Function hoisting only works with function declarations — not with function expressions. The following code will not work:
 
-console.log(square(5)); // ReferenceError: Cannot access 'square' before initialization
-const square = function (n) {
-  return n * n;
-}; // SyntaxError
+// console.log(square(5)); // ReferenceError: Cannot access 'square' before initialization
+// const square = function (n) {
+//   return n * n;
+// }; // SyntaxError
+
+const num1 = 20;
+const num2 = 3;
+const name = "Giga";
+
+function multiply() {
+  return num1 * num2;
+}
+
+console.log(multiply()); // 60
+
+function getScore() {
+  const num1 = 2;
+  const num2 = 3;
+
+  function add() {
+    return `${name} scorder ${num1 + num2}`;
+  }
+
+  return add();
+}
+
+console.log(getScore()); // Giga scored 5

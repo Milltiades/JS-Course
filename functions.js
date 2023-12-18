@@ -185,25 +185,61 @@
 //   return n * n;
 // }; // SyntaxError
 
-const num1 = 20;
-const num2 = 3;
-const name = "Giga";
+// const num1 = 20;
+// const num2 = 3;
+// const name = "Giga";
 
-function multiply() {
-  return num1 * num2;
-}
+// function multiply() {
+//   return num1 * num2;
+// }
 
-console.log(multiply()); // 60
+// console.log(multiply()); // 60
 
-function getScore() {
-  const num1 = 2;
-  const num2 = 3;
+// function getScore() {
+//   const num1 = 2;
+//   const num2 = 3;
 
-  function add() {
-    return `${name} scorder ${num1 + num2}`;
+//   function add() {
+//     return `${name} scorder ${num1 + num2}`;
+//   }
+
+//   return add();
+// }
+
+// console.log(getScore()); // Giga scored 5
+
+// const foo = function bar() {};
+
+// let x = 0;
+
+// while (x < 10) {
+//   x++;
+// }
+
+// function loop(x) {
+//   if (x >= 10) {
+//     return;
+//   }
+//   loop(x + 1);
+// }
+
+// loop(0);
+
+// function walkTree(node) {
+//   if (node === null) {
+//     return;
+//   }
+
+//   for (let i = 0; i < node.childNodes.length; i++) {
+//     walkTree(node.childNodes[i]);
+//   }
+// }
+function foo(i) {
+  if (i < 0) {
+    return;
   }
-
-  return add();
+  console.log(`begin: ${i}`);
+  foo(i - 1);
+  console.log(`end: ${i}`);
 }
-
-console.log(getScore()); // Giga scored 5
+foo(3);

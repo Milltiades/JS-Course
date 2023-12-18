@@ -154,16 +154,33 @@
 
 // console.log(myFunc());
 
-function factorial(n) {
-  if (n === 0 || n === 1) {
-    return 1;
-  } else {
-    return n * factorial(n - 1);
-  }
+// function factorial(n) {
+//   if (n === 0 || n === 1) {
+//     return 1;
+//   } else {
+//     return n * factorial(n - 1);
+//   }
+// }
+
+// console.log(factorial(5)); // 120
+// console.log(factorial(7)); // 5040
+// console.log(factorial(3)); // 6
+// console.log(factorial(1)); // 1
+// console.log(factorial(0)); // 1
+
+console.log(foo(5)); //25
+
+function foo(n) {
+  return n * n;
+}
+function square(n) {
+  return n * n;
 }
 
-console.log(factorial(5)); // 120
-console.log(factorial(7)); // 5040
-console.log(factorial(3)); // 6
-console.log(factorial(1)); // 1
-console.log(factorial(0)); // 1
+console.log(square(5)); // 25
+// Function hoisting only works with function declarations — not with function expressions. The following code will not work:
+
+console.log(square(5)); // ReferenceError: Cannot access 'square' before initialization
+const square = function (n) {
+  return n * n;
+}; // SyntaxError

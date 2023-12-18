@@ -234,12 +234,23 @@
 //     walkTree(node.childNodes[i]);
 //   }
 // }
-function foo(i) {
-  if (i < 0) {
-    return;
+// function foo(i) {
+//   if (i < 0) {
+//     return;
+//   }
+//   console.log(`begin: ${i}`);
+//   foo(i - 1);
+//   console.log(`end: ${i}`);
+// }
+// foo(3);
+
+function addSquares(a, b) {
+  function square(x) {
+    return x * x;
   }
-  console.log(`begin: ${i}`);
-  foo(i - 1);
-  console.log(`end: ${i}`);
+  return square(a) + square(b);
 }
-foo(3);
+
+console.log(addSquares(2, 3)); //13
+console.log(addSquares(3, 4)); //25
+console.log(addSquares(4, 5)); // 41

@@ -277,12 +277,76 @@
 // }
 // A(1); // Logs 6 (which is 1 + 2 + 3)
 
-function outside() {
-  const x = 5;
-  function inside(x) {
-    return x * 2;
-  }
-  return inside;
-}
+// function outside() {
+//   const x = 5;
+//   function inside(x) {
+//     return x * 2;
+//   }
+//   return inside;
+// }
 
-console.log(outside()(10));
+// console.log(outside()(10));
+// function outside() {
+//   const x = 5;
+//   function inside(x) {
+//     return x * 2;
+//   }
+//   return inside;
+// }
+
+// console.log(outside()(6));
+
+// The outer function defines a variable called "name"
+// const pet = function (name) {
+//   const getName = function () {
+//     // The inner function has access to the "name" variable of the outer function
+//     return name;
+//   };
+//   return getName; // Return the inner function, thereby exposing it to outer scopes
+// };
+// const myPet = pet("Vivie");
+
+// console.log(myPet()); // "Vivie"
+
+// const createPet = function (name) {
+//   let sex;
+//   const pet = {
+//     setName(newName) {
+//       name = newName;
+//     },
+//     getName() {
+//       return name;
+//     },
+//     getSex() {
+//       return sex;
+//     },
+//     setSex(newSex) {
+//       if (
+//         typeof newSex === "string" &&
+//         (newSex.toLowerCase() === "male" || newSex.toLowerCase() === "female")
+//       ) {
+//         sex = newSex;
+//       }
+//     },
+//   };
+
+//   return pet;
+// };
+
+// const pet = createPet("Vivie");
+// console.log(pet.getName()); // Vivie
+
+// pet.setName("Roxy");
+// pet.setSex("female");
+// console.log(pet.getSex()); // female
+// console.log(pet.getName()); // Roxy
+
+const getCode = (function () {
+  const apiCode = "0]Eal(eh&2"; // A code we do not want outsiders to be able to modify…
+
+  return function () {
+    return apiCode;
+  };
+})();
+
+console.log(getCode()); // "0]Eal(eh&2"

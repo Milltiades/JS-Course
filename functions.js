@@ -266,13 +266,23 @@
 // console.log(fnInside(5)); // 8
 // console.log(outside(3)(5)); // 8
 
-function A(x) {
-  function B(y) {
-    function C(z) {
-      console.log(x + y + z);
-    }
-    C(3);
+// function A(x) {
+//   function B(y) {
+//     function C(z) {
+//       console.log(x + y + z);
+//     }
+//     C(3);
+//   }
+//   B(2);
+// }
+// A(1); // Logs 6 (which is 1 + 2 + 3)
+
+function outside() {
+  const x = 5;
+  function inside(x) {
+    return x * 2;
   }
-  B(2);
+  return inside;
 }
-A(1); // Logs 6 (which is 1 + 2 + 3)
+
+console.log(outside()(10));

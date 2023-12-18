@@ -350,15 +350,39 @@
 // })();
 
 // console.log(getCode()); // "0]Eal(eh&2"
-function myConcat(separator) {
-  let result = ""; // initialize list
-  // iterate through arguments
-  for (let i = 1; i < arguments.length; i++) {
-    result += arguments[i] + separator;
-  }
-  return result;
+// function myConcat(separator) {
+//   let result = ""; // initialize list
+//   // iterate through arguments
+//   for (let i = 1; i < arguments.length; i++) {
+//     result += arguments[i] + separator;
+//   }
+//   return result;
+// }
+
+// console.log(myConcat(", ", "red", "orange", "blue"));
+// console.log(myConcat("; ", "elephant", "giraffe", "lion", "cheetah"));
+// console.log(myConcat(". ", "sage", "basil", "oregano", "pepper", "parsley"));
+
+// Note: The arguments variable is "array-like", but not an array. It is array-like in that it has a numbered index and a length property. However, it does not possess all of the array-manipulation methods.
+
+// function multiply(a, b) {
+//   b = typeof b !== "undefined" ? b : 1;
+//   console.log(typeof b);
+//   return a * b;
+// }
+
+// console.log(multiply(5)); // 5
+
+// function multiply(multiplier, ...theArgs) {
+//   return theArgs.map((x) => multiplier * x);
+// }
+
+// const arr = multiply(10, 1, 2, 3);
+// console.log(arr); // [2, 4, 6]
+
+function foo(par1, ...otherPars) {
+  return otherPars.map((e) => par1 + e);
 }
 
-console.log(myConcat(", ", "red", "orange", "blue"));
-console.log(myConcat("; ", "elephant", "giraffe", "lion", "cheetah"));
-console.log(myConcat(". ", "sage", "basil", "oregano", "pepper", "parsley"));
+const arr = foo(1, 2, 3, 4, 5);
+console.log(arr);

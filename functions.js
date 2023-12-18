@@ -380,9 +380,21 @@
 // const arr = multiply(10, 1, 2, 3);
 // console.log(arr); // [2, 4, 6]
 
-function foo(par1, ...otherPars) {
-  return otherPars.map((e) => par1 + e);
-}
+// function foo(par1, ...otherPars) {
+//   return otherPars.map((e) => par1 + e);
+// }
 
-const arr = foo(1, 2, 3, 4, 5);
-console.log(arr);
+// const arr = foo(1, 2, 3, 4, 5);
+// console.log(arr);
+
+// An arrow function expression (also called a fat arrow to distinguish from a hypothetical -> syntax in future JavaScript) has a shorter syntax compared to function expressions and does not have its own this, arguments, super, or new.target. Arrow functions are always anonymous.
+
+const a = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
+
+const a2 = a.map(function (s) {
+  return s.length;
+});
+
+console.log(a2); // [8, 6, 7, 9]
+const a3 = a.map((x) => x.length);
+console.log(a3); //[8, 6, 7, 9]

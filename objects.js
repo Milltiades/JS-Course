@@ -384,15 +384,15 @@
 // console.log(anotherObj.action()); //hello world
 // console.log(anotherObj.secondAction()); //This for coffee
 
-const vehicle = {
-  wheels: 4,
-  engine: function () {
-    return "Vrrooom!";
-  },
-};
+// const vehicle = {
+//   wheels: 4,
+//   engine: function () {
+//     return "Vrrooom!";
+//   },
+// };
 
-const truck = Object.create(vehicle);
-truck.doors = 2;
+// const truck = Object.create(vehicle);
+// truck.doors = 2;
 // console.log(truck);
 // console.log(truck.wheels); //inheritance
 // console.log(truck.engine());

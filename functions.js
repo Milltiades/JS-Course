@@ -341,12 +341,24 @@
 // console.log(pet.getSex()); // female
 // console.log(pet.getName()); // Roxy
 
-const getCode = (function () {
-  const apiCode = "0]Eal(eh&2"; // A code we do not want outsiders to be able to modify…
+// const getCode = (function () {
+//   const apiCode = "0]Eal(eh&2"; // A code we do not want outsiders to be able to modify…
 
-  return function () {
-    return apiCode;
-  };
-})();
+//   return function () {
+//     return apiCode;
+//   };
+// })();
 
-console.log(getCode()); // "0]Eal(eh&2"
+// console.log(getCode()); // "0]Eal(eh&2"
+function myConcat(separator) {
+  let result = ""; // initialize list
+  // iterate through arguments
+  for (let i = 1; i < arguments.length; i++) {
+    result += arguments[i] + separator;
+  }
+  return result;
+}
+
+console.log(myConcat(", ", "red", "orange", "blue"));
+console.log(myConcat("; ", "elephant", "giraffe", "lion", "cheetah"));
+console.log(myConcat(". ", "sage", "basil", "oregano", "pepper", "parsley"));

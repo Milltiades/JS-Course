@@ -389,12 +389,132 @@
 
 // An arrow function expression (also called a fat arrow to distinguish from a hypothetical -> syntax in future JavaScript) has a shorter syntax compared to function expressions and does not have its own this, arguments, super, or new.target. Arrow functions are always anonymous.
 
-const a = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
+// const a = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
 
-const a2 = a.map(function (s) {
-  return s.length;
-});
+// const a2 = a.map(function (s) {
+//   return s.length;
+// });
 
-console.log(a2); // [8, 6, 7, 9]
-const a3 = a.map((x) => x.length);
-console.log(a3); //[8, 6, 7, 9]
+// console.log(a2); // [8, 6, 7, 9]
+// const a3 = a.map((x) => x.length);
+// console.log(a3); //[8, 6, 7, 9]
+
+// function createPerson(name) {
+//   return {
+//     talk: () => `I am ${name}`,
+//   };
+// }
+// const me = createPerson("Giga");
+// const you = createPerson("Lasha");
+
+// function Person(name) {
+//   this.name = name;
+//   this.talk = () => {
+//     return `Hello I am ${this.name}`;
+//   };
+// }
+
+// const sina = new Person("Sina");
+// const ben = new console.log("Ben");
+// const sam = new console.log("Sam");
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     console.log(this.el);
+//   });
+// }
+
+// const h1 = new SuperElement("h1", "Helloooo!");
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     console.log(this.el);
+//   });
+// }
+
+// const array = ["a", "b", "c"];
+// const myElements = array.map((item) => {
+//   return new SuperElement("p", item);
+// });
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     console.log(this.el);
+//   });
+// }
+
+// const array = [
+//   {
+//     type: "h1",
+//     content: "Hello this is title",
+//   },
+//   {
+//     type: "p",
+//     content: "Hello this is Content",
+//   },
+//   {
+//     type: "button",
+//     content: "Button",
+//   },
+// ];
+
+// const myPage = array.map((item) => {
+//   return new SuperElement(item.type, item.content);
+// });
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     alert(this.el.innerText);
+//   });
+// }
+
+// const el = new SuperElement("h2", "Hello World!");
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     alert(this.el.innerText);
+//   });
+// }
+
+// const array = [
+//   {
+//     type: "h1",
+//     content: "My Title",
+//   },
+
+//   {
+//     type: "p",
+//     content: "My Content",
+//   },
+//   {
+//     type: "h3",
+//     content: "My Subtitle",
+//   },
+//   {
+//     type: "p",
+//     content: "My Content 2",
+//   },
+//   {
+//     type: "button",
+//     content: "My Button",
+//   },
+// ];
+
+// const myElements = array.map((item) => {
+//   return new SuperElement(item.type, item.content);
+// });

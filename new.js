@@ -83,26 +83,67 @@
 //   }
 // }
 
-class Polygon {
-  constructor() {
-    this.name = "Polygon";
-  }
-}
-class Rectangle {
-  constructor() {
-    this.name = "Rectangle";
-  }
-}
-class Square extends Polygon {
-  constructor() {
-    super();
-  }
-}
-Object.setPrototypeOf(Square, Rectangle);
+// class Polygon {
+//   constructor() {
+//     this.name = "Polygon";
+//   }
+// }
+// class Rectangle {
+//   constructor() {
+//     this.name = "Rectangle";
+//   }
+// }
+// class Square extends Polygon {
+//   constructor() {
+//     super();
+//   }
+// }
+// Object.setPrototypeOf(Square, Rectangle);
 
-const newInstance = new Square();
+// const newInstance = new Square();
 
-console.log(newInstance instanceof Polygon); //true
-console.log(newInstance instanceof Rectangle); //false
+// console.log(newInstance instanceof Polygon); //true
+// console.log(newInstance instanceof Rectangle); //false
 
-console.log(newInstance.name); //Rectangle
+// console.log(newInstance.name); //Rectangle
+
+// function Car() {}
+// const car1 = new Car();
+// const car2 = new Car();
+
+// console.log(car1.color);
+
+// Car.prototype.color = "original color";
+// console.log(car1.color);
+
+// car1.color = "Black";
+// console.log(car1.color);
+
+// console.log(Object.getPrototypeOf(car1).color);
+// console.log(Object.getPrototypeOf(car2).color);
+// console.log(car1 instanceof Car); //true
+// console.log(car2 instanceof Car); //true
+
+// function Car(color) {
+//   if (!new.target) {
+//     return `${color} car`;
+//   }
+//   this.color = color;
+// }
+
+// const a = Car("red");
+// const b = new Car("red");
+// console.log(a);
+// console.log(b);
+
+// function Car(color) {
+//   if (!new.target) {
+//     return `${color} car`;
+//   }
+//   this.color = color;
+// }
+
+// const car1 = Car("red");
+// console.log(car1);
+// const car2 = new Car("red");
+// console.log(car2);

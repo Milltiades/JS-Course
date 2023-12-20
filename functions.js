@@ -518,3 +518,143 @@
 // const myElements = array.map((item) => {
 //   return new SuperElement(item.type, item.content);
 // });
+
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayHi() {
+//     alert(this.name);
+//   }
+// }
+
+// class is a function
+// alert(typeof User); // function
+
+// ...or, more precisely, the constructor method
+// alert(User === User.prototype.constructor); // true
+
+// The methods are in User.prototype, e.g:
+// alert(User.prototype.sayHi); // the code of the sayHi method
+
+// there are exactly two methods in the prototype
+// alert(Object.getOwnPropertyNames(User.prototype)); // constructor, sayHi
+
+// rewriting class User in pure functions
+
+// 1. Create constructor function
+// function User(name) {
+//   this.name = name;
+// }
+// a function prototype has "constructor" property by default,
+// so we don't need to create it
+
+// 2. Add the method to prototype
+// User.prototype.sayHi = function () {
+//   alert(this.name);
+// };
+// User.prototype.sayNo = function () {
+//   alert(`No ${this.name}`);
+// };
+
+// // Usage:
+// let user = new User("John");
+// let user1 = new User("John1");
+
+// user.sayHi();
+// user1.sayNo();
+
+// class User {
+//   constructor() {}
+// }
+
+// alert(typeof User); // function
+// const myUser = new User();
+// console.log(myUser);
+// class User {
+//   constructor() {}
+// }
+
+// alert(User); // class User { ... }
+
+// let User = class {
+//   sayHi() {
+//     alert("Hello");
+//   }
+// };
+
+// // "Named Class Expression"
+// // (no such term in the spec, but that's similar to Named Function Expression)
+// let User = class MyClass {
+//   sayHi() {
+//     alert(MyClass); // MyClass name is visible only inside the class
+//   }
+// };
+
+// new User().sayHi(); // works, shows MyClass definition
+
+// alert(MyClass); // error, MyClass name isn't visible outside of the class
+
+// function makeClass(phrase) {
+//   return class {
+//     sayHi() {
+//       console.log(phrase);
+//     }
+//   };
+// }
+
+// let User = makeClass("Hello");
+// new User().sayHi(); // Hello
+
+// function makeClass(phrase) {
+//   return class {
+//     sayHi() {
+//       console.log(phrase);
+//     }
+//   };
+// }
+
+// let User = makeClass("Hello 2");
+// new User().sayHi(); // Hello 2
+
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   get name() {
+//     return this._name;
+//   }
+
+//   set name(value) {
+//     if (value.length < 4) {
+//       console.log("Name is too short.");
+//       return;
+//     }
+//     this._name = value;
+//   }
+// }
+
+// let user = new User("Giga");
+// console.log(user.name);
+
+// user = new User("sds");
+
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   get nameFoo() {
+//     return this.name;
+//   }
+//   set nameFoo(value) {
+//     this.name = value;
+//   }
+// }
+
+// let giga = new User("giga");
+
+// console.log(giga.nameFoo);
+// giga.nameFoo = "Lasha";
+// console.log(giga.nameFoo);

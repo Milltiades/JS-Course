@@ -389,12 +389,272 @@
 
 // An arrow function expression (also called a fat arrow to distinguish from a hypothetical -> syntax in future JavaScript) has a shorter syntax compared to function expressions and does not have its own this, arguments, super, or new.target. Arrow functions are always anonymous.
 
-const a = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
+// const a = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
 
-const a2 = a.map(function (s) {
-  return s.length;
-});
+// const a2 = a.map(function (s) {
+//   return s.length;
+// });
 
-console.log(a2); // [8, 6, 7, 9]
-const a3 = a.map((x) => x.length);
-console.log(a3); //[8, 6, 7, 9]
+// console.log(a2); // [8, 6, 7, 9]
+// const a3 = a.map((x) => x.length);
+// console.log(a3); //[8, 6, 7, 9]
+
+// function createPerson(name) {
+//   return {
+//     talk: () => `I am ${name}`,
+//   };
+// }
+// const me = createPerson("Giga");
+// const you = createPerson("Lasha");
+
+// function Person(name) {
+//   this.name = name;
+//   this.talk = () => {
+//     return `Hello I am ${this.name}`;
+//   };
+// }
+
+// const sina = new Person("Sina");
+// const ben = new console.log("Ben");
+// const sam = new console.log("Sam");
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     console.log(this.el);
+//   });
+// }
+
+// const h1 = new SuperElement("h1", "Helloooo!");
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     console.log(this.el);
+//   });
+// }
+
+// const array = ["a", "b", "c"];
+// const myElements = array.map((item) => {
+//   return new SuperElement("p", item);
+// });
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     console.log(this.el);
+//   });
+// }
+
+// const array = [
+//   {
+//     type: "h1",
+//     content: "Hello this is title",
+//   },
+//   {
+//     type: "p",
+//     content: "Hello this is Content",
+//   },
+//   {
+//     type: "button",
+//     content: "Button",
+//   },
+// ];
+
+// const myPage = array.map((item) => {
+//   return new SuperElement(item.type, item.content);
+// });
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     alert(this.el.innerText);
+//   });
+// }
+
+// const el = new SuperElement("h2", "Hello World!");
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     alert(this.el.innerText);
+//   });
+// }
+
+// const array = [
+//   {
+//     type: "h1",
+//     content: "My Title",
+//   },
+
+//   {
+//     type: "p",
+//     content: "My Content",
+//   },
+//   {
+//     type: "h3",
+//     content: "My Subtitle",
+//   },
+//   {
+//     type: "p",
+//     content: "My Content 2",
+//   },
+//   {
+//     type: "button",
+//     content: "My Button",
+//   },
+// ];
+
+// const myElements = array.map((item) => {
+//   return new SuperElement(item.type, item.content);
+// });
+
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayHi() {
+//     alert(this.name);
+//   }
+// }
+
+// class is a function
+// alert(typeof User); // function
+
+// ...or, more precisely, the constructor method
+// alert(User === User.prototype.constructor); // true
+
+// The methods are in User.prototype, e.g:
+// alert(User.prototype.sayHi); // the code of the sayHi method
+
+// there are exactly two methods in the prototype
+// alert(Object.getOwnPropertyNames(User.prototype)); // constructor, sayHi
+
+// rewriting class User in pure functions
+
+// 1. Create constructor function
+// function User(name) {
+//   this.name = name;
+// }
+// a function prototype has "constructor" property by default,
+// so we don't need to create it
+
+// 2. Add the method to prototype
+// User.prototype.sayHi = function () {
+//   alert(this.name);
+// };
+// User.prototype.sayNo = function () {
+//   alert(`No ${this.name}`);
+// };
+
+// // Usage:
+// let user = new User("John");
+// let user1 = new User("John1");
+
+// user.sayHi();
+// user1.sayNo();
+
+// class User {
+//   constructor() {}
+// }
+
+// alert(typeof User); // function
+// const myUser = new User();
+// console.log(myUser);
+// class User {
+//   constructor() {}
+// }
+
+// alert(User); // class User { ... }
+
+// let User = class {
+//   sayHi() {
+//     alert("Hello");
+//   }
+// };
+
+// // "Named Class Expression"
+// // (no such term in the spec, but that's similar to Named Function Expression)
+// let User = class MyClass {
+//   sayHi() {
+//     alert(MyClass); // MyClass name is visible only inside the class
+//   }
+// };
+
+// new User().sayHi(); // works, shows MyClass definition
+
+// alert(MyClass); // error, MyClass name isn't visible outside of the class
+
+// function makeClass(phrase) {
+//   return class {
+//     sayHi() {
+//       console.log(phrase);
+//     }
+//   };
+// }
+
+// let User = makeClass("Hello");
+// new User().sayHi(); // Hello
+
+// function makeClass(phrase) {
+//   return class {
+//     sayHi() {
+//       console.log(phrase);
+//     }
+//   };
+// }
+
+// let User = makeClass("Hello 2");
+// new User().sayHi(); // Hello 2
+
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   get name() {
+//     return this._name;
+//   }
+
+//   set name(value) {
+//     if (value.length < 4) {
+//       console.log("Name is too short.");
+//       return;
+//     }
+//     this._name = value;
+//   }
+// }
+
+// let user = new User("Giga");
+// console.log(user.name);
+
+// user = new User("sds");
+
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   get nameFoo() {
+//     return this.name;
+//   }
+//   set nameFoo(value) {
+//     this.name = value;
+//   }
+// }
+
+// let giga = new User("giga");
+
+// console.log(giga.nameFoo);
+// giga.nameFoo = "Lasha";
+// console.log(giga.nameFoo);

@@ -147,3 +147,141 @@
 // console.log(car1);
 // const car2 = new Car("red");
 // console.log(car2);
+
+// function Animal(name, species) {
+//   this.name = name;
+//   this.species = species;
+// }
+
+// Animal.prototype.makeSound = function () {
+//   console.log("Some generic animal sound");
+// };
+
+// var genericAnimal = new Animal("Genercis", "Unknow");
+
+// function Dog(name, breed) {
+//   Animal.call(this, name, "Dog");
+//   this.breed = breed;
+// }
+// Dog.prototype = Object.create(Animal.prototype);
+// Dog.prototype.constructor = Dog;
+
+// Dog.prototype.makeSound = function () {
+//   console.log("Woof! Woof");
+// };
+
+// var MyDog = new Dog("Buddy", "Golden Retriever");
+// genericAnimal.makeSound(); //Some generic animal sound
+// MyDog.makeSound(); // Woof! Woof!
+
+// // after
+
+// class Animal {
+//   constructor(name, species) {
+//     this.name = name;
+//     this.species = species;
+//   }
+
+//   makeSound() {
+//     console.log("Some generic animal sound");
+//   }
+// }
+
+// class Dog extends Animal {
+//   constructor(name, breed) {
+//     super(name, "Dog");
+//     this.breed = breed;
+//   }
+//   makeSound() {
+//     console.log("Woof! Woof!");
+//   }
+// }
+
+// const genericAnimal = new Animal("Generic", "Unknown");
+// const myDog = new Dog("Buddy", "Golden Retriever");
+
+// genericAnimal.makeSound(); // Some generic animal sound
+// myDog.makeSound();
+
+// class MathUtils {
+//   static square(x) {
+//     return x * x;
+//   }
+//   static cube(x) {
+//     return x * x * x;
+//   }
+// }
+
+// const squaredValue = MathUtils.square(4); // 16
+// const cubedValue = MathUtils.square(3); // 27
+
+// const test = new MathUtils();
+// console.log(cubedValue);
+
+// class Counter {
+//   static instanceCount = 0;
+
+//   constructor() {
+//     Counter.instanceCount++;
+//   }
+// }
+
+// const instance1 = new Counter();
+// console.log(Counter.instanceCount);
+// const instance2 = new Counter();
+// console.log(Counter.instanceCount);
+
+// const myObject = {
+//   myMethod: () => {
+//     console.log(this);
+//   },
+// };
+
+// myObject.myMethod();
+
+// class Test {
+//   constructor() {
+//     this.name = "giga";
+//   }
+//   foo = () => {
+//     console.log("test: ", this);
+//   };
+// }
+
+// const test1 = new Test();
+// test1.foo();
+
+// function loop(x) {
+//   if (x >= 10) {
+//     return;
+//   }
+//   loop(x + 1);
+// }
+// loop(0);
+
+// function foo(i) {
+//   if (i < 0) {
+//     return;
+//   }
+//   console.log(`begin: ${i}`);
+//   foo(i - 1);
+//   console.log(`end : ${i}`);
+// }
+// foo(3);
+// // 3;
+// // 2;
+// // 1;
+// // 0;
+// // 1;
+// // 2;
+// // 3;class
+class MyCLass {
+  constructor(name) {
+    this.name = name;
+  }
+  sayHello() {
+    console.log(`hello ${this.name}`);
+  }
+}
+const user = new MyCLass("Giga");
+user.sayHello();

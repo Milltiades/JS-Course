@@ -275,13 +275,140 @@
 // // 1;
 // // 2;
 // // 3;class
-class MyCLass {
-  constructor(name) {
-    this.name = name;
-  }
-  sayHello() {
-    console.log(`hello ${this.name}`);
+// class MyCLass {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayHello() {
+//     console.log(`hello ${this.name}`);
+//   }
+// }
+// const user = new MyCLass("Giga");
+// user.sayHello();
+
+// setTimeout(function () {
+//   console.log("Timer");
+// }, 3000);
+
+// function x(y) {
+//   console.log("x");
+//   y();
+// }
+
+// x(function y() {
+//   console.log("y");
+// });
+
+// function attachEventListeners() {
+//   let count = 0;
+//   document.getElementById("clickMe").addEventListener("click", function xyz() {
+//     console.log("Button cliked", ++count);
+//   });
+// }
+// attachEventListeners();
+
+//cosntructor functions
+// function Person(name, age) {
+//   this.name = name;
+//   this.age = age;
+// }
+
+// // Usage
+// const john = new Person("John Doe", 25);
+
+// //factory functions
+// function createPerson(name, age) {
+//   const person = {};
+//   person.name = name;
+//   person.age = age;
+//   return person;
+// }
+
+// // Usage
+// const jane = createPerson("Jane Doe", 30);
+
+// Constructor Function
+// function Person(name, age) {
+//   // Properties are set using 'this'
+//   this.name = name;
+//   this.age = age;
+
+//   // A method can also be added
+//   this.sayHello = function () {
+//     console.log(
+//       `Hello, my name is ${this.name} and I'm ${this.age} years old.`
+//     );
+//   };
+// }
+
+// // Usage with 'new' keyword
+// const john = new Person("John Doe", 25);
+// john.sayHello(); // Output: Hello, my name is John Doe and I'm 25 years old.
+
+// // Factory Function
+// function createPerson(name, age) {
+//   // Object creation and initialization logic
+//   const person = {};
+//   person.name = name;
+//   person.age = age;
+
+//   // Additional methods can be added
+//   person.sayHello = function () {
+//     console.log(
+//       `Hello, my name is ${person.name} and I'm ${person.age} years old.`
+//     );
+//   };
+
+//   return person;
+// }
+
+// // Usage without 'new' keyword
+// const jane = createPerson("Jane Doe", 30);
+// jane.sayHello(); // Output: Hello, my name is Jane Doe and I'm 30 years old.
+
+// function createPerson(name, age, profession) {
+//   const person = {};
+//   person.name = name;
+//   person.age = age;
+//   person.profession = profession;
+
+//   person.sayHello = function () {
+//     console.log(
+//       `Hello, my name is ${person.name}, I am ${person.age} years old, and I work as a ${person.profession}.`
+//     );
+//   };
+
+//   if (person.profession === "Developer") {
+//     person.writeCode = function () {
+//       console.log(`${person.name} is codding.`);
+//     };
+//   }
+
+//   return person;
+// }
+
+// const make = createPerson("Giga", 27, "Developer");
+// make.sayHello();
+// make.writeCode();
+
+function CreatePerson(name, age, profession) {
+  this.name = name;
+  this.age = age;
+  this.profession = profession;
+
+  this.sayHello = function () {
+    console.log(
+      `Hello, my name is ${this.name}, I'm ${this.age} years old, and I work as a ${this.profession}.`
+    );
+  };
+  if (this.profession === "Developer") {
+    this.writeCode = function () {
+      console.log(`${this.name} is writing code.`);
+    };
   }
 }
-const user = new MyCLass("Giga");
-user.sayHello();
+
+const lasha = new CreatePerson("Lasha", 26, "Developer");
+
+lasha.sayHello();
+lasha.writeCode();

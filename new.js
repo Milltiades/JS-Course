@@ -391,24 +391,73 @@
 // make.sayHello();
 // make.writeCode();
 
-function CreatePerson(name, age, profession) {
-  this.name = name;
-  this.age = age;
-  this.profession = profession;
+// function CreatePerson(name, age, profession) {
+//   this.name = name;
+//   this.age = age;
+//   this.profession = profession;
 
-  this.sayHello = function () {
-    console.log(
-      `Hello, my name is ${this.name}, I'm ${this.age} years old, and I work as a ${this.profession}.`
-    );
-  };
-  if (this.profession === "Developer") {
-    this.writeCode = function () {
-      console.log(`${this.name} is writing code.`);
-    };
-  }
+//   this.sayHello = function () {
+//     console.log(
+//       `Hello, my name is ${this.name}, I'm ${this.age} years old, and I work as a ${this.profession}.`
+//     );
+//   };
+//   if (this.profession === "Developer") {
+//     this.writeCode = function () {
+//       console.log(`${this.name} is writing code.`);
+//     };
+//   }
+// }
+
+// const lasha = new CreatePerson("Lasha", 26, "Developer");
+
+// lasha.sayHello();
+// lasha.writeCode();
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     console.log(this.el);
+//   });
+// }
+
+function SuperElement(type, content) {
+  this.el = document.createElement(type);
+  this.el.innerText = content;
+  document.body.append(this.el);
+  this.el.addEventListener("click", () => {
+    console.log(this.el);
+  });
 }
 
-const lasha = new CreatePerson("Lasha", 26, "Developer");
+// const h1 = new SuperElement("h1", "This is title");
+// const h2 = new SuperElement("h2", "This is subTitle");
+// const button = new SuperElement("button", "This is button");
 
-lasha.sayHello();
-lasha.writeCode();
+// const array = ["a", "b", "c"];
+
+// const elements = array.map((el) => {
+//   return new SuperElement("h1", el);
+// });
+
+const array = [
+  {
+    element: "h1",
+    content: "This is title",
+  },
+  {
+    element: "h2",
+    content: "This is subTitle",
+  },
+  {
+    element: "p",
+    content: "This is text about something.",
+  },
+  {
+    element: "button",
+    content: "This is button",
+  },
+];
+
+const elements = array.map((el) => new SuperElement(el.element, el.content));

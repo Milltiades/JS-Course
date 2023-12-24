@@ -327,44 +327,44 @@
 // // Usage
 // const jane = createPerson("Jane Doe", 30);
 
-// Constructor Function
-// function Person(name, age) {
-//   // Properties are set using 'this'
-//   this.name = name;
-//   this.age = age;
+//Constructor Function
+function Person(name, age) {
+  // Properties are set using 'this'
+  this.name = name;
+  this.age = age;
 
-//   // A method can also be added
-//   this.sayHello = function () {
-//     console.log(
-//       `Hello, my name is ${this.name} and I'm ${this.age} years old.`
-//     );
-//   };
-// }
+  // A method can also be added
+  this.sayHello = function () {
+    console.log(
+      `Hello, my name is ${this.name} and I'm ${this.age} years old.`
+    );
+  };
+}
 
-// // Usage with 'new' keyword
-// const john = new Person("John Doe", 25);
-// john.sayHello(); // Output: Hello, my name is John Doe and I'm 25 years old.
+// Usage with 'new' keyword
+const john = new Person("John Doe", 25);
+john.sayHello(); // Output: Hello, my name is John Doe and I'm 25 years old.
 
-// // Factory Function
-// function createPerson(name, age) {
-//   // Object creation and initialization logic
-//   const person = {};
-//   person.name = name;
-//   person.age = age;
+// Factory Function
+function createPerson(name, age) {
+  // Object creation and initialization logic
+  const person = {};
+  person.name = name;
+  person.age = age;
 
-//   // Additional methods can be added
-//   person.sayHello = function () {
-//     console.log(
-//       `Hello, my name is ${person.name} and I'm ${person.age} years old.`
-//     );
-//   };
+  // Additional methods can be added
+  person.sayHello = function () {
+    console.log(
+      `Hello, my name is ${person.name} and I'm ${person.age} years old.`
+    );
+  };
 
-//   return person;
-// }
+  return person;
+}
 
-// // Usage without 'new' keyword
-// const jane = createPerson("Jane Doe", 30);
-// jane.sayHello(); // Output: Hello, my name is Jane Doe and I'm 30 years old.
+// Usage without 'new' keyword
+const jane = createPerson("Jane Doe", 30);
+jane.sayHello(); // Output: Hello, my name is Jane Doe and I'm 30 years old.
 
 // function createPerson(name, age, profession) {
 //   const person = {};
@@ -391,24 +391,73 @@
 // make.sayHello();
 // make.writeCode();
 
-function CreatePerson(name, age, profession) {
-  this.name = name;
-  this.age = age;
-  this.profession = profession;
+// function CreatePerson(name, age, profession) {
+//   this.name = name;
+//   this.age = age;
+//   this.profession = profession;
 
-  this.sayHello = function () {
-    console.log(
-      `Hello, my name is ${this.name}, I'm ${this.age} years old, and I work as a ${this.profession}.`
-    );
-  };
-  if (this.profession === "Developer") {
-    this.writeCode = function () {
-      console.log(`${this.name} is writing code.`);
-    };
-  }
-}
+//   this.sayHello = function () {
+//     console.log(
+//       `Hello, my name is ${this.name}, I'm ${this.age} years old, and I work as a ${this.profession}.`
+//     );
+//   };
+//   if (this.profession === "Developer") {
+//     this.writeCode = function () {
+//       console.log(`${this.name} is writing code.`);
+//     };
+//   }
+// }
 
-const lasha = new CreatePerson("Lasha", 26, "Developer");
+// const lasha = new CreatePerson("Lasha", 26, "Developer");
 
-lasha.sayHello();
-lasha.writeCode();
+// lasha.sayHello();
+// lasha.writeCode();
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     console.log(this.el);
+//   });
+// }
+
+// function SuperElement(type, content) {
+//   this.el = document.createElement(type);
+//   this.el.innerText = content;
+//   document.body.append(this.el);
+//   this.el.addEventListener("click", () => {
+//     console.log(this.el);
+//   });
+// }
+
+// const h1 = new SuperElement("h1", "This is title");
+// const h2 = new SuperElement("h2", "This is subTitle");
+// const button = new SuperElement("button", "This is button");
+
+// const array = ["a", "b", "c"];
+
+// const elements = array.map((el) => {
+//   return new SuperElement("h1", el);
+// });
+
+// const array = [
+//   {
+//     element: "h1",
+//     content: "This is title",
+//   },
+//   {
+//     element: "h2",
+//     content: "This is subTitle",
+//   },
+//   {
+//     element: "p",
+//     content: "This is text about something.",
+//   },
+//   {
+//     element: "button",
+//     content: "This is button",
+//   },
+// ];
+
+// const elements = array.map((el) => new SuperElement(el.element, el.content));

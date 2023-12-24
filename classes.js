@@ -332,25 +332,25 @@
 // const myList = document.getElementById("myList");
 // const listBinding = new ListBinding(myList);
 
-class Car {
-  constructor() {
-    this.mark;
-  }
-  beepVoice(arg) {
-    console.log(arg);
-  }
-}
+// class Car {
+//   constructor() {
+//     this.mark;
+//   }
+//   beepVoice(arg) {
+//     console.log(arg);
+//   }
+// }
 
-class Bmw extends Car {
-  constructor() {
-    super();
-  }
-  start() {
-    this.beepVoice();
-  }
-  getMark() {
-    return this.mark;
-  }
-}
+// class Bmw extends Car {
+//   constructor() {
+//     super();
+//   }
+//   start() {
+//     this.beepVoice();
+//   }
+//   getMark() {
+//     return this.mark;
+//   }
+// }
 
-console.log(Bmw.getMark);
+// console.log(Bmw.getMark);

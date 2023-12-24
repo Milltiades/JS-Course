@@ -328,43 +328,43 @@
 // const jane = createPerson("Jane Doe", 30);
 
 //Constructor Function
-function Person(name, age) {
-  // Properties are set using 'this'
-  this.name = name;
-  this.age = age;
+// function Person(name, age) {
+//   // Properties are set using 'this'
+//   this.name = name;
+//   this.age = age;
 
-  // A method can also be added
-  this.sayHello = function () {
-    console.log(
-      `Hello, my name is ${this.name} and I'm ${this.age} years old.`
-    );
-  };
-}
+//   // A method can also be added
+//   this.sayHello = function () {
+//     console.log(
+//       `Hello, my name is ${this.name} and I'm ${this.age} years old.`
+//     );
+//   };
+// }
 
-// Usage with 'new' keyword
-const john = new Person("John Doe", 25);
-john.sayHello(); // Output: Hello, my name is John Doe and I'm 25 years old.
+// // Usage with 'new' keyword
+// const john = new Person("John Doe", 25);
+// john.sayHello(); // Output: Hello, my name is John Doe and I'm 25 years old.
 
-// Factory Function
-function createPerson(name, age) {
-  // Object creation and initialization logic
-  const person = {};
-  person.name = name;
-  person.age = age;
+// // Factory Function
+// function createPerson(name, age) {
+//   // Object creation and initialization logic
+//   const person = {};
+//   person.name = name;
+//   person.age = age;
 
-  // Additional methods can be added
-  person.sayHello = function () {
-    console.log(
-      `Hello, my name is ${person.name} and I'm ${person.age} years old.`
-    );
-  };
+//   // Additional methods can be added
+//   person.sayHello = function () {
+//     console.log(
+//       `Hello, my name is ${person.name} and I'm ${person.age} years old.`
+//     );
+//   };
 
-  return person;
-}
+//   return person;
+// }
 
-// Usage without 'new' keyword
-const jane = createPerson("Jane Doe", 30);
-jane.sayHello(); // Output: Hello, my name is Jane Doe and I'm 30 years old.
+// // Usage without 'new' keyword
+// const jane = createPerson("Jane Doe", 30);
+// jane.sayHello(); // Output: Hello, my name is Jane Doe and I'm 30 years old.
 
 // function createPerson(name, age, profession) {
 //   const person = {};

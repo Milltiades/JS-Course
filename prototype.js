@@ -24,19 +24,24 @@
 // ben.age = 12;
 // console.log(ben.age); // 12
 
-class Human {
-  talk() {
-    return "Talking";
-  }
-}
+// class Human {
+//   talk() {
+//     return "Talking";
+//   }
+// }
 
-class SuperHuman extends Human {
-  fly() {
-    return "Flying";
-  }
-}
-const ben = new SuperHuman();
+// class SuperHuman extends Human {
+//   fly() {
+//     return "Flying";
+//   }
+// }
+// const ben = new SuperHuman();
 
-console.log(ben.fly()); // Flying
-console.log(ben.talk()); // Talking
-console.log(ben);
+// console.log(ben.fly()); // Flying
+// console.log(ben.talk()); // Talking
+// console.log(ben);
+
+function Dude(name) {
+  this.name = name;
+}
+const me = new Dude("giga");

@@ -428,23 +428,23 @@
 
 // console.log(sayPerson2Name());
 
-const person = { name: "John" };
-const greet = function () {
-  console.log(`Hello, ${this.name}!`);
-};
-const greetJohn = greet.bind(person);
-greetJohn(); // Outputs: Hello, John!
+// const person = { name: "John" };
+// const greet = function () {
+//   console.log(`Hello, ${this.name}!`);
+// };
+// const greetJohn = greet.bind(person);
+// greetJohn(); // Outputs: Hello, John!
 
-const person1 = { name: "Alice" };
-const introduce = function (skill1, skill2) {
-  console.log(`${this.name} knows ${skill1} and ${skill2}.`);
-};
-introduce.apply(person, ["JavaScript", "Python"]);
-// Outputs: Alice knows JavaScript and Python.
+// const person1 = { name: "Alice" };
+// const introduce = function (skill1, skill2) {
+//   console.log(`${this.name} knows ${skill1} and ${skill2}.`);
+// };
+// introduce.apply(person, ["JavaScript", "Python"]);
+// // Outputs: Alice knows JavaScript and Python.
 
-const car = { brand: "Toyota" };
-const describeCar = function (color, year) {
-  console.log(`This ${color} car is a ${year} ${this.brand}.`);
-};
-describeCar.call(car, "blue", 2022);
-// Outputs: This blue car is a 2022 Toyota.
+// const car = { brand: "Toyota" };
+// const describeCar = function (color, year) {
+//   console.log(`This ${color} car is a ${year} ${this.brand}.`);
+// };
+// describeCar.call(car, "blue", 2022);
+// // Outputs: This blue car is a 2022 Toyota.

@@ -88,24 +88,236 @@
 // console.log(myCat.__proto__); //{breed: 'munchkin', tailLength: 15}
 // console.log(myCat.tailLength); // 15
 
-function Dog() {}
-Dog.prototype.breed = "Bulldog";
+// function Dog() {}
+// Dog.prototype.breed = "Bulldog";
 
-let myDoggie = new Dog();
-// console.log(myDoggie.breed); // Bulldog
+// let myDoggie = new Dog();
+// // console.log(myDoggie.breed); // Bulldog
 
-console.log(myDoggie.__proto__); //{breed: 'Bulldog', constructor: ƒ}
-console.log(myDoggie.prototype); //undefined
-console.log(Dog.prototype); //{breed: 'Bulldog', constructor: ƒ}
+// console.log(myDoggie.__proto__); //{breed: 'Bulldog', constructor: ƒ}
+// console.log(myDoggie.prototype); //undefined
+// console.log(Dog.prototype); //{breed: 'Bulldog', constructor: ƒ}
 
-function Girrafe() {}
+// function Girrafe() {}
 
-console.log(Girrafe.prototype); // {constructor: ƒ}
-let koala = {};
-console.log(koala.prototype); //undefined
-console.log(koala.__proto__); //{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+// console.log(Girrafe.prototype); // {constructor: ƒ}
+// let koala = {};
+// console.log(koala.prototype); //undefined
+// console.log(koala.__proto__); //{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
 
-console.log(koala.__proto__ === Object.prototype); // true
+// console.log(koala.__proto__ === Object.prototype); // true
 
-Object.prototype.waffle = "sdjksfskfjskfj";
-console.log(koala.waffle); //sdjksfskfjskfj
+// Object.prototype.waffle = "sdjksfskfjskfj";
+// console.log(koala.waffle); //sdjksfskfjskfj
+
+// Assignebt operators =
+
+// x = f(); // x = f() Assignment
+// x += f(); //x = x + f() Addition assignment
+// x -= f(); //x = x - f() Subtraction assignment
+// x *= f(); //x = x * f() Multiplication assignment
+// x /= f(); //x = x / f() Division assignment
+// x %= f(); //x = x % f() Remainder assignment
+// x **= f(); //x = x ** f() Exponentiation assignment
+// x <<= f(); //x = x << f() Left shift assignment
+// x >> f(); //x = x >> f() Right shift assignment
+// x >>>= f(); //x = x >>> f() Unsigned right shift assignment
+// x &= f(); //x = x & f() Bitwise AND assignment
+// x ^= f(); //x = x ^ f() Bitwise XOR assignment
+// x |= f(); //x = x | f() Bitwise OR assignment
+// x &&= f(); //x && (x = f()) Logical AND assignment
+// x ||= f(); //x || (x = f()) Logical OR assignment
+// x ??= f(); //x ?? (x = f()) Nullish coalescing assignment
+
+// const obj = {};
+
+// obj.x = 3;
+
+// console.log(obj.x); // 3
+// console.log(obj); // Prints { x: 3 }.
+
+// const key = "y";
+// obj[key] = 5;
+// console.log(obj[key]); // Prints 5
+// console.log(obj); // Prints { x: 3, y: 5 }.
+
+// const val = 0;
+// val.x = 3;
+
+// console.log(val.x); // Prints undefined.
+// console.log(val); // Prints 0.
+
+// const foo = ["one", "two", "three"];
+
+// const one = foo[0];
+// const two = foo[1];
+// const three = foo[2];
+
+// const [one, two, three] = foo;
+
+// let x;
+// const y = (x = f()); // Or equivalently: const y = x = f();
+// console.log(y); // Logs the return value of the assignment x = f().
+
+// console.log((x = f())); // Logs the return value directly.
+
+// // An assignment expression can be nested in any place
+// // where expressions are generally allowed,
+// // such as array literals' elements or as function calls' arguments.
+// console.log([0, (x = f()), 0]);
+// console.log(f(0, (x = f()), 0));
+
+// function f() {
+//   console.log("F!");
+//   return 2;
+// }
+// function g() {
+//   console.log("G!");
+//   return 3;
+// }
+
+// let x, y;
+
+// y = x = f();
+
+// y = [f(), (x = g())];
+// x[f()] = g();
+
+// const var1 = 3;
+// const var2 = 4;
+
+// 3 == var1;
+// "3" == var1;
+// 3 == "3";
+
+// var1 != 4;
+// var2 != 3;
+
+// 3 === var1;
+// var1 !== "3";
+// 3 !== "3";
+
+// var2 > var1;
+// "12" > 2;
+
+// var2 >= var1;
+// var1 >= 3;
+
+// var1 < var2;
+// "2" < 12;
+
+// var1 <= var2;
+// var2 <= 5;
+
+// 1 / 2; // 0.5
+// 1 / 2 === 1.0 / 2.0; // this is true
+
+// let num = 3;
+// console.log(++num, num); // 4 4
+// let num1 = 3;
+// console.log(num1++, num1); // 3 4
+
+// let x = 3;
+// console.log(--x); // 2
+// console.log(x); // 2
+
+// let y = 3;
+// console.log(y--); // 3
+// console.log(y); //2
+
+// let z = 3;
+// console.log(-z); // -3
+
+// console.log(+"3"); // 3 as a number
+// console.log(+true); // 1
+
+// let q = 2;
+// console.log(q ** 3); // 8
+// console.log(10 ** -1); // 0.1
+// console.log(10 ** -3); // 0.001
+
+// const a = 5; // 00000000000000000000000000000101
+// const b = 3; // 00000000000000000000000000000011
+
+// console.log(a & b); // 00000000000000000000000000000001 1
+
+// const c = 12; // 00000000000000000000000000001100    12
+// const d = 8; //  00000000000000000000000000001000   8
+
+// console.log(c & d); // 00000000000000000000000000001000  8
+
+// const a = 5; // 00000000000000000000000000000101
+// const b = 3; // 00000000000000000000000000000011
+
+// console.log(a | b); // 00000000000000000000000000000111 7
+
+// const c = 12; // 00000000000000000000000000001100    12
+// const d = 8; //  00000000000000000000000000001000   8
+
+// console.log(c | d); // 00000000000000000000000000001100 12
+
+// const a = 5; // 00000000000000000000000000000101
+// const b = 3; // 00000000000000000000000000000011
+
+// console.log(a ^ b); // 00000000000000000000000000000110 6
+
+// const a = 7; // 000111
+// const b = 12; // 0000000001100
+// const d = -12; // 1111111110011
+// // 1111111110100
+
+// console.log(a << b); //00011100000000  1792
+
+// const g = 15; // 00001111
+// const h = -15; // 11110001
+
+// const a = 17; // 000000010001
+// const b = -17; // 111111101111
+
+// const a1 = true && true; // t && t returns true
+// const a2 = true && false; // t && f returns false
+// const a3 = false && true; // f && t returns false
+// const a4 = false && 3 === 4; // f && f returns false
+// const a5 = "Cat" && "Dog"; // t && t returns Dog
+// const a6 = false && "Cat"; // f && t returns false
+// const a7 = "Cat" && false; // t && f returns false
+
+// const o1 = true || true; // t || t returns true
+// const o2 = false || true; // f || t returns true
+// const o3 = true || false; // t || f returns true
+// const o4 = false || 3 === 4; // f || f returns false
+// const o5 = "Cat" || "Dog"; // t || t returns Cat
+// const o6 = false || "Cat"; // f || t returns Cat
+// const o7 = "Cat" || false; // t || f returns Cat
+
+// const n1 = !true; // !t returns false
+// const n2 = !false; // !f returns true
+// const n3 = !"Cat"; // !t returns false
+
+// const x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const a = [x, x, x, x, x];
+
+// for (let i = 0, j = 9; i <= j; i++, j--) {
+//   //                              ^
+//   console.log(`a[${i}][${j}]= ${a[i][j]}`);
+// }
+
+// const myFun = [1, 2, 3, 4, 5];
+
+// console.log(typeof myFun);
+
+// typeof blur; // returns "function"
+// typeof eval; // returns "function"
+// typeof parseInt; // returns "function"
+// typeof shape.split; // returns "function"
+
+// typeof Date; // returns "function"
+// typeof Function; // returns "function"
+// typeof Math; // returns "object"
+// typeof Option; // returns "function"
+// typeof String; // returns "function"
+
+const theDay = new Date(1995, 12, 17);
+if (theDay instanceof Date) {
+  // statements to execute
+}

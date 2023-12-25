@@ -317,7 +317,140 @@
 // typeof Option; // returns "function"
 // typeof String; // returns "function"
 
-const theDay = new Date(1995, 12, 17);
-if (theDay instanceof Date) {
-  // statements to execute
+// const theDay = new Date(1995, 12, 17);
+// if (theDay instanceof Date) {
+//   // statements to execute
+// }
+
+// const myObject = {
+//   city: "Madrid",
+//   greet() {
+//     console.log(`Greetings from ${this.city}`);
+//   },
+// };
+
+// myObject.greet();
+
+// Note: The property of an object that points to its prototype is not called prototype. Its name is not standard, but in practice all browsers use __proto__. The standard way to access an object's prototype is the Object.getPrototypeOf() method.
+
+// console.log(Object.getPrototypeOf(myObject));
+
+// const myDate = new Date();
+// let object = myDate;
+
+// do {
+//   object = Object.getPrototypeOf(object);
+//   console.log(object);
+// } while (object);
+
+// const myDate = new Date(1995, 11, 17);
+// console.log(myDate.getYear()); //95
+
+// myDate.getYear = function () {
+//   console.log("Something else");
+// };
+
+// myDate.getYear(); // 'something else!'
+
+// const personPrototype = {
+//   greet() {
+//     console.log(`hello`);
+//   },
+// };
+
+// const carl = Object.create(personPrototype);
+
+// carl.greet();
+
+// const personPrototype = {
+//   greet() {
+//     console.log(`hello, my name is ${this.name}!`);
+//   },
+// };
+
+// function Person(name) {
+//   this.name = name;
+// }
+
+// Object.assign(Person.prototype, personPrototype);
+
+// const reuben = new Person("Reuben");
+// reuben.greet(); //hello, my name is Reuben!
+
+// const firstPrototype = {
+//   dance() {
+//     console.log(`${this.name} loves dancing very much!`);
+//   },
+// };
+
+// function Dancer(name) {
+//   this.name = name;
+// }
+
+// Object.assign(Dancer.prototype, firstPrototype);
+
+// const giga = new Dancer("Gedeon");
+
+// giga.dance(); // Gedeon loves dancing very much!
+
+// const firstPrototype = {
+//   driving() {
+//     console.log(`${this.name} drives very fast!`);
+//   },
+// };
+
+// function Driver(name) {
+//   this.name = name;
+//   this.dance = function () {
+//     console.log(`${this.name} loves dancing also!`);
+//   };
+// }
+
+// Object.assign(Driver.prototype, firstPrototype);
+
+// const giga = new Driver("Giga");
+// giga.driving(); // Giga drives very fast!
+// giga.dance(); // Giga loves dancing also!
+
+// const personPrototype = {
+//   greet() {
+//     console.log(`hello, my name is ${this.name}!`);
+//   },
+//   talk() {
+//     console.log("everyone talking!");
+//   },
+// };
+
+// function Person(name) {
+//   this.name = name;
+//   this.dance = "dancing";
+// }
+
+// Object.assign(Person.prototype, personPrototype);
+// // or
+// // Person.prototype.greet = personPrototype.greet;
+
+// const irma = new Person("Irma");
+// console.log(irma.dance); // dancing
+// irma.talk();
+
+// console.log(Object.hasOwn(irma, "name")); //true
+// console.log(Object.hasOwn(irma, "greet")); //false
+// console.log(Object.hasOwn(irma, "dance")); //true
+// console.log(Object.hasOwn(irma, "talk")); //false
+
+const PersonPrototype = {
+  talking() {
+    console.log(`${this.name} loves talking so much!`);
+  },
+};
+
+function Person(name) {
+  this.name = name;
 }
+Object.assign(Person.prototype, PersonPrototype);
+
+const giga = new Person("giga");
+
+console.log(Object.hasOwn(giga, "name")); //true
+giga.talking(); // giga loves talking so much!

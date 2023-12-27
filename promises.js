@@ -241,24 +241,24 @@
 
 // fetchData();
 
-const workPromise = new Promise((resolve, reject) => {
-  if (true) {
-    resolve("ოპერაცია წარმატებით შესრულდა");
-  } else {
-    reject("ოპერაცია წარუმატებელია!");
-  }
-});
+// const workPromise = new Promise((resolve, reject) => {
+//   if (true) {
+//     resolve("ოპერაცია წარმატებით შესრულდა");
+//   } else {
+//     reject("ოპერაცია წარუმატებელია!");
+//   }
+// });
 
-workPromise.then((res) => console.log(res)).catch((err) => console.log(err));
+// workPromise.then((res) => console.log(res)).catch((err) => console.log(err));
 
-const fetchData = async () => {
-  try {
-    const res = await fetch("https://jsonplaceholder.typicode.com/users");
-    const data = res.json();
-    return console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
-};
+// const fetchData = async () => {
+//   try {
+//     const res = await fetch("https://jsonplaceholder.typicode.com/users");
+//     const data = res.json();
+//     return console.log(data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
-fetchData();
+// fetchData();

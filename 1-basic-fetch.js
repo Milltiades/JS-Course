@@ -14,4 +14,4 @@ function getData() {
     });
 }
 
-getData();
+// getData();

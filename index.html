@@ -8,8 +8,8 @@
    http-equiv="Content-Security-Policy"
    content="default-src *;
    script-src 'self' 'unsafe-inline';
-   connect-src *';
-   img-src 'self' blob: data: http: https: ''
+   connect-src *;
+   img-src 'self' blob: data: http: https:
    "
 />
     <!-- <script src="script.js" defer></script>
@@ -62,6 +62,7 @@
       <img id="pic" src="./1031-536x354.jpg" alt="loaded by fetch" width="300" height="200" />
       <button id="abort">ABORT</button>
     </p>
+
     <form name="myform" id="myform" action="https://www.google.ca/">
       <p>
         <label for="jsonfile">JSON:</label>
@@ -70,11 +71,13 @@
       <p>
         <label for="imgfile">Image:</label>
         <input type="file" id="imgfile" name="imgfile" accept="image/*" />
+       
       </p>
       <p>
         <button id="btnSend">Send</button>
       </p>
     </form>
+
     <canvas id="canvas" width="600" height="400"></canvas>
   </main>
 </body>

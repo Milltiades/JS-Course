@@ -79,11 +79,42 @@ let endpoint = "http://127.0.0.1:3000/";
 
 function setData() {
   //
-  const imgInput = document.getElementById("imgFile");
+  const imgInput = document.getElementById("imgfile");
   const jsonInput = document.getElementById("jsonfile");
+
   document.getElementById("myform").addEventListener("submit", (ev) => {
     ev.preventDefault();
     // upload something
+    let obj = {
+      id: 123,
+      name: "steve",
+    };
+
+    let jsonstring = JSON.stringify(obj);
+
+    let fd = new FormData(document.getElementById("myform"));
+    // console.log(imgInput.files[0]);
+    // console.log("test");
+    // fd.append("imageFile", imgInput.files[0], imgInput.files[0].name);
+
+    let request = new Request(endpoint, {
+      method: "POST",
+      //   body: jsonstring,
+      body: fd,
+      headers: {
+        // "content-type": "application/json",
+        "content-type": "multipart/form-data",
+      },
+    });
+    fetch(request)
+      .then((response) => {
+        if (!response.ok) throw new Error("Invalid");
+        return response.text();
+      })
+      .then((txt) => {
+        console.log(txt);
+      })
+      .catch(console.warn);
   });
 }
 

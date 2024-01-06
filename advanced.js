@@ -43,20 +43,43 @@
 
 //     The data is not persistent i.e. it will be lost once the window/tab is closed. Like localStorage, it works on same-origin policy. So, data stored will only be available on the same origin.
 
-localStorage.setItem("name", "Giga");
-// localStorage.removeItem("name");
-// console.log(localStorage.getItem("name"));
+// localStorage.setItem("name", "Giga");
+// // localStorage.removeItem("name");
+// // console.log(localStorage.getItem("name"));
 
-sessionStorage.setItem("name", "Lasha");
-sessionStorage.setItem("name", "Giga");
+// sessionStorage.setItem("name", "Lasha");
+// sessionStorage.setItem("name", "Giga");
 
-// sessionStorage.removeItem("name");
-console.log(sessionStorage.getItem("name"));
+// // sessionStorage.removeItem("name");
+// console.log(sessionStorage.getItem("name"));
 
-document.cookie = "name=Gedeon; expires=" + new Date(9999, 0, 15).toUTCString();
+// document.cookie = "name=Gedeon; expires=" + new Date(9999, 0, 15).toUTCString();
+
+// document.cookie =
+//   "lastName=Smith; expires=" + new Date(2024, 1, 1).toUTCString();
+// document.cookie = "age=27";
+
+// console.log(document.cookie);
+
+// console.log("sss");
+localStorage.setItem("lunch", "cereal");
+console.log(localStorage.getItem("breakfast"));
+
+sessionStorage.setItem("dinner", "eggs");
+console.log(sessionStorage.getItem("breakfast"));
+
+localStorage.removeItem("dinner");
+localStorage.clear();
+
+document.cookie = "hello=; expires= Thu, 01 Jan 1970 00:00:00 UTC";
+document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
 
 document.cookie =
-  "lastName=Smith; expires=" + new Date(2024, 1, 1).toUTCString();
-document.cookie = "age=27";
+  "person=; path=/; expires=" + new Date(1970, 5, 5).toUTCString();
 
 console.log(document.cookie);
+
+document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
+document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
+document.cookie =
+  "doSomethingOnlyTwice=; expires=Fri, 31 Dec 1970 23:59:59 GMT";

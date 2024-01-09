@@ -43,20 +43,113 @@
 
 //     The data is not persistent i.e. it will be lost once the window/tab is closed. Like localStorage, it works on same-origin policy. So, data stored will only be available on the same origin.
 
-localStorage.setItem("name", "Giga");
-// localStorage.removeItem("name");
-// console.log(localStorage.getItem("name"));
+// localStorage.setItem("name", "Giga");
+// // localStorage.removeItem("name");
+// // console.log(localStorage.getItem("name"));
 
-sessionStorage.setItem("name", "Lasha");
-sessionStorage.setItem("name", "Giga");
+// sessionStorage.setItem("name", "Lasha");
+// sessionStorage.setItem("name", "Giga");
 
-// sessionStorage.removeItem("name");
-console.log(sessionStorage.getItem("name"));
+// // sessionStorage.removeItem("name");
+// console.log(sessionStorage.getItem("name"));
 
-document.cookie = "name=Gedeon; expires=" + new Date(9999, 0, 15).toUTCString();
+// document.cookie = "name=Gedeon; expires=" + new Date(9999, 0, 15).toUTCString();
 
-document.cookie =
-  "lastName=Smith; expires=" + new Date(2024, 1, 1).toUTCString();
-document.cookie = "age=27";
+// document.cookie =
+//   "lastName=Smith; expires=" + new Date(2024, 1, 1).toUTCString();
+// document.cookie = "age=27";
 
-console.log(document.cookie);
+// console.log(document.cookie);
+
+// console.log("sss");
+// localStorage.setItem("lunch", "cereal");
+// console.log(localStorage.getItem("breakfast"));
+
+// sessionStorage.setItem("dinner", "eggs");
+// console.log(sessionStorage.getItem("breakfast"));
+
+// localStorage.removeItem("dinner");
+// localStorage.clear();
+
+// document.cookie = "hello=; expires= Thu, 01 Jan 1970 00:00:00 UTC";
+// document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
+
+// document.cookie =
+//   "person=; path=/; expires=" + new Date(1970, 5, 5).toUTCString();
+
+// console.log(document.cookie);
+
+// document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
+// document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
+// document.cookie =
+//   "doSomethingOnlyTwice=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
+
+// function* simpleGenerator() {
+//   console.log("before 1");
+//   yield 1;
+//   console.log("after 1");
+//   console.log("before 2");
+//   yield 2;
+//   console.log("after 2");
+//   console.log("before 3");
+//   yield 3;
+//   console.log("after 3");
+// }
+// const generateObject = simpleGenerator();
+// const generateObject2 = simpleGenerator();
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject2.next());
+// console.log(generateObject2.next());
+
+// function* generateId() {
+//   let id = 1;
+
+//   while (true) {
+//     yield id;
+//     id++;
+//   }
+// }
+// const generateObject = generateId();
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// const generateObject2 = generateId();
+// console.log(generateObject2.next());
+
+// function* generator(array) {
+//   for (let i = 0; i < array.length; i++) {
+//     yield array[i];
+//   }
+// }
+// const generateObject = generator([1, 3, 5]);
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+
+function* generateId() {
+  let id = 1;
+  while (true) {
+    const increment = yield id;
+    if (increment != null) {
+      id += increment;
+    } else {
+      id++;
+    }
+  }
+}
+
+const generateObject = generateId();
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.return(8));
+// console.log(generateObject.next());
+
+console.log(generateObject.next());
+console.log(generateObject.next());
+console.log(generateObject.throw(new Error("Hi")));
+console.log(generateObject.next());

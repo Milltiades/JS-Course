@@ -84,20 +84,49 @@
 // document.cookie =
 //   "doSomethingOnlyTwice=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
 
-function* simpleGenerator() {
-  console.log("before 1");
-  yield 1;
-  console.log("after 1");
-  console.log("before 2");
-  yield 2;
-  console.log("after 2");
-  console.log("before 3");
-  yield 3;
-  console.log("after 3");
+// function* simpleGenerator() {
+//   console.log("before 1");
+//   yield 1;
+//   console.log("after 1");
+//   console.log("before 2");
+//   yield 2;
+//   console.log("after 2");
+//   console.log("before 3");
+//   yield 3;
+//   console.log("after 3");
+// }
+// const generateObject = simpleGenerator();
+// const generateObject2 = simpleGenerator();
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject2.next());
+// console.log(generateObject2.next());
+
+// function* generateId() {
+//   let id = 1;
+
+//   while (true) {
+//     yield id;
+//     id++;
+//   }
+// }
+// const generateObject = generateId();
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// const generateObject2 = generateId();
+// console.log(generateObject2.next());
+
+function* generator(array) {
+  for (let i = 0; i < array.length; i++) {
+    yield array[i];
+  }
 }
-const generateObject = simpleGenerator();
-const generateObject2 = simpleGenerator();
+const generateObject = generator([1, 3, 5]);
 console.log(generateObject.next());
 console.log(generateObject.next());
-console.log(generateObject2.next());
-console.log(generateObject2.next());
+console.log(generateObject.next());
+console.log(generateObject.next());

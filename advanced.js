@@ -62,24 +62,42 @@
 // console.log(document.cookie);
 
 // console.log("sss");
-localStorage.setItem("lunch", "cereal");
-console.log(localStorage.getItem("breakfast"));
+// localStorage.setItem("lunch", "cereal");
+// console.log(localStorage.getItem("breakfast"));
 
-sessionStorage.setItem("dinner", "eggs");
-console.log(sessionStorage.getItem("breakfast"));
+// sessionStorage.setItem("dinner", "eggs");
+// console.log(sessionStorage.getItem("breakfast"));
 
-localStorage.removeItem("dinner");
-localStorage.clear();
+// localStorage.removeItem("dinner");
+// localStorage.clear();
 
-document.cookie = "hello=; expires= Thu, 01 Jan 1970 00:00:00 UTC";
-document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
+// document.cookie = "hello=; expires= Thu, 01 Jan 1970 00:00:00 UTC";
+// document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
 
-document.cookie =
-  "person=; path=/; expires=" + new Date(1970, 5, 5).toUTCString();
+// document.cookie =
+//   "person=; path=/; expires=" + new Date(1970, 5, 5).toUTCString();
 
-console.log(document.cookie);
+// console.log(document.cookie);
 
-document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
-document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
-document.cookie =
-  "doSomethingOnlyTwice=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
+// document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
+// document.cookie = "doSomethingOnlyOnce=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
+// document.cookie =
+//   "doSomethingOnlyTwice=; expires=Fri, 31 Dec 1970 23:59:59 GMT";
+
+function* simpleGenerator() {
+  console.log("before 1");
+  yield 1;
+  console.log("after 1");
+  console.log("before 2");
+  yield 2;
+  console.log("after 2");
+  console.log("before 3");
+  yield 3;
+  console.log("after 3");
+}
+const generateObject = simpleGenerator();
+const generateObject2 = simpleGenerator();
+console.log(generateObject.next());
+console.log(generateObject.next());
+console.log(generateObject2.next());
+console.log(generateObject2.next());

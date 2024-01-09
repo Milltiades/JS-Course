@@ -120,13 +120,36 @@
 // const generateObject2 = generateId();
 // console.log(generateObject2.next());
 
-function* generator(array) {
-  for (let i = 0; i < array.length; i++) {
-    yield array[i];
+// function* generator(array) {
+//   for (let i = 0; i < array.length; i++) {
+//     yield array[i];
+//   }
+// }
+// const generateObject = generator([1, 3, 5]);
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+
+function* generateId() {
+  let id = 1;
+  while (true) {
+    const increment = yield id;
+    if (increment != null) {
+      id += increment;
+    } else {
+      id++;
+    }
   }
 }
-const generateObject = generator([1, 3, 5]);
+
+const generateObject = generateId();
+// console.log(generateObject.next());
+// console.log(generateObject.next());
+// console.log(generateObject.return(8));
+// console.log(generateObject.next());
+
 console.log(generateObject.next());
 console.log(generateObject.next());
-console.log(generateObject.next());
+console.log(generateObject.throw(new Error("Hi")));
 console.log(generateObject.next());

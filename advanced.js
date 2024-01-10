@@ -430,29 +430,79 @@
 
 // fetchData();
 
-function* fetchDataGenerator() {
-  try {
-    const response = yield fetch("https://jsonplaceholder.typicode.com/users");
-    const data = yield response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return null;
+// function* fetchDataGenerator() {
+//   try {
+//     const response = yield fetch("https://jsonplaceholder.typicode.com/users");
+//     const data = yield response.json();
+//     return data;
+//   } catch (error) {
+//     console.error("Error fetching data:", error);
+//     return null;
+//   }
+// }
+
+// const fetchData = async () => {
+//   const generator = fetchDataGenerator();
+
+//   const response = await generator.next().value;
+
+//   const data = await generator.next(response).value;
+
+//   if (data) {
+//     console.log("Fetched data:", data);
+//   } else {
+//     console.log("Data fetch failed.");
+//   }
+// };
+
+// fetchData();
+
+// function* fibonacciGenerator() {
+//   let a = 0;
+//   let b = 1;
+
+//   while (true) {
+//     yield a;
+//     [a, b] = [b, a + b];
+//   }
+// }
+
+// // Example usage
+// const fibonacciSequence = fibonacciGenerator();
+
+// for (let i = 0; i <= 20; i++) {
+//   console.log(fibonacciSequence.next().value);
+// }
+
+// function* fibonacciGen() {
+//   let a = 0;
+//   let b = 1;
+
+//   while (true) {
+//     yield a;
+//     [a, b] = [b, a + b];
+//   }
+// }
+
+// const fibonacci = fibonacciGen();
+// for (let i = 0; i <= 50; i++) {
+//   console.log(fibonacci.next().value);
+// }
+
+function* fibonacciGen() {
+  let a = 0;
+  let b = 1;
+  let c = 0;
+
+  while (true) {
+    yield a;
+    a = b;
+    b = c;
+    c = a + b;
   }
 }
 
-const fetchData = async () => {
-  const generator = fetchDataGenerator();
-
-  const response = await generator.next().value;
-
-  const data = await generator.next(response).value;
-
-  if (data) {
-    console.log("Fetched data:", data);
-  } else {
-    console.log("Data fetch failed.");
-  }
-};
-
-fetchData();
+const fibonacci = fibonacciGen();
+for (let i = 0; i <= 50; i++) {
+  console.log(fibonacci.next().value);
+}

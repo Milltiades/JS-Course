@@ -398,13 +398,61 @@
 
 // generator.throw(new Error("saxeli bazashia r moidzebna"));
 
-function* gen() {
-  yield 1;
-  yield 2;
-  yield 3;
+// function* gen() {
+//   yield 1;
+//   yield 2;
+//   yield 3;
+// }
+// const g = gen();
+// console.log(g.next());
+// console.log(g.return("foo"));
+// console.log(g.next());
+// console.log(g.return("foo2"));
+
+// function* asyncDataFetcher() {
+//   try {
+//     setTimeout(() => {
+//       const simulatedData = "Simulated fetched data";
+//       generator.next(simulatedData);
+//     }, 1000);
+//     const data = yield;
+//     console.log(data);
+//   } catch (err) {
+//     console.error("Error fetching data:", err);
+//   }
+// }
+
+// const fetchData = async () => {
+//   const generator = asyncDataFetcher();
+//   await generator.next();
+//   console.log("Processing other operations...");
+// };
+
+// fetchData();
+
+function* fetchDataGenerator() {
+  try {
+    const response = yield fetch("https://jsonplaceholder.typicode.com/users");
+    const data = yield response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
+  }
 }
-const g = gen();
-console.log(g.next());
-console.log(g.return("foo"));
-console.log(g.next());
-console.log(g.return("foo2"));
+
+const fetchData = async () => {
+  const generator = fetchDataGenerator();
+
+  const response = await generator.next().value;
+
+  const data = await generator.next(response).value;
+
+  if (data) {
+    console.log("Fetched data:", data);
+  } else {
+    console.log("Data fetch failed.");
+  }
+};
+
+fetchData();

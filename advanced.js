@@ -260,25 +260,151 @@
 
 // console.log(str); // 0..9A..Za..z
 
-function* generateSequence(start, end) {
-  for (let i = start; i <= end; i++) yield i;
+// function* generateSequence(start, end) {
+//   for (let i = start; i <= end; i++) yield i;
+// }
+
+// function* generateAlphaNum() {
+//   // yield* generateSequence(48, 57);
+//   for (let i = 48; i <= 57; i++) yield i;
+
+//   // yield* generateSequence(65, 90);
+//   for (let i = 65; i <= 90; i++) yield i;
+
+//   // yield* generateSequence(97, 122);
+//   for (let i = 97; i <= 122; i++) yield i;
+// }
+
+// let str = "";
+
+// for (let code of generateAlphaNum()) {
+//   str += String.fromCharCode(code);
+// }
+
+// console.log(str); // 0..9A..Za..z
+
+// function* generateSequence(start, end) {
+//   for (let i = start; i <= end; i++) yield i;
+// }
+
+// function* generatePasswordCodes() {
+//   yield* generateSequence(48, 57);
+//   yield* generateSequence(65, 90);
+//   yield* generateSequence(97, 122);
+// }
+
+// let str = "";
+
+// for (let code of generatePasswordCodes()) {
+//   str += String.fromCharCode(code);
+// }
+
+// alert(str);
+
+// function* gen() {
+//   let result = yield "2 + 2 = ?";
+//   alert(result);
+//   let res2 = yield "3 + 3 = ?";
+//   alert(res2);
+// }
+
+// let generator = gen();
+// let question = generator.next().value;
+
+// generator.next(4);
+// generator.next(6);
+
+// function* gen() {
+//   let result = yield "What's your name ?";
+
+//   alert(result);
+
+//   alert(yield "test2");
+// }
+
+// let generator = gen();
+// let question = generator.next().value;
+
+// console.log(question);
+// generator.next("Giga");
+// generator.next();
+// generator.next();
+
+// function* gen() {
+//   let ask1 = yield "2 + 2 = ?";
+//   console.log(ask1);
+//   let ask2 = yield "3 + 3 = ?";
+//   console.log(ask2);
+// }
+
+// let generator = gen();
+// console.log(generator.next().value);
+// console.log(generator.next(4).value);
+// console.log(generator.next(9).done);
+
+// function* gen() {
+//   let ask1 = yield "ra gqvia?";
+//   alert(ask1);
+//   let ask2 = yield "ra gvari xar?";
+//   alert(ask2);
+// }
+
+// let generator = gen();
+// alert(generator.next().value);
+// alert(generator.next("giga").value);
+// alert(generator.next("kakulia").done);
+
+// function* gen() {
+//   try {
+//     let result = yield "2 + 2 = ?";
+//     alert(
+//       "The execution does not reach here, because the exception is thrown above"
+//     );
+//   } catch (e) {
+//     alert(e);
+//   }
+// }
+
+// let generator = gen();
+// let question = generator.next().value;
+
+// generator.throw(new Error("The answer is not found in my database"));
+
+// function* generate() {
+//   let result = yield "2 + 2 = ?"; // Error in this line
+// }
+
+// let generator = generate();
+
+// let question = generator.next().value;
+
+// try {
+//   generator.throw(new Error("The answer is not found in my database"));
+// } catch (e) {
+//   alert(e); // shows the error
+// }
+
+// function* gen() {
+//   try {
+//     let result = yield "ra gqvia?";
+//     alert(result);
+//   } catch (e) {
+//     alert(e);
+//   }
+// }
+
+// let generator = gen();
+// let question = generator.next().value;
+
+// generator.throw(new Error("saxeli bazashia r moidzebna"));
+
+function* gen() {
+  yield 1;
+  yield 2;
+  yield 3;
 }
-
-function* generateAlphaNum() {
-  // yield* generateSequence(48, 57);
-  for (let i = 48; i <= 57; i++) yield i;
-
-  // yield* generateSequence(65, 90);
-  for (let i = 65; i <= 90; i++) yield i;
-
-  // yield* generateSequence(97, 122);
-  for (let i = 97; i <= 122; i++) yield i;
-}
-
-let str = "";
-
-for (let code of generateAlphaNum()) {
-  str += String.fromCharCode(code);
-}
-
-console.log(str); // 0..9A..Za..z
+const g = gen();
+console.log(g.next());
+console.log(g.return("foo"));
+console.log(g.next());
+console.log(g.return("foo2"));

@@ -489,20 +489,20 @@
 //   console.log(fibonacci.next().value);
 // }
 
-function* fibonacciGen() {
-  let a = 0;
-  let b = 1;
-  let c = 0;
+// function* fibonacciGen() {
+//   let a = 0;
+//   let b = 1;
+//   let c = 0;
 
-  while (true) {
-    yield a;
-    a = b;
-    b = c;
-    c = a + b;
-  }
-}
+//   while (true) {
+//     yield a;
+//     a = b;
+//     b = c;
+//     c = a + b;
+//   }
+// }
 
-const fibonacci = fibonacciGen();
-for (let i = 0; i <= 50; i++) {
-  console.log(fibonacci.next().value);
-}
+// const fibonacci = fibonacciGen();
+// for (let i = 0; i <= 50; i++) {
+//   console.log(fibonacci.next().value);
+// }

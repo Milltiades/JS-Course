@@ -398,13 +398,111 @@
 
 // generator.throw(new Error("saxeli bazashia r moidzebna"));
 
-function* gen() {
-  yield 1;
-  yield 2;
-  yield 3;
-}
-const g = gen();
-console.log(g.next());
-console.log(g.return("foo"));
-console.log(g.next());
-console.log(g.return("foo2"));
+// function* gen() {
+//   yield 1;
+//   yield 2;
+//   yield 3;
+// }
+// const g = gen();
+// console.log(g.next());
+// console.log(g.return("foo"));
+// console.log(g.next());
+// console.log(g.return("foo2"));
+
+// function* asyncDataFetcher() {
+//   try {
+//     setTimeout(() => {
+//       const simulatedData = "Simulated fetched data";
+//       generator.next(simulatedData);
+//     }, 1000);
+//     const data = yield;
+//     console.log(data);
+//   } catch (err) {
+//     console.error("Error fetching data:", err);
+//   }
+// }
+
+// const fetchData = async () => {
+//   const generator = asyncDataFetcher();
+//   await generator.next();
+//   console.log("Processing other operations...");
+// };
+
+// fetchData();
+
+// function* fetchDataGenerator() {
+//   try {
+//     const response = yield fetch("https://jsonplaceholder.typicode.com/users");
+//     const data = yield response.json();
+//     return data;
+//   } catch (error) {
+//     console.error("Error fetching data:", error);
+//     return null;
+//   }
+// }
+
+// const fetchData = async () => {
+//   const generator = fetchDataGenerator();
+
+//   const response = await generator.next().value;
+
+//   const data = await generator.next(response).value;
+
+//   if (data) {
+//     console.log("Fetched data:", data);
+//   } else {
+//     console.log("Data fetch failed.");
+//   }
+// };
+
+// fetchData();
+
+// function* fibonacciGenerator() {
+//   let a = 0;
+//   let b = 1;
+
+//   while (true) {
+//     yield a;
+//     [a, b] = [b, a + b];
+//   }
+// }
+
+// // Example usage
+// const fibonacciSequence = fibonacciGenerator();
+
+// for (let i = 0; i <= 20; i++) {
+//   console.log(fibonacciSequence.next().value);
+// }
+
+// function* fibonacciGen() {
+//   let a = 0;
+//   let b = 1;
+
+//   while (true) {
+//     yield a;
+//     [a, b] = [b, a + b];
+//   }
+// }
+
+// const fibonacci = fibonacciGen();
+// for (let i = 0; i <= 50; i++) {
+//   console.log(fibonacci.next().value);
+// }
+
+// function* fibonacciGen() {
+//   let a = 0;
+//   let b = 1;
+//   let c = 0;
+
+//   while (true) {
+//     yield a;
+//     a = b;
+//     b = c;
+//     c = a + b;
+//   }
+// }
+
+// const fibonacci = fibonacciGen();
+// for (let i = 0; i <= 50; i++) {
+//   console.log(fibonacci.next().value);
+// }

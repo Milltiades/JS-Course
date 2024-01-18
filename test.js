@@ -161,28 +161,97 @@
 // person.age = 100;
 // console.log(person.age);
 
-let validator = {
-  set: function (obj, prop, value) {
-    if (prop === "age") {
-      if (typeof value !== "number" || Number.isNaN(value)) {
-        console.log("ასაკი უნდა იყოს ციფრი!");
-      }
+// let validator = {
+//   set: function (obj, prop, value) {
+//     if (prop === "age") {
+//       if (typeof value !== "number" || Number.isNaN(value)) {
+//         console.log("ასაკი უნდა იყოს ციფრი!");
+//       }
 
-      if (value <= 0) {
-        console.log("ასაკი უნდა იყოს დადებითი რიცხვი");
-      } else if (value < 18) {
-        console.log("ასაკი უნდა იყოს 18 წელს ზემოთ!");
-      }
-    }
-    obj[prop] = value;
-    return true;
-  },
-};
+//       if (value <= 0) {
+//         console.log("ასაკი უნდა იყოს დადებითი რიცხვი");
+//       } else if (value < 18) {
+//         console.log("ასაკი უნდა იყოს 18 წელს ზემოთ!");
+//       }
+//     }
+//     obj[prop] = value;
+//     return true;
+//   },
+// };
 
-let user = new Proxy({}, validator);
-user.age = "ახალგაზრდა";
-user.age = -1;
-user.age = 0;
-user.age = 12;
-user.age = 21;
-console.log(user.age);
+// let user = new Proxy({}, validator);
+// user.age = "ახალგაზრდა";
+// user.age = -1;
+// user.age = 0;
+// user.age = 12;
+// user.age = 21;
+// console.log(user.age);
+
+// const person = {
+//   age: 20,
+//   name: "gedeon",
+// };
+
+// const p = new Proxy(person, {
+//   get: (target, key) => {
+//     if (key === "name") {
+//       return target[key].toUpperCase();
+//     } else if (key === "age") {
+//       return target[key] * 2;
+//     } else {
+//       return target[key];
+//     }
+//   },
+// });
+
+// console.log(p.age);
+// console.log(p.name);
+
+// const validator = new Proxy(
+//   {},
+//   {
+//     set: (target, key, value) => {
+//       if (typeof value !== "number") {
+//         console.error(
+//           `Invalid value: ${value}. Please provide a number value.`
+//         );
+//         return false;
+//       } else {
+//         target[key] = value;
+//         return true;
+//       }
+//     },
+//   }
+// );
+
+// validator.number1 = 22; // alowed
+// validator.number1 = "asda"; // Error
+
+// const logger = new Proxy(
+//   {},
+//   {
+//     get: (target, key) => {
+//       console.log(`Property ${key} was accessed.`);
+//       return target[key];
+//     },
+//     set: (target, key, value) => {
+//       console.log(`Property ${key} was set to ${value}.`);
+//       target[key] = value;
+//       return true;
+//     },
+//   }
+// );
+
+// logger.name;
+// logger.age = 27;
+
+const defaults = new Proxy(
+  { defaultProp: "This is the default value.", name: "giga" },
+  {
+    get: (target, key) => {
+      return key in target ? target[key] : target.defaultProp;
+    },
+  }
+);
+
+console.log(defaults.names);

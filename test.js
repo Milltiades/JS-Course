@@ -102,24 +102,87 @@
 //   console.log(`${key}: ${valueInMegabytes} MB`);
 // }
 
-let box1 = {
-  width: 100,
-  height: 50,
-};
-let box2 = box1;
-// let box2 = {
-//   width: 120,
-//   height: 80,
+// let box1 = {
+//   width: 100,
+//   height: 50,
+// };
+// let box2 = box1;
+// // let box2 = {
+// //   width: 120,
+// //   height: 80,
+// // };
+
+// let box3 = box2;
+
+// box1.width = 150;
+// box2.width = 200;
+// box1.width = 50;
+// box3.width = 1000;
+// box3.height = 1000;
+
+// console.log("Box 1 width", box1.width);
+// console.log("Box 2 width", box2.width);
+// console.log("Box 3 height", box3.height);
+
+// var p = new Proxy(target, handler);
+
+// var handler = {
+//   get(target, key) {
+//     return key in target ? target[key] : 37;
+//   },
+// };
+// var p = new Proxy({}, handler);
+
+// p.a = 1;
+// p.b = undefined;
+
+// console.log(p.a, p.b);
+// console.log("c" in p, p.c);
+
+// let validator = {
+//   set: function (obj, prop, value) {
+//     if (prop === "age") {
+//       if (typeof value !== "number" || Number.isNaN(value)) {
+//         console.log("Age must be a number");
+//       }
+//       if (value <= 0) {
+//         console.log("Age must be a positive number");
+//       }
+//     }
+//     obj[prop] = value;
+
+//     return true;
+//   },
 // };
 
-let box3 = box2;
+// let person = new Proxy({}, validator);
+// person.age = "young";
+// person.age = -30;
+// person.age = 100;
+// console.log(person.age);
 
-box1.width = 150;
-box2.width = 200;
-box1.width = 50;
-box3.width = 1000;
-box3.height = 1000;
+let validator = {
+  set: function (obj, prop, value) {
+    if (prop === "age") {
+      if (typeof value !== "number" || Number.isNaN(value)) {
+        console.log("ასაკი უნდა იყოს ციფრი!");
+      }
 
-console.log("Box 1 width", box1.width);
-console.log("Box 2 width", box2.width);
-console.log("Box 3 height", box3.height);
+      if (value <= 0) {
+        console.log("ასაკი უნდა იყოს დადებითი რიცხვი");
+      } else if (value < 18) {
+        console.log("ასაკი უნდა იყოს 18 წელს ზემოთ!");
+      }
+    }
+    obj[prop] = value;
+    return true;
+  },
+};
+
+let user = new Proxy({}, validator);
+user.age = "ახალგაზრდა";
+user.age = -1;
+user.age = 0;
+user.age = 12;
+user.age = 21;
+console.log(user.age);
